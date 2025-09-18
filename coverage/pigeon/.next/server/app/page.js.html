@@ -1,0 +1,652 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Code coverage report for pigeon/.next/server/app/page.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../base.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../../../favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+    
+<body>
+<div class='wrapper'>
+    <div class='pad1'>
+        <h1><a href="../../../../index.html">All files</a> / <a href="index.html">pigeon/.next/server/app</a> page.js</h1>
+        <div class='clearfix'>
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">0% </span>
+                <span class="quiet">Statements</span>
+                <span class='fraction'>0/190</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">0% </span>
+                <span class="quiet">Branches</span>
+                <span class='fraction'>0/1</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">0% </span>
+                <span class="quiet">Functions</span>
+                <span class='fraction'>0/1</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">0% </span>
+                <span class="quiet">Lines</span>
+                <span class='fraction'>0/190</span>
+            </div>
+        
+            
+        </div>
+        <p class="quiet">
+            Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
+        </p>
+        <template id="filterTemplate">
+            <div class="quiet">
+                Filter:
+                <input type="search" id="fileSearch">
+            </div>
+        </template>
+    </div>
+    <div class='status-line low'></div>
+    <pre><table class="coverage">
+<tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
+<a name='L2'></a><a href='#L2'>2</a>
+<a name='L3'></a><a href='#L3'>3</a>
+<a name='L4'></a><a href='#L4'>4</a>
+<a name='L5'></a><a href='#L5'>5</a>
+<a name='L6'></a><a href='#L6'>6</a>
+<a name='L7'></a><a href='#L7'>7</a>
+<a name='L8'></a><a href='#L8'>8</a>
+<a name='L9'></a><a href='#L9'>9</a>
+<a name='L10'></a><a href='#L10'>10</a>
+<a name='L11'></a><a href='#L11'>11</a>
+<a name='L12'></a><a href='#L12'>12</a>
+<a name='L13'></a><a href='#L13'>13</a>
+<a name='L14'></a><a href='#L14'>14</a>
+<a name='L15'></a><a href='#L15'>15</a>
+<a name='L16'></a><a href='#L16'>16</a>
+<a name='L17'></a><a href='#L17'>17</a>
+<a name='L18'></a><a href='#L18'>18</a>
+<a name='L19'></a><a href='#L19'>19</a>
+<a name='L20'></a><a href='#L20'>20</a>
+<a name='L21'></a><a href='#L21'>21</a>
+<a name='L22'></a><a href='#L22'>22</a>
+<a name='L23'></a><a href='#L23'>23</a>
+<a name='L24'></a><a href='#L24'>24</a>
+<a name='L25'></a><a href='#L25'>25</a>
+<a name='L26'></a><a href='#L26'>26</a>
+<a name='L27'></a><a href='#L27'>27</a>
+<a name='L28'></a><a href='#L28'>28</a>
+<a name='L29'></a><a href='#L29'>29</a>
+<a name='L30'></a><a href='#L30'>30</a>
+<a name='L31'></a><a href='#L31'>31</a>
+<a name='L32'></a><a href='#L32'>32</a>
+<a name='L33'></a><a href='#L33'>33</a>
+<a name='L34'></a><a href='#L34'>34</a>
+<a name='L35'></a><a href='#L35'>35</a>
+<a name='L36'></a><a href='#L36'>36</a>
+<a name='L37'></a><a href='#L37'>37</a>
+<a name='L38'></a><a href='#L38'>38</a>
+<a name='L39'></a><a href='#L39'>39</a>
+<a name='L40'></a><a href='#L40'>40</a>
+<a name='L41'></a><a href='#L41'>41</a>
+<a name='L42'></a><a href='#L42'>42</a>
+<a name='L43'></a><a href='#L43'>43</a>
+<a name='L44'></a><a href='#L44'>44</a>
+<a name='L45'></a><a href='#L45'>45</a>
+<a name='L46'></a><a href='#L46'>46</a>
+<a name='L47'></a><a href='#L47'>47</a>
+<a name='L48'></a><a href='#L48'>48</a>
+<a name='L49'></a><a href='#L49'>49</a>
+<a name='L50'></a><a href='#L50'>50</a>
+<a name='L51'></a><a href='#L51'>51</a>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a>
+<a name='L54'></a><a href='#L54'>54</a>
+<a name='L55'></a><a href='#L55'>55</a>
+<a name='L56'></a><a href='#L56'>56</a>
+<a name='L57'></a><a href='#L57'>57</a>
+<a name='L58'></a><a href='#L58'>58</a>
+<a name='L59'></a><a href='#L59'>59</a>
+<a name='L60'></a><a href='#L60'>60</a>
+<a name='L61'></a><a href='#L61'>61</a>
+<a name='L62'></a><a href='#L62'>62</a>
+<a name='L63'></a><a href='#L63'>63</a>
+<a name='L64'></a><a href='#L64'>64</a>
+<a name='L65'></a><a href='#L65'>65</a>
+<a name='L66'></a><a href='#L66'>66</a>
+<a name='L67'></a><a href='#L67'>67</a>
+<a name='L68'></a><a href='#L68'>68</a>
+<a name='L69'></a><a href='#L69'>69</a>
+<a name='L70'></a><a href='#L70'>70</a>
+<a name='L71'></a><a href='#L71'>71</a>
+<a name='L72'></a><a href='#L72'>72</a>
+<a name='L73'></a><a href='#L73'>73</a>
+<a name='L74'></a><a href='#L74'>74</a>
+<a name='L75'></a><a href='#L75'>75</a>
+<a name='L76'></a><a href='#L76'>76</a>
+<a name='L77'></a><a href='#L77'>77</a>
+<a name='L78'></a><a href='#L78'>78</a>
+<a name='L79'></a><a href='#L79'>79</a>
+<a name='L80'></a><a href='#L80'>80</a>
+<a name='L81'></a><a href='#L81'>81</a>
+<a name='L82'></a><a href='#L82'>82</a>
+<a name='L83'></a><a href='#L83'>83</a>
+<a name='L84'></a><a href='#L84'>84</a>
+<a name='L85'></a><a href='#L85'>85</a>
+<a name='L86'></a><a href='#L86'>86</a>
+<a name='L87'></a><a href='#L87'>87</a>
+<a name='L88'></a><a href='#L88'>88</a>
+<a name='L89'></a><a href='#L89'>89</a>
+<a name='L90'></a><a href='#L90'>90</a>
+<a name='L91'></a><a href='#L91'>91</a>
+<a name='L92'></a><a href='#L92'>92</a>
+<a name='L93'></a><a href='#L93'>93</a>
+<a name='L94'></a><a href='#L94'>94</a>
+<a name='L95'></a><a href='#L95'>95</a>
+<a name='L96'></a><a href='#L96'>96</a>
+<a name='L97'></a><a href='#L97'>97</a>
+<a name='L98'></a><a href='#L98'>98</a>
+<a name='L99'></a><a href='#L99'>99</a>
+<a name='L100'></a><a href='#L100'>100</a>
+<a name='L101'></a><a href='#L101'>101</a>
+<a name='L102'></a><a href='#L102'>102</a>
+<a name='L103'></a><a href='#L103'>103</a>
+<a name='L104'></a><a href='#L104'>104</a>
+<a name='L105'></a><a href='#L105'>105</a>
+<a name='L106'></a><a href='#L106'>106</a>
+<a name='L107'></a><a href='#L107'>107</a>
+<a name='L108'></a><a href='#L108'>108</a>
+<a name='L109'></a><a href='#L109'>109</a>
+<a name='L110'></a><a href='#L110'>110</a>
+<a name='L111'></a><a href='#L111'>111</a>
+<a name='L112'></a><a href='#L112'>112</a>
+<a name='L113'></a><a href='#L113'>113</a>
+<a name='L114'></a><a href='#L114'>114</a>
+<a name='L115'></a><a href='#L115'>115</a>
+<a name='L116'></a><a href='#L116'>116</a>
+<a name='L117'></a><a href='#L117'>117</a>
+<a name='L118'></a><a href='#L118'>118</a>
+<a name='L119'></a><a href='#L119'>119</a>
+<a name='L120'></a><a href='#L120'>120</a>
+<a name='L121'></a><a href='#L121'>121</a>
+<a name='L122'></a><a href='#L122'>122</a>
+<a name='L123'></a><a href='#L123'>123</a>
+<a name='L124'></a><a href='#L124'>124</a>
+<a name='L125'></a><a href='#L125'>125</a>
+<a name='L126'></a><a href='#L126'>126</a>
+<a name='L127'></a><a href='#L127'>127</a>
+<a name='L128'></a><a href='#L128'>128</a>
+<a name='L129'></a><a href='#L129'>129</a>
+<a name='L130'></a><a href='#L130'>130</a>
+<a name='L131'></a><a href='#L131'>131</a>
+<a name='L132'></a><a href='#L132'>132</a>
+<a name='L133'></a><a href='#L133'>133</a>
+<a name='L134'></a><a href='#L134'>134</a>
+<a name='L135'></a><a href='#L135'>135</a>
+<a name='L136'></a><a href='#L136'>136</a>
+<a name='L137'></a><a href='#L137'>137</a>
+<a name='L138'></a><a href='#L138'>138</a>
+<a name='L139'></a><a href='#L139'>139</a>
+<a name='L140'></a><a href='#L140'>140</a>
+<a name='L141'></a><a href='#L141'>141</a>
+<a name='L142'></a><a href='#L142'>142</a>
+<a name='L143'></a><a href='#L143'>143</a>
+<a name='L144'></a><a href='#L144'>144</a>
+<a name='L145'></a><a href='#L145'>145</a>
+<a name='L146'></a><a href='#L146'>146</a>
+<a name='L147'></a><a href='#L147'>147</a>
+<a name='L148'></a><a href='#L148'>148</a>
+<a name='L149'></a><a href='#L149'>149</a>
+<a name='L150'></a><a href='#L150'>150</a>
+<a name='L151'></a><a href='#L151'>151</a>
+<a name='L152'></a><a href='#L152'>152</a>
+<a name='L153'></a><a href='#L153'>153</a>
+<a name='L154'></a><a href='#L154'>154</a>
+<a name='L155'></a><a href='#L155'>155</a>
+<a name='L156'></a><a href='#L156'>156</a>
+<a name='L157'></a><a href='#L157'>157</a>
+<a name='L158'></a><a href='#L158'>158</a>
+<a name='L159'></a><a href='#L159'>159</a>
+<a name='L160'></a><a href='#L160'>160</a>
+<a name='L161'></a><a href='#L161'>161</a>
+<a name='L162'></a><a href='#L162'>162</a>
+<a name='L163'></a><a href='#L163'>163</a>
+<a name='L164'></a><a href='#L164'>164</a>
+<a name='L165'></a><a href='#L165'>165</a>
+<a name='L166'></a><a href='#L166'>166</a>
+<a name='L167'></a><a href='#L167'>167</a>
+<a name='L168'></a><a href='#L168'>168</a>
+<a name='L169'></a><a href='#L169'>169</a>
+<a name='L170'></a><a href='#L170'>170</a>
+<a name='L171'></a><a href='#L171'>171</a>
+<a name='L172'></a><a href='#L172'>172</a>
+<a name='L173'></a><a href='#L173'>173</a>
+<a name='L174'></a><a href='#L174'>174</a>
+<a name='L175'></a><a href='#L175'>175</a>
+<a name='L176'></a><a href='#L176'>176</a>
+<a name='L177'></a><a href='#L177'>177</a>
+<a name='L178'></a><a href='#L178'>178</a>
+<a name='L179'></a><a href='#L179'>179</a>
+<a name='L180'></a><a href='#L180'>180</a>
+<a name='L181'></a><a href='#L181'>181</a>
+<a name='L182'></a><a href='#L182'>182</a>
+<a name='L183'></a><a href='#L183'>183</a>
+<a name='L184'></a><a href='#L184'>184</a>
+<a name='L185'></a><a href='#L185'>185</a>
+<a name='L186'></a><a href='#L186'>186</a>
+<a name='L187'></a><a href='#L187'>187</a>
+<a name='L188'></a><a href='#L188'>188</a>
+<a name='L189'></a><a href='#L189'>189</a>
+<a name='L190'></a><a href='#L190'>190</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >/*</span></span></span>
+<span class="cstat-no" title="statement not covered" > * ATTENTION: An "eval-source-map" devtool has been used.</span>
+<span class="cstat-no" title="statement not covered" > * This devtool is neither made for production nor for readable output files.</span>
+<span class="cstat-no" title="statement not covered" > * It uses "eval()" calls to create a separate source file with attached SourceMaps in the browser devtools.</span>
+<span class="cstat-no" title="statement not covered" > * If you are trying to read the output file, select a different devtool (https://webpack.js.org/configuration/devtool/)</span>
+<span class="cstat-no" title="statement not covered" > * or disable the default devtool with "devtool: false".</span>
+<span class="cstat-no" title="statement not covered" > * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).</span>
+<span class="cstat-no" title="statement not covered" > */</span>
+<span class="cstat-no" title="statement not covered" >(() =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >var exports = {};</span>
+<span class="cstat-no" title="statement not covered" >exports.id = "app/page";</span>
+<span class="cstat-no" title="statement not covered" >exports.ids = ["app/page"];</span>
+<span class="cstat-no" title="statement not covered" >exports.modules = {</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >/***/ "../../client/components/action-async-storage.external":</span>
+<span class="cstat-no" title="statement not covered" >/*!*******************************************************************************!*\</span>
+<span class="cstat-no" title="statement not covered" >  !*** external "next/dist/client/components/action-async-storage.external.js" ***!</span>
+<span class="cstat-no" title="statement not covered" >  \*******************************************************************************/</span>
+<span class="cstat-no" title="statement not covered" >/***/ ((module) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >"use strict";</span>
+<span class="cstat-no" title="statement not covered" >module.exports = require("next/dist/client/components/action-async-storage.external.js");</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >/***/ }),</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >/***/ "../../client/components/request-async-storage.external":</span>
+<span class="cstat-no" title="statement not covered" >/*!********************************************************************************!*\</span>
+<span class="cstat-no" title="statement not covered" >  !*** external "next/dist/client/components/request-async-storage.external.js" ***!</span>
+<span class="cstat-no" title="statement not covered" >  \********************************************************************************/</span>
+<span class="cstat-no" title="statement not covered" >/***/ ((module) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >"use strict";</span>
+<span class="cstat-no" title="statement not covered" >module.exports = require("next/dist/client/components/request-async-storage.external.js");</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >/***/ }),</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >/***/ "../../client/components/static-generation-async-storage.external":</span>
+<span class="cstat-no" title="statement not covered" >/*!******************************************************************************************!*\</span>
+<span class="cstat-no" title="statement not covered" >  !*** external "next/dist/client/components/static-generation-async-storage.external.js" ***!</span>
+<span class="cstat-no" title="statement not covered" >  \******************************************************************************************/</span>
+<span class="cstat-no" title="statement not covered" >/***/ ((module) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >"use strict";</span>
+<span class="cstat-no" title="statement not covered" >module.exports = require("next/dist/client/components/static-generation-async-storage.external.js");</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >/***/ }),</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >/***/ "next/dist/compiled/next-server/app-page.runtime.dev.js":</span>
+<span class="cstat-no" title="statement not covered" >/*!*************************************************************************!*\</span>
+<span class="cstat-no" title="statement not covered" >  !*** external "next/dist/compiled/next-server/app-page.runtime.dev.js" ***!</span>
+<span class="cstat-no" title="statement not covered" >  \*************************************************************************/</span>
+<span class="cstat-no" title="statement not covered" >/***/ ((module) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >"use strict";</span>
+<span class="cstat-no" title="statement not covered" >module.exports = require("next/dist/compiled/next-server/app-page.runtime.dev.js");</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >/***/ }),</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >/***/ "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-app-loader.js?name=app%2Fpage&amp;page=%2Fpage&amp;appPaths=%2Fpage&amp;pagePath=private-next-app-dir%2Fpage.tsx&amp;appDir=C%3A%5Cpigeon%5Csrc%5Capp&amp;pageExtensions=tsx&amp;pageExtensions=ts&amp;pageExtensions=jsx&amp;pageExtensions=js&amp;rootDir=C%3A%5Cpigeon&amp;isDev=true&amp;tsconfigPath=tsconfig.json&amp;basePath=&amp;assetPrefix=&amp;nextConfigOutput=&amp;preferredRegion=&amp;middlewareConfig=e30%3D!":</span>
+<span class="cstat-no" title="statement not covered" >/*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\</span>
+<span class="cstat-no" title="statement not covered" >  !*** ./node_modules/next/dist/build/webpack/loaders/next-app-loader.js?name=app%2Fpage&amp;page=%2Fpage&amp;appPaths=%2Fpage&amp;pagePath=private-next-app-dir%2Fpage.tsx&amp;appDir=C%3A%5Cpigeon%5Csrc%5Capp&amp;pageExtensions=tsx&amp;pageExtensions=ts&amp;pageExtensions=jsx&amp;pageExtensions=js&amp;rootDir=C%3A%5Cpigeon&amp;isDev=true&amp;tsconfigPath=tsconfig.json&amp;basePath=&amp;assetPrefix=&amp;nextConfigOutput=&amp;preferredRegion=&amp;middlewareConfig=e30%3D! ***!</span>
+<span class="cstat-no" title="statement not covered" >  \**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/</span>
+<span class="cstat-no" title="statement not covered" >/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >"use strict";</span>
+<span class="cstat-no" title="statement not covered" >eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   GlobalError: () =&gt; (/* reexport default from dynamic */ next_dist_client_components_error_boundary__WEBPACK_IMPORTED_MODULE_2___default.a),\n/* harmony export */   __next_app__: () =&gt; (/* binding */ __next_app__),\n/* harmony export */   originalPathname: () =&gt; (/* binding */ originalPathname),\n/* harmony export */   pages: () =&gt; (/* binding */ pages),\n/* harmony export */   routeModule: () =&gt; (/* binding */ routeModule),\n/* harmony export */   tree: () =&gt; (/* binding */ tree)\n/* harmony export */ });\n/* harmony import */ var next_dist_server_future_route_modules_app_page_module_compiled__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! next/dist/server/future/route-modules/app-page/module.compiled */ \"(ssr)/./node_modules/next/dist/server/future/route-modules/app-page/module.compiled.js?d969\");\n/* harmony import */ var next_dist_server_future_route_modules_app_page_module_compiled__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(next_dist_server_future_route_modules_app_page_module_compiled__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var next_dist_server_future_route_kind__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/dist/server/future/route-kind */ \"(rsc)/./node_modules/next/dist/server/future/route-kind.js\");\n/* harmony import */ var next_dist_client_components_error_boundary__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/dist/client/components/error-boundary */ \"(rsc)/./node_modules/next/dist/client/components/error-boundary.js\");\n/* harmony import */ var next_dist_client_components_error_boundary__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_dist_client_components_error_boundary__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var next_dist_server_app_render_entry_base__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! next/dist/server/app-render/entry-base */ \"(rsc)/./node_modules/next/dist/server/app-render/entry-base.js\");\n/* harmony import */ var next_dist_server_app_render_entry_base__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_dist_server_app_render_entry_base__WEBPACK_IMPORTED_MODULE_3__);\n/* harmony reexport (unknown) */ var __WEBPACK_REEXPORT_OBJECT__ = {};\n/* harmony reexport (unknown) */ for(const __WEBPACK_IMPORT_KEY__ in next_dist_server_app_render_entry_base__WEBPACK_IMPORTED_MODULE_3__) if([\"default\",\"tree\",\"pages\",\"GlobalError\",\"originalPathname\",\"__next_app__\",\"routeModule\"].indexOf(__WEBPACK_IMPORT_KEY__) &lt; 0) __WEBPACK_REEXPORT_OBJECT__[__WEBPACK_IMPORT_KEY__] = () =&gt; next_dist_server_app_render_entry_base__WEBPACK_IMPORTED_MODULE_3__[__WEBPACK_IMPORT_KEY__]\n/* harmony reexport (unknown) */ __webpack_require__.d(__webpack_exports__, __WEBPACK_REEXPORT_OBJECT__);\n\"TURBOPACK { transition: next-ssr }\";\n\n\n// We inject the tree and pages here so that we can use them in the route\n// module.\nconst tree = {\n        children: [\n        '',\n        {\n        children: ['__PAGE__', {}, {\n          page: [() =&gt; Promise.resolve(/*! import() eager */).then(__webpack_require__.bind(__webpack_require__, /*! ./src/app/page.tsx */ \"(rsc)/./src/app/page.tsx\")), \"C:\\\\pigeon\\\\src\\\\app\\\\page.tsx\"],\n          \n        }]\n      },\n        {\n        'layout': [() =&gt; Promise.resolve(/*! import() eager */).then(__webpack_require__.bind(__webpack_require__, /*! ./src/app/layout.tsx */ \"(rsc)/./src/app/layout.tsx\")), \"C:\\\\pigeon\\\\src\\\\app\\\\layout.tsx\"],\n'not-found': [() =&gt; Promise.resolve(/*! import() eager */).then(__webpack_require__.t.bind(__webpack_require__, /*! next/dist/client/components/not-found-error */ \"(rsc)/./node_modules/next/dist/client/components/not-found-error.js\", 23)), \"next/dist/client/components/not-found-error\"],\n        \n      }\n      ]\n      }.children;\nconst pages = [\"C:\\\\pigeon\\\\src\\\\app\\\\page.tsx\"];\n\n\nconst __next_app_require__ = __webpack_require__\nconst __next_app_load_chunk__ = () =&gt; Promise.resolve()\nconst originalPathname = \"/page\";\nconst __next_app__ = {\n    require: __next_app_require__,\n    loadChunk: __next_app_load_chunk__\n};\n\n// Create and export the route module that will be consumed.\nconst routeModule = new next_dist_server_future_route_modules_app_page_module_compiled__WEBPACK_IMPORTED_MODULE_0__.AppPageRouteModule({\n    definition: {\n        kind: next_dist_server_future_route_kind__WEBPACK_IMPORTED_MODULE_1__.RouteKind.APP_PAGE,\n        page: \"/page\",\n        pathname: \"/\",\n        // The following aren't used in production.\n        bundlePath: \"\",\n        filename: \"\",\n        appPaths: []\n    },\n    userland: {\n        loaderTree: tree\n    }\n});\n\n//# sourceMappingURL=app-page.js.map//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiKHJzYykvLi9ub2RlX21vZHVsZXMvbmV4dC9kaXN0L2J1aWxkL3dlYnBhY2svbG9hZGVycy9uZXh0LWFwcC1sb2FkZXIuanM/bmFtZT1hcHAlMkZwYWdlJnBhZ2U9JTJGcGFnZSZhcHBQYXRocz0lMkZwYWdlJnBhZ2VQYXRoPXByaXZhdGUtbmV4dC1hcHAtZGlyJTJGcGFnZS50c3gmYXBwRGlyPUMlM0ElNUNwaWdlb24lNUNzcmMlNUNhcHAmcGFnZUV4dGVuc2lvbnM9dHN4JnBhZ2VFeHRlbnNpb25zPXRzJnBhZ2VFeHRlbnNpb25zPWpzeCZwYWdlRXh0ZW5zaW9ucz1qcyZyb290RGlyPUMlM0ElNUNwaWdlb24maXNEZXY9dHJ1ZSZ0c2NvbmZpZ1BhdGg9dHNjb25maWcuanNvbiZiYXNlUGF0aD0mYXNzZXRQcmVmaXg9Jm5leHRDb25maWdPdXRwdXQ9JnByZWZlcnJlZFJlZ2lvbj0mbWlkZGxld2FyZUNvbmZpZz1lMzAlM0QhIiwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7QUFBQSxhQUFhLHNCQUFzQjtBQUNpRTtBQUNyQztBQUMvRDtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQSxpQ0FBaUM7QUFDakMsdUJBQXVCLGdKQUFtRTtBQUMxRjtBQUNBLFNBQVM7QUFDVCxPQUFPO0FBQ1A7QUFDQSx5QkFBeUIsb0pBQXFFO0FBQzlGLG9CQUFvQiwwTkFBZ0Y7QUFDcEc7QUFDQTtBQUNBO0FBQ0EsT0FBTztBQUNQO0FBQ3VCO0FBQzZEO0FBQ3BGLDZCQUE2QixtQkFBbUI7QUFDaEQ7QUFDTztBQUNBO0FBQ1A7QUFDQTtBQUNBO0FBQ3VEO0FBQ3ZEO0FBQ08sd0JBQXdCLDhHQUFrQjtBQUNqRDtBQUNBLGNBQWMseUVBQVM7QUFDdkI7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0EsS0FBSztBQUNMO0FBQ0E7QUFDQTtBQUNBLENBQUM7O0FBRUQiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly9waWdlb24vP2IzZTMiXSwic291cmNlc0NvbnRlbnQiOlsiXCJUVVJCT1BBQ0sgeyB0cmFuc2l0aW9uOiBuZXh0LXNzciB9XCI7XG5pbXBvcnQgeyBBcHBQYWdlUm91dGVNb2R1bGUgfSBmcm9tIFwibmV4dC9kaXN0L3NlcnZlci9mdXR1cmUvcm91dGUtbW9kdWxlcy9hcHAtcGFnZS9tb2R1bGUuY29tcGlsZWRcIjtcbmltcG9ydCB7IFJvdXRlS2luZCB9IGZyb20gXCJuZXh0L2Rpc3Qvc2VydmVyL2Z1dHVyZS9yb3V0ZS1raW5kXCI7XG4vLyBXZSBpbmplY3QgdGhlIHRyZWUgYW5kIHBhZ2VzIGhlcmUgc28gdGhhdCB3ZSBjYW4gdXNlIHRoZW0gaW4gdGhlIHJvdXRlXG4vLyBtb2R1bGUuXG5jb25zdCB0cmVlID0ge1xuICAgICAgICBjaGlsZHJlbjogW1xuICAgICAgICAnJyxcbiAgICAgICAge1xuICAgICAgICBjaGlsZHJlbjogWydfX1BBR0VfXycsIHt9LCB7XG4gICAgICAgICAgcGFnZTogWygpID0+IGltcG9ydCgvKiB3ZWJwYWNrTW9kZTogXCJlYWdlclwiICovIFwiQzpcXFxccGlnZW9uXFxcXHNyY1xcXFxhcHBcXFxccGFnZS50c3hcIiksIFwiQzpcXFxccGlnZW9uXFxcXHNyY1xcXFxhcHBcXFxccGFnZS50c3hcIl0sXG4gICAgICAgICAgXG4gICAgICAgIH1dXG4gICAgICB9LFxuICAgICAgICB7XG4gICAgICAgICdsYXlvdXQnOiBbKCkgPT4gaW1wb3J0KC8qIHdlYnBhY2tNb2RlOiBcImVhZ2VyXCIgKi8gXCJDOlxcXFxwaWdlb25cXFxcc3JjXFxcXGFwcFxcXFxsYXlvdXQudHN4XCIpLCBcIkM6XFxcXHBpZ2VvblxcXFxzcmNcXFxcYXBwXFxcXGxheW91dC50c3hcIl0sXG4nbm90LWZvdW5kJzogWygpID0+IGltcG9ydCgvKiB3ZWJwYWNrTW9kZTogXCJlYWdlclwiICovIFwibmV4dC9kaXN0L2NsaWVudC9jb21wb25lbnRzL25vdC1mb3VuZC1lcnJvclwiKSwgXCJuZXh0L2Rpc3QvY2xpZW50L2NvbXBvbmVudHMvbm90LWZvdW5kLWVycm9yXCJdLFxuICAgICAgICBcbiAgICAgIH1cbiAgICAgIF1cbiAgICAgIH0uY2hpbGRyZW47XG5jb25zdCBwYWdlcyA9IFtcIkM6XFxcXHBpZ2VvblxcXFxzcmNcXFxcYXBwXFxcXHBhZ2UudHN4XCJdO1xuZXhwb3J0IHsgdHJlZSwgcGFnZXMgfTtcbmV4cG9ydCB7IGRlZmF1bHQgYXMgR2xvYmFsRXJyb3IgfSBmcm9tIFwibmV4dC9kaXN0L2NsaWVudC9jb21wb25lbnRzL2Vycm9yLWJvdW5kYXJ5XCI7XG5jb25zdCBfX25leHRfYXBwX3JlcXVpcmVfXyA9IF9fd2VicGFja19yZXF1aXJlX19cbmNvbnN0IF9fbmV4dF9hcHBfbG9hZF9jaHVua19fID0gKCkgPT4gUHJvbWlzZS5yZXNvbHZlKClcbmV4cG9ydCBjb25zdCBvcmlnaW5hbFBhdGhuYW1lID0gXCIvcGFnZVwiO1xuZXhwb3J0IGNvbnN0IF9fbmV4dF9hcHBfXyA9IHtcbiAgICByZXF1aXJlOiBfX25leHRfYXBwX3JlcXVpcmVfXyxcbiAgICBsb2FkQ2h1bms6IF9fbmV4dF9hcHBfbG9hZF9jaHVua19fXG59O1xuZXhwb3J0ICogZnJvbSBcIm5leHQvZGlzdC9zZXJ2ZXIvYXBwLXJlbmRlci9lbnRyeS1iYXNlXCI7XG4vLyBDcmVhdGUgYW5kIGV4cG9ydCB0aGUgcm91dGUgbW9kdWxlIHRoYXQgd2lsbCBiZSBjb25zdW1lZC5cbmV4cG9ydCBjb25zdCByb3V0ZU1vZHVsZSA9IG5ldyBBcHBQYWdlUm91dGVNb2R1bGUoe1xuICAgIGRlZmluaXRpb246IHtcbiAgICAgICAga2luZDogUm91dGVLaW5kLkFQUF9QQUdFLFxuICAgICAgICBwYWdlOiBcIi9wYWdlXCIsXG4gICAgICAgIHBhdGhuYW1lOiBcIi9cIixcbiAgICAgICAgLy8gVGhlIGZvbGxvd2luZyBhcmVuJ3QgdXNlZCBpbiBwcm9kdWN0aW9uLlxuICAgICAgICBidW5kbGVQYXRoOiBcIlwiLFxuICAgICAgICBmaWxlbmFtZTogXCJcIixcbiAgICAgICAgYXBwUGF0aHM6IFtdXG4gICAgfSxcbiAgICB1c2VybGFuZDoge1xuICAgICAgICBsb2FkZXJUcmVlOiB0cmVlXG4gICAgfVxufSk7XG5cbi8vIyBzb3VyY2VNYXBwaW5nVVJMPWFwcC1wYWdlLmpzLm1hcCJdLCJuYW1lcyI6W10sInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///(rsc)/./node_modules/next/dist/build/webpack/loaders/next-app-loader.js?name=app%2Fpage&amp;page=%2Fpage&amp;appPaths=%2Fpage&amp;pagePath=private-next-app-dir%2Fpage.tsx&amp;appDir=C%3A%5Cpigeon%5Csrc%5Capp&amp;pageExtensions=tsx&amp;pageExtensions=ts&amp;pageExtensions=jsx&amp;pageExtensions=js&amp;rootDir=C%3A%5Cpigeon&amp;isDev=true&amp;tsconfigPath=tsconfig.json&amp;basePath=&amp;assetPrefix=&amp;nextConfigOutput=&amp;preferredRegion=&amp;middlewareConfig=e30%3D!\n");</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >/***/ }),</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >/***/ "(ssr)/./node_modules/next/dist/build/webpack/loaders/next-flight-client-entry-loader.js?modules=%7B%22request%22%3A%22C%3A%5C%5Cpigeon%5C%5Cnode_modules%5C%5Cnext%5C%5Cdist%5C%5Cclient%5C%5Ccomponents%5C%5Capp-router.js%22%2C%22ids%22%3A%5B%5D%7D&amp;modules=%7B%22request%22%3A%22C%3A%5C%5Cpigeon%5C%5Cnode_modules%5C%5Cnext%5C%5Cdist%5C%5Cclient%5C%5Ccomponents%5C%5Cclient-page.js%22%2C%22ids%22%3A%5B%5D%7D&amp;modules=%7B%22request%22%3A%22C%3A%5C%5Cpigeon%5C%5Cnode_modules%5C%5Cnext%5C%5Cdist%5C%5Cclient%5C%5Ccomponents%5C%5Cerror-boundary.js%22%2C%22ids%22%3A%5B%5D%7D&amp;modules=%7B%22request%22%3A%22C%3A%5C%5Cpigeon%5C%5Cnode_modules%5C%5Cnext%5C%5Cdist%5C%5Cclient%5C%5Ccomponents%5C%5Clayout-router.js%22%2C%22ids%22%3A%5B%5D%7D&amp;modules=%7B%22request%22%3A%22C%3A%5C%5Cpigeon%5C%5Cnode_modules%5C%5Cnext%5C%5Cdist%5C%5Cclient%5C%5Ccomponents%5C%5Cnot-found-boundary.js%22%2C%22ids%22%3A%5B%5D%7D&amp;modules=%7B%22request%22%3A%22C%3A%5C%5Cpigeon%5C%5Cnode_modules%5C%5Cnext%5C%5Cdist%5C%5Cclient%5C%5Ccomponents%5C%5Crender-from-template-context.js%22%2C%22ids%22%3A%5B%5D%7D&amp;server=true!":</span>
+<span class="cstat-no" title="statement not covered" >/*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\</span>
+<span class="cstat-no" title="statement not covered" >  !*** ./node_modules/next/dist/build/webpack/loaders/next-flight-client-entry-loader.js?modules=%7B%22request%22%3A%22C%3A%5C%5Cpigeon%5C%5Cnode_modules%5C%5Cnext%5C%5Cdist%5C%5Cclient%5C%5Ccomponents%5C%5Capp-router.js%22%2C%22ids%22%3A%5B%5D%7D&amp;modules=%7B%22request%22%3A%22C%3A%5C%5Cpigeon%5C%5Cnode_modules%5C%5Cnext%5C%5Cdist%5C%5Cclient%5C%5Ccomponents%5C%5Cclient-page.js%22%2C%22ids%22%3A%5B%5D%7D&amp;modules=%7B%22request%22%3A%22C%3A%5C%5Cpigeon%5C%5Cnode_modules%5C%5Cnext%5C%5Cdist%5C%5Cclient%5C%5Ccomponents%5C%5Cerror-boundary.js%22%2C%22ids%22%3A%5B%5D%7D&amp;modules=%7B%22request%22%3A%22C%3A%5C%5Cpigeon%5C%5Cnode_modules%5C%5Cnext%5C%5Cdist%5C%5Cclient%5C%5Ccomponents%5C%5Clayout-router.js%22%2C%22ids%22%3A%5B%5D%7D&amp;modules=%7B%22request%22%3A%22C%3A%5C%5Cpigeon%5C%5Cnode_modules%5C%5Cnext%5C%5Cdist%5C%5Cclient%5C%5Ccomponents%5C%5Cnot-found-boundary.js%22%2C%22ids%22%3A%5B%5D%7D&amp;modules=%7B%22request%22%3A%22C%3A%5C%5Cpigeon%5C%5Cnode_modules%5C%5Cnext%5C%5Cdist%5C%5Cclient%5C%5Ccomponents%5C%5Crender-from-template-context.js%22%2C%22ids%22%3A%5B%5D%7D&amp;server=true! ***!</span>
+<span class="cstat-no" title="statement not covered" >  \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/</span>
+<span class="cstat-no" title="statement not covered" >/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >eval("Promise.resolve(/*! import() eager */).then(__webpack_require__.t.bind(__webpack_require__, /*! ./node_modules/next/dist/client/components/app-router.js */ \"(ssr)/./node_modules/next/dist/client/components/app-router.js\", 23));\n;\nPromise.resolve(/*! import() eager */).then(__webpack_require__.t.bind(__webpack_require__, /*! ./node_modules/next/dist/client/components/client-page.js */ \"(ssr)/./node_modules/next/dist/client/components/client-page.js\", 23));\n;\nPromise.resolve(/*! import() eager */).then(__webpack_require__.t.bind(__webpack_require__, /*! ./node_modules/next/dist/client/components/error-boundary.js */ \"(ssr)/./node_modules/next/dist/client/components/error-boundary.js\", 23));\n;\nPromise.resolve(/*! import() eager */).then(__webpack_require__.t.bind(__webpack_require__, /*! ./node_modules/next/dist/client/components/layout-router.js */ \"(ssr)/./node_modules/next/dist/client/components/layout-router.js\", 23));\n;\nPromise.resolve(/*! import() eager */).then(__webpack_require__.t.bind(__webpack_require__, /*! ./node_modules/next/dist/client/components/not-found-boundary.js */ \"(ssr)/./node_modules/next/dist/client/components/not-found-boundary.js\", 23));\n;\nPromise.resolve(/*! import() eager */).then(__webpack_require__.t.bind(__webpack_require__, /*! ./node_modules/next/dist/client/components/render-from-template-context.js */ \"(ssr)/./node_modules/next/dist/client/components/render-from-template-context.js\", 23));\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiKHNzcikvLi9ub2RlX21vZHVsZXMvbmV4dC9kaXN0L2J1aWxkL3dlYnBhY2svbG9hZGVycy9uZXh0LWZsaWdodC1jbGllbnQtZW50cnktbG9hZGVyLmpzP21vZHVsZXM9JTdCJTIycmVxdWVzdCUyMiUzQSUyMkMlM0ElNUMlNUNwaWdlb24lNUMlNUNub2RlX21vZHVsZXMlNUMlNUNuZXh0JTVDJTVDZGlzdCU1QyU1Q2NsaWVudCU1QyU1Q2NvbXBvbmVudHMlNUMlNUNhcHAtcm91dGVyLmpzJTIyJTJDJTIyaWRzJTIyJTNBJTVCJTVEJTdEJm1vZHVsZXM9JTdCJTIycmVxdWVzdCUyMiUzQSUyMkMlM0ElNUMlNUNwaWdlb24lNUMlNUNub2RlX21vZHVsZXMlNUMlNUNuZXh0JTVDJTVDZGlzdCU1QyU1Q2NsaWVudCU1QyU1Q2NvbXBvbmVudHMlNUMlNUNjbGllbnQtcGFnZS5qcyUyMiUyQyUyMmlkcyUyMiUzQSU1QiU1RCU3RCZtb2R1bGVzPSU3QiUyMnJlcXVlc3QlMjIlM0ElMjJDJTNBJTVDJTVDcGlnZW9uJTVDJTVDbm9kZV9tb2R1bGVzJTVDJTVDbmV4dCU1QyU1Q2Rpc3QlNUMlNUNjbGllbnQlNUMlNUNjb21wb25lbnRzJTVDJTVDZXJyb3ItYm91bmRhcnkuanMlMjIlMkMlMjJpZHMlMjIlM0ElNUIlNUQlN0QmbW9kdWxlcz0lN0IlMjJyZXF1ZXN0JTIyJTNBJTIyQyUzQSU1QyU1Q3BpZ2VvbiU1QyU1Q25vZGVfbW9kdWxlcyU1QyU1Q25leHQlNUMlNUNkaXN0JTVDJTVDY2xpZW50JTVDJTVDY29tcG9uZW50cyU1QyU1Q2xheW91dC1yb3V0ZXIuanMlMjIlMkMlMjJpZHMlMjIlM0ElNUIlNUQlN0QmbW9kdWxlcz0lN0IlMjJyZXF1ZXN0JTIyJTNBJTIyQyUzQSU1QyU1Q3BpZ2VvbiU1QyU1Q25vZGVfbW9kdWxlcyU1QyU1Q25leHQlNUMlNUNkaXN0JTVDJTVDY2xpZW50JTVDJTVDY29tcG9uZW50cyU1QyU1Q25vdC1mb3VuZC1ib3VuZGFyeS5qcyUyMiUyQyUyMmlkcyUyMiUzQSU1QiU1RCU3RCZtb2R1bGVzPSU3QiUyMnJlcXVlc3QlMjIlM0ElMjJDJTNBJTVDJTVDcGlnZW9uJTVDJTVDbm9kZV9tb2R1bGVzJTVDJTVDbmV4dCU1QyU1Q2Rpc3QlNUMlNUNjbGllbnQlNUMlNUNjb21wb25lbnRzJTVDJTVDcmVuZGVyLWZyb20tdGVtcGxhdGUtY29udGV4dC5qcyUyMiUyQyUyMmlkcyUyMiUzQSU1QiU1RCU3RCZzZXJ2ZXI9dHJ1ZSEiLCJtYXBwaW5ncyI6IkFBQUEsa09BQTRHO0FBQzVHO0FBQ0Esb09BQTZHO0FBQzdHO0FBQ0EsME9BQWdIO0FBQ2hIO0FBQ0Esd09BQStHO0FBQy9HO0FBQ0Esa1BBQW9IO0FBQ3BIO0FBQ0Esc1FBQThIIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vcGlnZW9uLz9kNmE5Il0sInNvdXJjZXNDb250ZW50IjpbImltcG9ydCgvKiB3ZWJwYWNrTW9kZTogXCJlYWdlclwiICovIFwiQzpcXFxccGlnZW9uXFxcXG5vZGVfbW9kdWxlc1xcXFxuZXh0XFxcXGRpc3RcXFxcY2xpZW50XFxcXGNvbXBvbmVudHNcXFxcYXBwLXJvdXRlci5qc1wiKTtcbjtcbmltcG9ydCgvKiB3ZWJwYWNrTW9kZTogXCJlYWdlclwiICovIFwiQzpcXFxccGlnZW9uXFxcXG5vZGVfbW9kdWxlc1xcXFxuZXh0XFxcXGRpc3RcXFxcY2xpZW50XFxcXGNvbXBvbmVudHNcXFxcY2xpZW50LXBhZ2UuanNcIik7XG47XG5pbXBvcnQoLyogd2VicGFja01vZGU6IFwiZWFnZXJcIiAqLyBcIkM6XFxcXHBpZ2VvblxcXFxub2RlX21vZHVsZXNcXFxcbmV4dFxcXFxkaXN0XFxcXGNsaWVudFxcXFxjb21wb25lbnRzXFxcXGVycm9yLWJvdW5kYXJ5LmpzXCIpO1xuO1xuaW1wb3J0KC8qIHdlYnBhY2tNb2RlOiBcImVhZ2VyXCIgKi8gXCJDOlxcXFxwaWdlb25cXFxcbm9kZV9tb2R1bGVzXFxcXG5leHRcXFxcZGlzdFxcXFxjbGllbnRcXFxcY29tcG9uZW50c1xcXFxsYXlvdXQtcm91dGVyLmpzXCIpO1xuO1xuaW1wb3J0KC8qIHdlYnBhY2tNb2RlOiBcImVhZ2VyXCIgKi8gXCJDOlxcXFxwaWdlb25cXFxcbm9kZV9tb2R1bGVzXFxcXG5leHRcXFxcZGlzdFxcXFxjbGllbnRcXFxcY29tcG9uZW50c1xcXFxub3QtZm91bmQtYm91bmRhcnkuanNcIik7XG47XG5pbXBvcnQoLyogd2VicGFja01vZGU6IFwiZWFnZXJcIiAqLyBcIkM6XFxcXHBpZ2VvblxcXFxub2RlX21vZHVsZXNcXFxcbmV4dFxcXFxkaXN0XFxcXGNsaWVudFxcXFxjb21wb25lbnRzXFxcXHJlbmRlci1mcm9tLXRlbXBsYXRlLWNvbnRleHQuanNcIik7XG4iXSwibmFtZXMiOltdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///(ssr)/./node_modules/next/dist/build/webpack/loaders/next-flight-client-entry-loader.js?modules=%7B%22request%22%3A%22C%3A%5C%5Cpigeon%5C%5Cnode_modules%5C%5Cnext%5C%5Cdist%5C%5Cclient%5C%5Ccomponents%5C%5Capp-router.js%22%2C%22ids%22%3A%5B%5D%7D&amp;modules=%7B%22request%22%3A%22C%3A%5C%5Cpigeon%5C%5Cnode_modules%5C%5Cnext%5C%5Cdist%5C%5Cclient%5C%5Ccomponents%5C%5Cclient-page.js%22%2C%22ids%22%3A%5B%5D%7D&amp;modules=%7B%22request%22%3A%22C%3A%5C%5Cpigeon%5C%5Cnode_modules%5C%5Cnext%5C%5Cdist%5C%5Cclient%5C%5Ccomponents%5C%5Cerror-boundary.js%22%2C%22ids%22%3A%5B%5D%7D&amp;modules=%7B%22request%22%3A%22C%3A%5C%5Cpigeon%5C%5Cnode_modules%5C%5Cnext%5C%5Cdist%5C%5Cclient%5C%5Ccomponents%5C%5Clayout-router.js%22%2C%22ids%22%3A%5B%5D%7D&amp;modules=%7B%22request%22%3A%22C%3A%5C%5Cpigeon%5C%5Cnode_modules%5C%5Cnext%5C%5Cdist%5C%5Cclient%5C%5Ccomponents%5C%5Cnot-found-boundary.js%22%2C%22ids%22%3A%5B%5D%7D&amp;modules=%7B%22request%22%3A%22C%3A%5C%5Cpigeon%5C%5Cnode_modules%5C%5Cnext%5C%5Cdist%5C%5Cclient%5C%5Ccomponents%5C%5Crender-from-template-context.js%22%2C%22ids%22%3A%5B%5D%7D&amp;server=true!\n");</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >/***/ }),</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >/***/ "(ssr)/./node_modules/next/dist/build/webpack/loaders/next-flight-client-entry-loader.js?modules=%7B%22request%22%3A%22C%3A%5C%5Cpigeon%5C%5Cnode_modules%5C%5Cnext%5C%5Cdist%5C%5Cclient%5C%5Clink.js%22%2C%22ids%22%3A%5B%22*%22%5D%7D&amp;modules=%7B%22request%22%3A%22C%3A%5C%5Cpigeon%5C%5Csrc%5C%5Capp%5C%5Cglobals.css%22%2C%22ids%22%3A%5B%5D%7D&amp;modules=%7B%22request%22%3A%22C%3A%5C%5Cpigeon%5C%5Csrc%5C%5Capp%5C%5CNavBar.tsx%22%2C%22ids%22%3A%5B%22default%22%5D%7D&amp;server=true!":</span>
+<span class="cstat-no" title="statement not covered" >/*!********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\</span>
+<span class="cstat-no" title="statement not covered" >  !*** ./node_modules/next/dist/build/webpack/loaders/next-flight-client-entry-loader.js?modules=%7B%22request%22%3A%22C%3A%5C%5Cpigeon%5C%5Cnode_modules%5C%5Cnext%5C%5Cdist%5C%5Cclient%5C%5Clink.js%22%2C%22ids%22%3A%5B%22*%22%5D%7D&amp;modules=%7B%22request%22%3A%22C%3A%5C%5Cpigeon%5C%5Csrc%5C%5Capp%5C%5Cglobals.css%22%2C%22ids%22%3A%5B%5D%7D&amp;modules=%7B%22request%22%3A%22C%3A%5C%5Cpigeon%5C%5Csrc%5C%5Capp%5C%5CNavBar.tsx%22%2C%22ids%22%3A%5B%22default%22%5D%7D&amp;server=true! ***!</span>
+<span class="cstat-no" title="statement not covered" >  \********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/</span>
+<span class="cstat-no" title="statement not covered" >/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >eval("Promise.resolve(/*! import() eager */).then(__webpack_require__.t.bind(__webpack_require__, /*! ./node_modules/next/dist/client/link.js */ \"(ssr)/./node_modules/next/dist/client/link.js\", 23));\n;\nPromise.resolve(/*! import() eager */).then(__webpack_require__.bind(__webpack_require__, /*! ./src/app/NavBar.tsx */ \"(ssr)/./src/app/NavBar.tsx\"));\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiKHNzcikvLi9ub2RlX21vZHVsZXMvbmV4dC9kaXN0L2J1aWxkL3dlYnBhY2svbG9hZGVycy9uZXh0LWZsaWdodC1jbGllbnQtZW50cnktbG9hZGVyLmpzP21vZHVsZXM9JTdCJTIycmVxdWVzdCUyMiUzQSUyMkMlM0ElNUMlNUNwaWdlb24lNUMlNUNub2RlX21vZHVsZXMlNUMlNUNuZXh0JTVDJTVDZGlzdCU1QyU1Q2NsaWVudCU1QyU1Q2xpbmsuanMlMjIlMkMlMjJpZHMlMjIlM0ElNUIlMjIqJTIyJTVEJTdEJm1vZHVsZXM9JTdCJTIycmVxdWVzdCUyMiUzQSUyMkMlM0ElNUMlNUNwaWdlb24lNUMlNUNzcmMlNUMlNUNhcHAlNUMlNUNnbG9iYWxzLmNzcyUyMiUyQyUyMmlkcyUyMiUzQSU1QiU1RCU3RCZtb2R1bGVzPSU3QiUyMnJlcXVlc3QlMjIlM0ElMjJDJTNBJTVDJTVDcGlnZW9uJTVDJTVDc3JjJTVDJTVDYXBwJTVDJTVDTmF2QmFyLnRzeCUyMiUyQyUyMmlkcyUyMiUzQSU1QiUyMmRlZmF1bHQlMjIlNUQlN0Qmc2VydmVyPXRydWUhIiwibWFwcGluZ3MiOiJBQUFBLGdNQUEwRjtBQUMxRjtBQUNBLG9KQUFrRyIsInNvdXJjZXMiOlsid2VicGFjazovL3BpZ2Vvbi8/NjUxOCJdLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQoLyogd2VicGFja01vZGU6IFwiZWFnZXJcIiAqLyBcIkM6XFxcXHBpZ2VvblxcXFxub2RlX21vZHVsZXNcXFxcbmV4dFxcXFxkaXN0XFxcXGNsaWVudFxcXFxsaW5rLmpzXCIpO1xuO1xuaW1wb3J0KC8qIHdlYnBhY2tNb2RlOiBcImVhZ2VyXCIsIHdlYnBhY2tFeHBvcnRzOiBbXCJkZWZhdWx0XCJdICovIFwiQzpcXFxccGlnZW9uXFxcXHNyY1xcXFxhcHBcXFxcTmF2QmFyLnRzeFwiKTtcbiJdLCJuYW1lcyI6W10sInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///(ssr)/./node_modules/next/dist/build/webpack/loaders/next-flight-client-entry-loader.js?modules=%7B%22request%22%3A%22C%3A%5C%5Cpigeon%5C%5Cnode_modules%5C%5Cnext%5C%5Cdist%5C%5Cclient%5C%5Clink.js%22%2C%22ids%22%3A%5B%22*%22%5D%7D&amp;modules=%7B%22request%22%3A%22C%3A%5C%5Cpigeon%5C%5Csrc%5C%5Capp%5C%5Cglobals.css%22%2C%22ids%22%3A%5B%5D%7D&amp;modules=%7B%22request%22%3A%22C%3A%5C%5Cpigeon%5C%5Csrc%5C%5Capp%5C%5CNavBar.tsx%22%2C%22ids%22%3A%5B%22default%22%5D%7D&amp;server=true!\n");</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >/***/ }),</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >/***/ "(ssr)/./node_modules/next/dist/build/webpack/loaders/next-flight-client-entry-loader.js?modules=%7B%22request%22%3A%22C%3A%5C%5Cpigeon%5C%5Csrc%5C%5Capp%5C%5Cpage.tsx%22%2C%22ids%22%3A%5B%5D%7D&amp;server=true!":</span>
+<span class="cstat-no" title="statement not covered" >/*!****************************************************************************************************************************************************************************************************************!*\</span>
+<span class="cstat-no" title="statement not covered" >  !*** ./node_modules/next/dist/build/webpack/loaders/next-flight-client-entry-loader.js?modules=%7B%22request%22%3A%22C%3A%5C%5Cpigeon%5C%5Csrc%5C%5Capp%5C%5Cpage.tsx%22%2C%22ids%22%3A%5B%5D%7D&amp;server=true! ***!</span>
+<span class="cstat-no" title="statement not covered" >  \****************************************************************************************************************************************************************************************************************/</span>
+<span class="cstat-no" title="statement not covered" >/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >eval("Promise.resolve(/*! import() eager */).then(__webpack_require__.bind(__webpack_require__, /*! ./src/app/page.tsx */ \"(ssr)/./src/app/page.tsx\"));\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiKHNzcikvLi9ub2RlX21vZHVsZXMvbmV4dC9kaXN0L2J1aWxkL3dlYnBhY2svbG9hZGVycy9uZXh0LWZsaWdodC1jbGllbnQtZW50cnktbG9hZGVyLmpzP21vZHVsZXM9JTdCJTIycmVxdWVzdCUyMiUzQSUyMkMlM0ElNUMlNUNwaWdlb24lNUMlNUNzcmMlNUMlNUNhcHAlNUMlNUNwYWdlLnRzeCUyMiUyQyUyMmlkcyUyMiUzQSU1QiU1RCU3RCZzZXJ2ZXI9dHJ1ZSEiLCJtYXBwaW5ncyI6IkFBQUEsZ0pBQW1FIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vcGlnZW9uLz85NTJjIl0sInNvdXJjZXNDb250ZW50IjpbImltcG9ydCgvKiB3ZWJwYWNrTW9kZTogXCJlYWdlclwiICovIFwiQzpcXFxccGlnZW9uXFxcXHNyY1xcXFxhcHBcXFxccGFnZS50c3hcIik7XG4iXSwibmFtZXMiOltdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///(ssr)/./node_modules/next/dist/build/webpack/loaders/next-flight-client-entry-loader.js?modules=%7B%22request%22%3A%22C%3A%5C%5Cpigeon%5C%5Csrc%5C%5Capp%5C%5Cpage.tsx%22%2C%22ids%22%3A%5B%5D%7D&amp;server=true!\n");</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >/***/ }),</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >/***/ "(ssr)/./src/app/NavBar.tsx":</span>
+<span class="cstat-no" title="statement not covered" >/*!****************************!*\</span>
+<span class="cstat-no" title="statement not covered" >  !*** ./src/app/NavBar.tsx ***!</span>
+<span class="cstat-no" title="statement not covered" >  \****************************/</span>
+<span class="cstat-no" title="statement not covered" >/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >"use strict";</span>
+<span class="cstat-no" title="statement not covered" >eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () =&gt; (/* binding */ NavBar)\n/* harmony export */ });\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-dev-runtime */ \"(ssr)/./node_modules/next/dist/server/future/route-modules/app-page/vendored/ssr/react-jsx-dev-runtime.js\");\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ \"(ssr)/./node_modules/next/dist/server/future/route-modules/app-page/vendored/ssr/react.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/link */ \"(ssr)/./node_modules/next/dist/api/link.js\");\n/* harmony import */ var next_navigation__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! next/navigation */ \"(ssr)/./node_modules/next/dist/api/navigation.js\");\n/* __next_internal_client_entry_do_not_use__ default auto */ \n\n\n\nfunction classNames(...xs) {\n    return xs.filter(Boolean).join(\" \");\n}\nconst links = [\n    {\n        href: \"/\",\n        label: \"Home\",\n        testid: \"nav-link-home-2\",\n        match: \"exact\"\n    },\n    {\n        href: \"/inventory\",\n        label: \"Inventory\",\n        testid: \"nav-link-inventory\",\n        match: \"section\"\n    },\n    {\n        href: \"/playground\",\n        label: \"Playground\",\n        testid: \"nav-link-playground\",\n        match: \"exact\"\n    },\n    // Link to a concrete studio route to avoid 404 on \"/studio\" root, but keep section-based active state\n    {\n        href: \"/studio/123\",\n        label: \"Studio\",\n        testid: \"nav-link-studio\",\n        match: \"section\",\n        sectionBase: \"/studio\"\n    },\n    {\n        href: \"/library\",\n        label: \"Library\",\n        testid: \"nav-link-library\",\n        match: \"section\"\n    },\n    {\n        href: \"/templates\",\n        label: \"Templates\",\n        testid: \"nav-link-templates\",\n        match: \"section\"\n    }\n];\nfunction NavBar() {\n    const pathname = (0,next_navigation__WEBPACK_IMPORTED_MODULE_3__.usePathname)() || \"/\";\n    const [open, setOpen] = react__WEBPACK_IMPORTED_MODULE_1___default().useState(false);\n    const isActive = (link)=&gt;{\n        if (link.match === \"exact\") {\n            return pathname === link.href;\n        }\n        const base = link.sectionBase ?? link.href;\n        return pathname === base || pathname.startsWith(base + \"/\");\n    };\n    const onNavClick = ()=&gt;setOpen(false);\n    return /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"div\", {\n        className: \"relative\",\n        children: [\n            /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"button\", {\n                type: \"button\",\n                className: \"md:hidden inline-flex items-center justify-center rounded-md p-2 text-neutral-600 hover:bg-neutral-100 dark:text-neutral-300 dark:hover:bg-neutral-800 focus:outline-none focus:ring-2 focus:ring-blue-500\",\n                \"aria-label\": \"Toggle navigation\",\n                \"aria-controls\": \"primary-nav\",\n                \"aria-expanded\": open ? \"true\" : \"false\",\n                \"data-testid\": \"nav-mobile-toggle\",\n                onClick: ()=&gt;setOpen((v)=&gt;!v),\n                children: open ? // X icon\n                /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"svg\", {\n                    xmlns: \"http://www.w3.org/2000/svg\",\n                    viewBox: \"0 0 24 24\",\n                    fill: \"currentColor\",\n                    className: \"h-5 w-5\",\n                    children: /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"path\", {\n                        fillRule: \"evenodd\",\n                        d: \"M6.225 4.811a1 1 0 0 1 1.414 0L12 9.172l4.361-4.361a1 1 0 1 1 1.414 1.414L13.414 10.586l4.361 4.361a1 1 0 1 1-1.414 1.414L12 12l-4.361 4.361a1 1 0 0 1-1.414-1.414l4.361-4.361-4.361-4.361a1 1 0 0 1 0-1.414Z\",\n                        clipRule: \"evenodd\"\n                    }, void 0, false, {\n                        fileName: \"C:\\\\pigeon\\\\src\\\\app\\\\NavBar.tsx\",\n                        lineNumber: 59,\n                        columnNumber: 13\n                    }, this)\n                }, void 0, false, {\n                    fileName: \"C:\\\\pigeon\\\\src\\\\app\\\\NavBar.tsx\",\n                    lineNumber: 58,\n                    columnNumber: 11\n                }, this) : // Hamburger icon\n                /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"svg\", {\n                    xmlns: \"http://www.w3.org/2000/svg\",\n                    viewBox: \"0 0 24 24\",\n                    fill: \"currentColor\",\n                    className: \"h-5 w-5\",\n                    children: /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"path\", {\n                        fillRule: \"evenodd\",\n                        d: \"M3.75 6.75A.75.75 0 0 1 4.5 6h15a.75.75 0 0 1 0 1.5h-15a.75.75 0 0 1-.75-.75Zm0 5.25a.75.75 0 0 1 .75-.75h15a.75.75 0 0 1 0 1.5h-15a.75.75 0 0 1-.75-.75Zm.75 4.5a.75.75 0 0 0 0 1.5h15a.75.75 0 0 0 0-1.5h-15Z\",\n                        clipRule: \"evenodd\"\n                    }, void 0, false, {\n                        fileName: \"C:\\\\pigeon\\\\src\\\\app\\\\NavBar.tsx\",\n                        lineNumber: 64,\n                        columnNumber: 13\n                    }, this)\n                }, void 0, false, {\n                    fileName: \"C:\\\\pigeon\\\\src\\\\app\\\\NavBar.tsx\",\n                    lineNumber: 63,\n                    columnNumber: 11\n                }, this)\n            }, void 0, false, {\n                fileName: \"C:\\\\pigeon\\\\src\\\\app\\\\NavBar.tsx\",\n                lineNumber: 47,\n                columnNumber: 7\n            }, this),\n            /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"nav\", {\n                id: \"primary-nav\",\n                className: classNames(\"items-center gap-6 text-sm\", open ? \"absolute left-0 right-0 top-12 z-50 flex flex-col bg-white dark:bg-neutral-950 border-b border-neutral-200 dark:border-neutral-800 p-4 shadow-sm\" : \"hidden\", \"md:static md:flex md:flex-row md:bg-transparent md:border-0 md:p-0 md:shadow-none\"),\n                \"aria-label\": \"Primary\",\n                \"data-testid\": \"app-nav\",\n                children: links.map((link)=&gt;{\n                    const active = isActive(link);\n                    return /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(next_link__WEBPACK_IMPORTED_MODULE_2__[\"default\"], {\n                        href: link.href,\n                        className: classNames(\"transition-colors hover:text-blue-600\", // visible focus styles for keyboard navigation\n                        \"focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:rounded\", active &amp;&amp; \"text-blue-700 dark:text-blue-400 font-medium underline underline-offset-4\"),\n                        \"data-testid\": link.testid,\n                        \"aria-current\": active ? \"page\" : undefined,\n                        onClick: onNavClick,\n                        children: link.label\n                    }, link.href, false, {\n                        fileName: \"C:\\\\pigeon\\\\src\\\\app\\\\NavBar.tsx\",\n                        lineNumber: 84,\n                        columnNumber: 13\n                    }, this);\n                })\n            }, void 0, false, {\n                fileName: \"C:\\\\pigeon\\\\src\\\\app\\\\NavBar.tsx\",\n                lineNumber: 69,\n                columnNumber: 7\n            }, this)\n        ]\n    }, void 0, true, {\n        fileName: \"C:\\\\pigeon\\\\src\\\\app\\\\NavBar.tsx\",\n        lineNumber: 45,\n        columnNumber: 5\n    }, this);\n}\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiKHNzcikvLi9zcmMvYXBwL05hdkJhci50c3giLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7QUFDMEI7QUFDRztBQUNpQjtBQUU5QyxTQUFTRyxXQUFXLEdBQUdDLEVBQTRDO0lBQ2pFLE9BQU9BLEdBQUdDLE1BQU0sQ0FBQ0MsU0FBU0MsSUFBSSxDQUFDO0FBQ2pDO0FBWUEsTUFBTUMsUUFBNEI7SUFDaEM7UUFBRUMsTUFBTTtRQUFLQyxPQUFPO1FBQVFDLFFBQVE7UUFBbUJDLE9BQU87SUFBUTtJQUN0RTtRQUFFSCxNQUFNO1FBQWNDLE9BQU87UUFBYUMsUUFBUTtRQUFzQkMsT0FBTztJQUFVO0lBQ3pGO1FBQUVILE1BQU07UUFBZUMsT0FBTztRQUFjQyxRQUFRO1FBQXVCQyxPQUFPO0lBQVE7SUFDMUYsc0dBQXNHO0lBQ3RHO1FBQUVILE1BQU07UUFBZUMsT0FBTztRQUFVQyxRQUFRO1FBQW1CQyxPQUFPO1FBQVdDLGFBQWE7SUFBVTtJQUM1RztRQUFFSixNQUFNO1FBQVlDLE9BQU87UUFBV0MsUUFBUTtRQUFvQkMsT0FBTztJQUFVO0lBQ25GO1FBQUVILE1BQU07UUFBY0MsT0FBTztRQUFhQyxRQUFRO1FBQXNCQyxPQUFPO0lBQVU7Q0FDMUY7QUFFYyxTQUFTRTtJQUN0QixNQUFNQyxXQUFXYiw0REFBV0EsTUFBTTtJQUNsQyxNQUFNLENBQUNjLE1BQU1DLFFBQVEsR0FBR2pCLHFEQUFjLENBQUM7SUFFdkMsTUFBTW1CLFdBQVcsQ0FBQ0M7UUFDaEIsSUFBSUEsS0FBS1IsS0FBSyxLQUFLLFNBQVM7WUFDMUIsT0FBT0csYUFBYUssS0FBS1gsSUFBSTtRQUMvQjtRQUNBLE1BQU1ZLE9BQU9ELEtBQUtQLFdBQVcsSUFBSU8sS0FBS1gsSUFBSTtRQUMxQyxPQUFPTSxhQUFhTSxRQUFRTixTQUFTTyxVQUFVLENBQUNELE9BQU87SUFDekQ7SUFFQSxNQUFNRSxhQUFhLElBQU1OLFFBQVE7SUFFakMscUJBQ0UsOERBQUNPO1FBQUlDLFdBQVU7OzBCQUViLDhEQUFDQztnQkFDQ0MsTUFBSztnQkFDTEYsV0FBVTtnQkFDVkcsY0FBVztnQkFDWEMsaUJBQWM7Z0JBQ2RDLGlCQUFlZCxPQUFPLFNBQVM7Z0JBQy9CZSxlQUFZO2dCQUNaQyxTQUFTLElBQU1mLFFBQVEsQ0FBQ2dCLElBQU0sQ0FBQ0E7MEJBRTlCakIsT0FDQyxTQUFTOzhCQUNULDhEQUFDa0I7b0JBQUlDLE9BQU07b0JBQTZCQyxTQUFRO29CQUFZQyxNQUFLO29CQUFlWixXQUFVOzhCQUN4Riw0RUFBQ2E7d0JBQUtDLFVBQVM7d0JBQVVDLEdBQUU7d0JBQWdOQyxVQUFTOzs7Ozs7Ozs7OzJCQUd0UCxpQkFBaUI7OEJBQ2pCLDhEQUFDUDtvQkFBSUMsT0FBTTtvQkFBNkJDLFNBQVE7b0JBQVlDLE1BQUs7b0JBQWVaLFdBQVU7OEJBQ3hGLDRFQUFDYTt3QkFBS0MsVUFBUzt3QkFBVUMsR0FBRTt3QkFBa05DLFVBQVM7Ozs7Ozs7Ozs7Ozs7Ozs7MEJBSzVQLDhEQUFDQztnQkFDQ0MsSUFBRztnQkFDSGxCLFdBQVd0QixXQUNULDhCQUNBYSxPQUNFLHFKQUNBLFVBQ0Y7Z0JBRUZZLGNBQVc7Z0JBQ1hHLGVBQVk7MEJBRVh2QixNQUFNb0MsR0FBRyxDQUFDLENBQUN4QjtvQkFDVixNQUFNeUIsU0FBUzFCLFNBQVNDO29CQUN4QixxQkFDRSw4REFBQ25CLGlEQUFJQTt3QkFFSFEsTUFBTVcsS0FBS1gsSUFBSTt3QkFDZmdCLFdBQVd0QixXQUNULHlDQUNBLCtDQUErQzt3QkFDL0MscUdBQ0EwQyxVQUFVO3dCQUVaZCxlQUFhWCxLQUFLVCxNQUFNO3dCQUN4Qm1DLGdCQUFjRCxTQUFTLFNBQVNFO3dCQUNoQ2YsU0FBU1Q7a0NBRVJILEtBQUtWLEtBQUs7dUJBWk5VLEtBQUtYLElBQUk7Ozs7O2dCQWVwQjs7Ozs7Ozs7Ozs7O0FBSVIiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly9waWdlb24vLi9zcmMvYXBwL05hdkJhci50c3g/NjlhMCJdLCJzb3VyY2VzQ29udGVudCI6WyJcInVzZSBjbGllbnRcIjtcbmltcG9ydCBSZWFjdCBmcm9tIFwicmVhY3RcIjtcbmltcG9ydCBMaW5rIGZyb20gXCJuZXh0L2xpbmtcIjtcbmltcG9ydCB7IHVzZVBhdGhuYW1lIH0gZnJvbSBcIm5leHQvbmF2aWdhdGlvblwiO1xuXG5mdW5jdGlvbiBjbGFzc05hbWVzKC4uLnhzOiBBcnJheTxzdHJpbmcgfCBmYWxzZSB8IG51bGwgfCB1bmRlZmluZWQ+KSB7XG4gIHJldHVybiB4cy5maWx0ZXIoQm9vbGVhbikuam9pbihcIiBcIik7XG59XG5cbnR5cGUgTWF0Y2hNb2RlID0gXCJleGFjdFwiIHwgXCJzZWN0aW9uXCI7XG5cbnR5cGUgTmF2TGluayA9IHtcbiAgaHJlZjogc3RyaW5nO1xuICBsYWJlbDogc3RyaW5nO1xuICB0ZXN0aWQ6IHN0cmluZztcbiAgbWF0Y2g6IE1hdGNoTW9kZTtcbiAgc2VjdGlvbkJhc2U/OiBzdHJpbmc7IC8vIG9ubHkgd2hlbiBtYXRjaCA9PT0gJ3NlY3Rpb24nIGFuZCBiYXNlIGRpZmZlcnMgZnJvbSBocmVmXG59O1xuXG5jb25zdCBsaW5rczogcmVhZG9ubHkgTmF2TGlua1tdID0gW1xuICB7IGhyZWY6IFwiL1wiLCBsYWJlbDogXCJIb21lXCIsIHRlc3RpZDogXCJuYXYtbGluay1ob21lLTJcIiwgbWF0Y2g6IFwiZXhhY3RcIiB9LFxuICB7IGhyZWY6IFwiL2ludmVudG9yeVwiLCBsYWJlbDogXCJJbnZlbnRvcnlcIiwgdGVzdGlkOiBcIm5hdi1saW5rLWludmVudG9yeVwiLCBtYXRjaDogXCJzZWN0aW9uXCIgfSxcbiAgeyBocmVmOiBcIi9wbGF5Z3JvdW5kXCIsIGxhYmVsOiBcIlBsYXlncm91bmRcIiwgdGVzdGlkOiBcIm5hdi1saW5rLXBsYXlncm91bmRcIiwgbWF0Y2g6IFwiZXhhY3RcIiB9LFxuICAvLyBMaW5rIHRvIGEgY29uY3JldGUgc3R1ZGlvIHJvdXRlIHRvIGF2b2lkIDQwNCBvbiBcIi9zdHVkaW9cIiByb290LCBidXQga2VlcCBzZWN0aW9uLWJhc2VkIGFjdGl2ZSBzdGF0ZVxuICB7IGhyZWY6IFwiL3N0dWRpby8xMjNcIiwgbGFiZWw6IFwiU3R1ZGlvXCIsIHRlc3RpZDogXCJuYXYtbGluay1zdHVkaW9cIiwgbWF0Y2g6IFwic2VjdGlvblwiLCBzZWN0aW9uQmFzZTogXCIvc3R1ZGlvXCIgfSxcbiAgeyBocmVmOiBcIi9saWJyYXJ5XCIsIGxhYmVsOiBcIkxpYnJhcnlcIiwgdGVzdGlkOiBcIm5hdi1saW5rLWxpYnJhcnlcIiwgbWF0Y2g6IFwic2VjdGlvblwiIH0sXG4gIHsgaHJlZjogXCIvdGVtcGxhdGVzXCIsIGxhYmVsOiBcIlRlbXBsYXRlc1wiLCB0ZXN0aWQ6IFwibmF2LWxpbmstdGVtcGxhdGVzXCIsIG1hdGNoOiBcInNlY3Rpb25cIiB9LFxuXSBhcyBjb25zdDtcblxuZXhwb3J0IGRlZmF1bHQgZnVuY3Rpb24gTmF2QmFyKCkge1xuICBjb25zdCBwYXRobmFtZSA9IHVzZVBhdGhuYW1lKCkgfHwgXCIvXCI7XG4gIGNvbnN0IFtvcGVuLCBzZXRPcGVuXSA9IFJlYWN0LnVzZVN0YXRlKGZhbHNlKTtcblxuICBjb25zdCBpc0FjdGl2ZSA9IChsaW5rOiBOYXZMaW5rKSA9PiB7XG4gICAgaWYgKGxpbmsubWF0Y2ggPT09IFwiZXhhY3RcIikge1xuICAgICAgcmV0dXJuIHBhdGhuYW1lID09PSBsaW5rLmhyZWY7XG4gICAgfVxuICAgIGNvbnN0IGJhc2UgPSBsaW5rLnNlY3Rpb25CYXNlID8/IGxpbmsuaHJlZjtcbiAgICByZXR1cm4gcGF0aG5hbWUgPT09IGJhc2UgfHwgcGF0aG5hbWUuc3RhcnRzV2l0aChiYXNlICsgXCIvXCIpO1xuICB9O1xuXG4gIGNvbnN0IG9uTmF2Q2xpY2sgPSAoKSA9PiBzZXRPcGVuKGZhbHNlKTtcblxuICByZXR1cm4gKFxuICAgIDxkaXYgY2xhc3NOYW1lPVwicmVsYXRpdmVcIj5cbiAgICAgIHsvKiBNb2JpbGUgdG9nZ2xlICovfVxuICAgICAgPGJ1dHRvblxuICAgICAgICB0eXBlPVwiYnV0dG9uXCJcbiAgICAgICAgY2xhc3NOYW1lPVwibWQ6aGlkZGVuIGlubGluZS1mbGV4IGl0ZW1zLWNlbnRlciBqdXN0aWZ5LWNlbnRlciByb3VuZGVkLW1kIHAtMiB0ZXh0LW5ldXRyYWwtNjAwIGhvdmVyOmJnLW5ldXRyYWwtMTAwIGRhcms6dGV4dC1uZXV0cmFsLTMwMCBkYXJrOmhvdmVyOmJnLW5ldXRyYWwtODAwIGZvY3VzOm91dGxpbmUtbm9uZSBmb2N1czpyaW5nLTIgZm9jdXM6cmluZy1ibHVlLTUwMFwiXG4gICAgICAgIGFyaWEtbGFiZWw9XCJUb2dnbGUgbmF2aWdhdGlvblwiXG4gICAgICAgIGFyaWEtY29udHJvbHM9XCJwcmltYXJ5LW5hdlwiXG4gICAgICAgIGFyaWEtZXhwYW5kZWQ9e29wZW4gPyBcInRydWVcIiA6IFwiZmFsc2VcIn1cbiAgICAgICAgZGF0YS10ZXN0aWQ9XCJuYXYtbW9iaWxlLXRvZ2dsZVwiXG4gICAgICAgIG9uQ2xpY2s9eygpID0+IHNldE9wZW4oKHYpID0+ICF2KX1cbiAgICAgID5cbiAgICAgICAge29wZW4gPyAoXG4gICAgICAgICAgLy8gWCBpY29uXG4gICAgICAgICAgPHN2ZyB4bWxucz1cImh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnXCIgdmlld0JveD1cIjAgMCAyNCAyNFwiIGZpbGw9XCJjdXJyZW50Q29sb3JcIiBjbGFzc05hbWU9XCJoLTUgdy01XCI+XG4gICAgICAgICAgICA8cGF0aCBmaWxsUnVsZT1cImV2ZW5vZGRcIiBkPVwiTTYuMjI1IDQuODExYTEgMSAwIDAgMSAxLjQxNCAwTDEyIDkuMTcybDQuMzYxLTQuMzYxYTEgMSAwIDEgMSAxLjQxNCAxLjQxNEwxMy40MTQgMTAuNTg2bDQuMzYxIDQuMzYxYTEgMSAwIDEgMS0xLjQxNCAxLjQxNEwxMiAxMmwtNC4zNjEgNC4zNjFhMSAxIDAgMCAxLTEuNDE0LTEuNDE0bDQuMzYxLTQuMzYxLTQuMzYxLTQuMzYxYTEgMSAwIDAgMSAwLTEuNDE0WlwiIGNsaXBSdWxlPVwiZXZlbm9kZFwiIC8+XG4gICAgICAgICAgPC9zdmc+XG4gICAgICAgICkgOiAoXG4gICAgICAgICAgLy8gSGFtYnVyZ2VyIGljb25cbiAgICAgICAgICA8c3ZnIHhtbG5zPVwiaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmdcIiB2aWV3Qm94PVwiMCAwIDI0IDI0XCIgZmlsbD1cImN1cnJlbnRDb2xvclwiIGNsYXNzTmFtZT1cImgtNSB3LTVcIj5cbiAgICAgICAgICAgIDxwYXRoIGZpbGxSdWxlPVwiZXZlbm9kZFwiIGQ9XCJNMy43NSA2Ljc1QS43NS43NSAwIDAgMSA0LjUgNmgxNWEuNzUuNzUgMCAwIDEgMCAxLjVoLTE1YS43NS43NSAwIDAgMS0uNzUtLjc1Wm0wIDUuMjVhLjc1Ljc1IDAgMCAxIC43NS0uNzVoMTVhLjc1Ljc1IDAgMCAxIDAgMS41aC0xNWEuNzUuNzUgMCAwIDEtLjc1LS43NVptLjc1IDQuNWEuNzUuNzUgMCAwIDAgMCAxLjVoMTVhLjc1Ljc1IDAgMCAwIDAtMS41aC0xNVpcIiBjbGlwUnVsZT1cImV2ZW5vZGRcIiAvPlxuICAgICAgICAgIDwvc3ZnPlxuICAgICAgICApfVxuICAgICAgPC9idXR0b24+XG5cbiAgICAgIDxuYXZcbiAgICAgICAgaWQ9XCJwcmltYXJ5LW5hdlwiXG4gICAgICAgIGNsYXNzTmFtZT17Y2xhc3NOYW1lcyhcbiAgICAgICAgICBcIml0ZW1zLWNlbnRlciBnYXAtNiB0ZXh0LXNtXCIsXG4gICAgICAgICAgb3BlbiA/XG4gICAgICAgICAgICBcImFic29sdXRlIGxlZnQtMCByaWdodC0wIHRvcC0xMiB6LTUwIGZsZXggZmxleC1jb2wgYmctd2hpdGUgZGFyazpiZy1uZXV0cmFsLTk1MCBib3JkZXItYiBib3JkZXItbmV1dHJhbC0yMDAgZGFyazpib3JkZXItbmV1dHJhbC04MDAgcC00IHNoYWRvdy1zbVwiIDpcbiAgICAgICAgICAgIFwiaGlkZGVuXCIsXG4gICAgICAgICAgXCJtZDpzdGF0aWMgbWQ6ZmxleCBtZDpmbGV4LXJvdyBtZDpiZy10cmFuc3BhcmVudCBtZDpib3JkZXItMCBtZDpwLTAgbWQ6c2hhZG93LW5vbmVcIlxuICAgICAgICApfVxuICAgICAgICBhcmlhLWxhYmVsPVwiUHJpbWFyeVwiXG4gICAgICAgIGRhdGEtdGVzdGlkPVwiYXBwLW5hdlwiXG4gICAgICA+XG4gICAgICAgIHtsaW5rcy5tYXAoKGxpbmspID0+IHtcbiAgICAgICAgICBjb25zdCBhY3RpdmUgPSBpc0FjdGl2ZShsaW5rKTtcbiAgICAgICAgICByZXR1cm4gKFxuICAgICAgICAgICAgPExpbmtcbiAgICAgICAgICAgICAga2V5PXtsaW5rLmhyZWZ9XG4gICAgICAgICAgICAgIGhyZWY9e2xpbmsuaHJlZn1cbiAgICAgICAgICAgICAgY2xhc3NOYW1lPXtjbGFzc05hbWVzKFxuICAgICAgICAgICAgICAgIFwidHJhbnNpdGlvbi1jb2xvcnMgaG92ZXI6dGV4dC1ibHVlLTYwMFwiLFxuICAgICAgICAgICAgICAgIC8vIHZpc2libGUgZm9jdXMgc3R5bGVzIGZvciBrZXlib2FyZCBuYXZpZ2F0aW9uXG4gICAgICAgICAgICAgICAgXCJmb2N1cy12aXNpYmxlOm91dGxpbmUtbm9uZSBmb2N1cy12aXNpYmxlOnJpbmctMiBmb2N1cy12aXNpYmxlOnJpbmctYmx1ZS01MDAgZm9jdXMtdmlzaWJsZTpyb3VuZGVkXCIsXG4gICAgICAgICAgICAgICAgYWN0aXZlICYmIFwidGV4dC1ibHVlLTcwMCBkYXJrOnRleHQtYmx1ZS00MDAgZm9udC1tZWRpdW0gdW5kZXJsaW5lIHVuZGVybGluZS1vZmZzZXQtNFwiXG4gICAgICAgICAgICAgICl9XG4gICAgICAgICAgICAgIGRhdGEtdGVzdGlkPXtsaW5rLnRlc3RpZH1cbiAgICAgICAgICAgICAgYXJpYS1jdXJyZW50PXthY3RpdmUgPyBcInBhZ2VcIiA6IHVuZGVmaW5lZH1cbiAgICAgICAgICAgICAgb25DbGljaz17b25OYXZDbGlja31cbiAgICAgICAgICAgID5cbiAgICAgICAgICAgICAge2xpbmsubGFiZWx9XG4gICAgICAgICAgICA8L0xpbms+XG4gICAgICAgICAgKTtcbiAgICAgICAgfSl9XG4gICAgICA8L25hdj5cbiAgICA8L2Rpdj5cbiAgKTtcbn0iXSwibmFtZXMiOlsiUmVhY3QiLCJMaW5rIiwidXNlUGF0aG5hbWUiLCJjbGFzc05hbWVzIiwieHMiLCJmaWx0ZXIiLCJCb29sZWFuIiwiam9pbiIsImxpbmtzIiwiaHJlZiIsImxhYmVsIiwidGVzdGlkIiwibWF0Y2giLCJzZWN0aW9uQmFzZSIsIk5hdkJhciIsInBhdGhuYW1lIiwib3BlbiIsInNldE9wZW4iLCJ1c2VTdGF0ZSIsImlzQWN0aXZlIiwibGluayIsImJhc2UiLCJzdGFydHNXaXRoIiwib25OYXZDbGljayIsImRpdiIsImNsYXNzTmFtZSIsImJ1dHRvbiIsInR5cGUiLCJhcmlhLWxhYmVsIiwiYXJpYS1jb250cm9scyIsImFyaWEtZXhwYW5kZWQiLCJkYXRhLXRlc3RpZCIsIm9uQ2xpY2siLCJ2Iiwic3ZnIiwieG1sbnMiLCJ2aWV3Qm94IiwiZmlsbCIsInBhdGgiLCJmaWxsUnVsZSIsImQiLCJjbGlwUnVsZSIsIm5hdiIsImlkIiwibWFwIiwiYWN0aXZlIiwiYXJpYS1jdXJyZW50IiwidW5kZWZpbmVkIl0sInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///(ssr)/./src/app/NavBar.tsx\n");</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >/***/ }),</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >/***/ "(ssr)/./src/app/page.tsx":</span>
+<span class="cstat-no" title="statement not covered" >/*!**************************!*\</span>
+<span class="cstat-no" title="statement not covered" >  !*** ./src/app/page.tsx ***!</span>
+<span class="cstat-no" title="statement not covered" >  \**************************/</span>
+<span class="cstat-no" title="statement not covered" >/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >"use strict";</span>
+<span class="cstat-no" title="statement not covered" >eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () =&gt; (/* binding */ HomePage)\n/* harmony export */ });\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-dev-runtime */ \"(ssr)/./node_modules/next/dist/server/future/route-modules/app-page/vendored/ssr/react-jsx-dev-runtime.js\");\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/link */ \"(ssr)/./node_modules/next/dist/api/link.js\");\n/* __next_internal_client_entry_do_not_use__ default auto */ \n\nfunction HomePage() {\n    return /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"main\", {\n        className: \"flex min-h-screen flex-col items-center justify-center p-24\",\n        children: [\n            /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"div\", {\n                className: \"z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex\",\n                children: [\n                    /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"p\", {\n                        className: \"fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30\",\n                        children: [\n                            \"Get started by editing\\xa0\",\n                            /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"code\", {\n                                className: \"font-mono font-bold\",\n                                children: \"src/app/page.tsx\"\n                            }, void 0, false, {\n                                fileName: \"C:\\\\pigeon\\\\src\\\\app\\\\page.tsx\",\n                                lineNumber: 11,\n                                columnNumber: 11\n                            }, this)\n                        ]\n                    }, void 0, true, {\n                        fileName: \"C:\\\\pigeon\\\\src\\\\app\\\\page.tsx\",\n                        lineNumber: 9,\n                        columnNumber: 9\n                    }, this),\n                    /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"div\", {\n                        className: \"fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none\",\n                        children: /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(next_link__WEBPACK_IMPORTED_MODULE_1__[\"default\"], {\n                            href: \"/studio/123\",\n                            className: \"group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 dark:hover:border-neutral-700 dark:hover:bg-neutral-800/30\",\n                            children: [\n                                /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"h2\", {\n                                    className: `mb-3 text-2xl font-semibold`,\n                                    children: \"Explore the Prompt Studio\"\n                                }, void 0, false, {\n                                    fileName: \"C:\\\\pigeon\\\\src\\\\app\\\\page.tsx\",\n                                    lineNumber: 18,\n                                    columnNumber: 13\n                                }, this),\n                                /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"p\", {\n                                    className: `m-0 max-w-[30ch] text-sm opacity-50`,\n                                    children: \"Edit prompts, autosave versions, and analyze diffs.\"\n                                }, void 0, false, {\n                                    fileName: \"C:\\\\pigeon\\\\src\\\\app\\\\page.tsx\",\n                                    lineNumber: 21,\n                                    columnNumber: 13\n                                }, this)\n                            ]\n                        }, void 0, true, {\n                            fileName: \"C:\\\\pigeon\\\\src\\\\app\\\\page.tsx\",\n                            lineNumber: 14,\n                            columnNumber: 11\n                        }, this)\n                    }, void 0, false, {\n                        fileName: \"C:\\\\pigeon\\\\src\\\\app\\\\page.tsx\",\n                        lineNumber: 13,\n                        columnNumber: 9\n                    }, this)\n                ]\n            }, void 0, true, {\n                fileName: \"C:\\\\pigeon\\\\src\\\\app\\\\page.tsx\",\n                lineNumber: 8,\n                columnNumber: 7\n            }, this),\n            /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"div\", {\n                className: \"mb-32 grid text-center lg:mb-0 lg:grid-cols-4 lg:text-left\",\n                children: [\n                    /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(next_link__WEBPACK_IMPORTED_MODULE_1__[\"default\"], {\n                        href: \"/templates\",\n                        className: \"group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 dark:hover:border-neutral-700 dark:hover:bg-neutral-800/30\",\n                        children: [\n                            /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"h2\", {\n                                className: `mb-3 text-2xl font-semibold`,\n                                children: [\n                                    \"Templates \",\n                                    /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"span\", {\n                                        className: \"inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none\",\n                                        children: \"-&gt;\"\n                                    }, void 0, false, {\n                                        fileName: \"C:\\\\pigeon\\\\src\\\\app\\\\page.tsx\",\n                                        lineNumber: 34,\n                                        columnNumber: 23\n                                    }, this)\n                                ]\n                            }, void 0, true, {\n                                fileName: \"C:\\\\pigeon\\\\src\\\\app\\\\page.tsx\",\n                                lineNumber: 33,\n                                columnNumber: 11\n                            }, this),\n                            /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"p\", {\n                                className: `m-0 max-w-[30ch] text-sm opacity-50`,\n                                children: \"Library of reusable prompts and patterns.\"\n                            }, void 0, false, {\n                                fileName: \"C:\\\\pigeon\\\\src\\\\app\\\\page.tsx\",\n                                lineNumber: 36,\n                                columnNumber: 11\n                            }, this)\n                        ]\n                    }, void 0, true, {\n                        fileName: \"C:\\\\pigeon\\\\src\\\\app\\\\page.tsx\",\n                        lineNumber: 29,\n                        columnNumber: 9\n                    }, this),\n                    /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(next_link__WEBPACK_IMPORTED_MODULE_1__[\"default\"], {\n                        href: \"/inventory\",\n                        className: \"group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 dark:hover:border-neutral-700 dark:hover:bg-neutral-800/30\",\n                        children: [\n                            /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"h2\", {\n                                className: `mb-3 text-2xl font-semibold`,\n                                children: [\n                                    \"Inventory \",\n                                    /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"span\", {\n                                        className: \"inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none\",\n                                        children: \"-&gt;\"\n                                    }, void 0, false, {\n                                        fileName: \"C:\\\\pigeon\\\\src\\\\app\\\\page.tsx\",\n                                        lineNumber: 46,\n                                        columnNumber: 23\n                                    }, this)\n                                ]\n                            }, void 0, true, {\n                                fileName: \"C:\\\\pigeon\\\\src\\\\app\\\\page.tsx\",\n                                lineNumber: 45,\n                                columnNumber: 11\n                            }, this),\n                            /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"p\", {\n                                className: `m-0 max-w-[30ch] text-sm opacity-50`,\n                                children: \"Manage context sources used across flows.\"\n                            }, void 0, false, {\n                                fileName: \"C:\\\\pigeon\\\\src\\\\app\\\\page.tsx\",\n                                lineNumber: 48,\n                                columnNumber: 11\n                            }, this)\n                        ]\n                    }, void 0, true, {\n                        fileName: \"C:\\\\pigeon\\\\src\\\\app\\\\page.tsx\",\n                        lineNumber: 41,\n                        columnNumber: 9\n                    }, this),\n                    /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(next_link__WEBPACK_IMPORTED_MODULE_1__[\"default\"], {\n                        href: \"/playground\",\n                        \"data-testid\": \"nav-playground\",\n                        className: \"group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 dark:hover:border-neutral-700 dark:hover:bg-neutral-800/30\",\n                        children: [\n                            /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"h2\", {\n                                className: `mb-3 text-2xl font-semibold`,\n                                children: [\n                                    \"Playground \",\n                                    /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"span\", {\n                                        className: \"inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none\",\n                                        children: \"-&gt;\"\n                                    }, void 0, false, {\n                                        fileName: \"C:\\\\pigeon\\\\src\\\\app\\\\page.tsx\",\n                                        lineNumber: 59,\n                                        columnNumber: 24\n                                    }, this)\n                                ]\n                            }, void 0, true, {\n                                fileName: \"C:\\\\pigeon\\\\src\\\\app\\\\page.tsx\",\n                                lineNumber: 58,\n                                columnNumber: 11\n                            }, this),\n                            /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"p\", {\n                                className: `m-0 max-w-[30ch] text-sm opacity-50`,\n                                children: \"Rapidly iterate prompts with side-by-side results.\"\n                            }, void 0, false, {\n                                fileName: \"C:\\\\pigeon\\\\src\\\\app\\\\page.tsx\",\n                                lineNumber: 61,\n                                columnNumber: 11\n                            }, this)\n                        ]\n                    }, void 0, true, {\n                        fileName: \"C:\\\\pigeon\\\\src\\\\app\\\\page.tsx\",\n                        lineNumber: 53,\n                        columnNumber: 9\n                    }, this),\n                    /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(next_link__WEBPACK_IMPORTED_MODULE_1__[\"default\"], {\n                        href: \"/api/status/db\",\n                        className: \"group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 dark:hover:border-neutral-700 dark:hover:bg-neutral-800/30\",\n                        children: [\n                            /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"h2\", {\n                                className: `mb-3 text-2xl font-semibold`,\n                                children: [\n                                    \"View report \",\n                                    /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"span\", {\n                                        className: \"inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none\",\n                                        children: \"-&gt;\"\n                                    }, void 0, false, {\n                                        fileName: \"C:\\\\pigeon\\\\src\\\\app\\\\page.tsx\",\n                                        lineNumber: 71,\n                                        columnNumber: 25\n                                    }, this)\n                                ]\n                            }, void 0, true, {\n                                fileName: \"C:\\\\pigeon\\\\src\\\\app\\\\page.tsx\",\n                                lineNumber: 70,\n                                columnNumber: 11\n                            }, this),\n                            /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"p\", {\n                                className: `m-0 max-w-[30ch] text-sm opacity-50`,\n                                children: \"System status and diagnostics.\"\n                            }, void 0, false, {\n                                fileName: \"C:\\\\pigeon\\\\src\\\\app\\\\page.tsx\",\n                                lineNumber: 73,\n                                columnNumber: 11\n                            }, this)\n                        ]\n                    }, void 0, true, {\n                        fileName: \"C:\\\\pigeon\\\\src\\\\app\\\\page.tsx\",\n                        lineNumber: 66,\n                        columnNumber: 9\n                    }, this)\n                ]\n            }, void 0, true, {\n                fileName: \"C:\\\\pigeon\\\\src\\\\app\\\\page.tsx\",\n                lineNumber: 28,\n                columnNumber: 7\n            }, this)\n        ]\n    }, void 0, true, {\n        fileName: \"C:\\\\pigeon\\\\src\\\\app\\\\page.tsx\",\n        lineNumber: 7,\n        columnNumber: 5\n    }, this);\n}\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiKHNzcikvLi9zcmMvYXBwL3BhZ2UudHN4IiwibWFwcGluZ3MiOiI7Ozs7Ozs7O0FBRTZCO0FBRWQsU0FBU0M7SUFDdEIscUJBQ0UsOERBQUNDO1FBQUtDLFdBQVU7OzBCQUNkLDhEQUFDQztnQkFBSUQsV0FBVTs7a0NBQ2IsOERBQUNFO3dCQUFFRixXQUFVOzs0QkFBNFI7MENBRXZTLDhEQUFDRztnQ0FBS0gsV0FBVTswQ0FBc0I7Ozs7Ozs7Ozs7OztrQ0FFeEMsOERBQUNDO3dCQUFJRCxXQUFVO2tDQUNiLDRFQUFDSCxpREFBSUE7NEJBQ0hPLE1BQUs7NEJBQ0xKLFdBQVU7OzhDQUVWLDhEQUFDSztvQ0FBR0wsV0FBVyxDQUFDLDJCQUEyQixDQUFDOzhDQUFFOzs7Ozs7OENBRzlDLDhEQUFDRTtvQ0FBRUYsV0FBVyxDQUFDLG1DQUFtQyxDQUFDOzhDQUFFOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OzswQkFPM0QsOERBQUNDO2dCQUFJRCxXQUFVOztrQ0FDYiw4REFBQ0gsaURBQUlBO3dCQUNITyxNQUFLO3dCQUNMSixXQUFVOzswQ0FFViw4REFBQ0s7Z0NBQUdMLFdBQVcsQ0FBQywyQkFBMkIsQ0FBQzs7b0NBQUU7a0RBQ2xDLDhEQUFDTTt3Q0FBS04sV0FBVTtrREFBMkY7Ozs7Ozs7Ozs7OzswQ0FFdkgsOERBQUNFO2dDQUFFRixXQUFXLENBQUMsbUNBQW1DLENBQUM7MENBQUU7Ozs7Ozs7Ozs7OztrQ0FLdkQsOERBQUNILGlEQUFJQTt3QkFDSE8sTUFBSzt3QkFDTEosV0FBVTs7MENBRVYsOERBQUNLO2dDQUFHTCxXQUFXLENBQUMsMkJBQTJCLENBQUM7O29DQUFFO2tEQUNsQyw4REFBQ007d0NBQUtOLFdBQVU7a0RBQTJGOzs7Ozs7Ozs7Ozs7MENBRXZILDhEQUFDRTtnQ0FBRUYsV0FBVyxDQUFDLG1DQUFtQyxDQUFDOzBDQUFFOzs7Ozs7Ozs7Ozs7a0NBS3ZELDhEQUFDSCxpREFBSUE7d0JBQ0hPLE1BQUs7d0JBQ0xHLGVBQVk7d0JBQ1pQLFdBQVU7OzBDQUVWLDhEQUFDSztnQ0FBR0wsV0FBVyxDQUFDLDJCQUEyQixDQUFDOztvQ0FBRTtrREFDakMsOERBQUNNO3dDQUFLTixXQUFVO2tEQUEyRjs7Ozs7Ozs7Ozs7OzBDQUV4SCw4REFBQ0U7Z0NBQUVGLFdBQVcsQ0FBQyxtQ0FBbUMsQ0FBQzswQ0FBRTs7Ozs7Ozs7Ozs7O2tDQUt2RCw4REFBQ0gsaURBQUlBO3dCQUNITyxNQUFLO3dCQUNMSixXQUFVOzswQ0FFViw4REFBQ0s7Z0NBQUdMLFdBQVcsQ0FBQywyQkFBMkIsQ0FBQzs7b0NBQUU7a0RBQ2hDLDhEQUFDTTt3Q0FBS04sV0FBVTtrREFBMkY7Ozs7Ozs7Ozs7OzswQ0FFekgsOERBQUNFO2dDQUFFRixXQUFXLENBQUMsbUNBQW1DLENBQUM7MENBQUU7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQU8vRCIsInNvdXJjZXMiOlsid2VicGFjazovL3BpZ2Vvbi8uL3NyYy9hcHAvcGFnZS50c3g/ZjY4YSJdLCJzb3VyY2VzQ29udGVudCI6WyJcInVzZSBjbGllbnRcIjtcblxuaW1wb3J0IExpbmsgZnJvbSBcIm5leHQvbGlua1wiO1xuXG5leHBvcnQgZGVmYXVsdCBmdW5jdGlvbiBIb21lUGFnZSgpIHtcbiAgcmV0dXJuIChcbiAgICA8bWFpbiBjbGFzc05hbWU9XCJmbGV4IG1pbi1oLXNjcmVlbiBmbGV4LWNvbCBpdGVtcy1jZW50ZXIganVzdGlmeS1jZW50ZXIgcC0yNFwiPlxuICAgICAgPGRpdiBjbGFzc05hbWU9XCJ6LTEwIHctZnVsbCBtYXgtdy01eGwgaXRlbXMtY2VudGVyIGp1c3RpZnktYmV0d2VlbiBmb250LW1vbm8gdGV4dC1zbSBsZzpmbGV4XCI+XG4gICAgICAgIDxwIGNsYXNzTmFtZT1cImZpeGVkIGxlZnQtMCB0b3AtMCBmbGV4IHctZnVsbCBqdXN0aWZ5LWNlbnRlciBib3JkZXItYiBib3JkZXItZ3JheS0zMDAgYmctZ3JhZGllbnQtdG8tYiBmcm9tLXppbmMtMjAwIHBiLTYgcHQtOCBiYWNrZHJvcC1ibHVyLTJ4bCBkYXJrOmJvcmRlci1uZXV0cmFsLTgwMCBkYXJrOmJnLXppbmMtODAwLzMwIGRhcms6ZnJvbS1pbmhlcml0IGxnOnN0YXRpYyBsZzp3LWF1dG8gIGxnOnJvdW5kZWQteGwgbGc6Ym9yZGVyIGxnOmJnLWdyYXktMjAwIGxnOnAtNCBsZzpkYXJrOmJnLXppbmMtODAwLzMwXCI+XG4gICAgICAgICAgR2V0IHN0YXJ0ZWQgYnkgZWRpdGluZyZuYnNwO1xuICAgICAgICAgIDxjb2RlIGNsYXNzTmFtZT1cImZvbnQtbW9ubyBmb250LWJvbGRcIj5zcmMvYXBwL3BhZ2UudHN4PC9jb2RlPlxuICAgICAgICA8L3A+XG4gICAgICAgIDxkaXYgY2xhc3NOYW1lPVwiZml4ZWQgYm90dG9tLTAgbGVmdC0wIGZsZXggaC00OCB3LWZ1bGwgaXRlbXMtZW5kIGp1c3RpZnktY2VudGVyIGJnLWdyYWRpZW50LXRvLXQgZnJvbS13aGl0ZSB2aWEtd2hpdGUgZGFyazpmcm9tLWJsYWNrIGRhcms6dmlhLWJsYWNrIGxnOnN0YXRpYyBsZzpoLWF1dG8gbGc6dy1hdXRvIGxnOmJnLW5vbmVcIj5cbiAgICAgICAgICA8TGlua1xuICAgICAgICAgICAgaHJlZj1cIi9zdHVkaW8vMTIzXCJcbiAgICAgICAgICAgIGNsYXNzTmFtZT1cImdyb3VwIHJvdW5kZWQtbGcgYm9yZGVyIGJvcmRlci10cmFuc3BhcmVudCBweC01IHB5LTQgdHJhbnNpdGlvbi1jb2xvcnMgaG92ZXI6Ym9yZGVyLWdyYXktMzAwIGhvdmVyOmJnLWdyYXktMTAwIGRhcms6aG92ZXI6Ym9yZGVyLW5ldXRyYWwtNzAwIGRhcms6aG92ZXI6YmctbmV1dHJhbC04MDAvMzBcIlxuICAgICAgICAgID5cbiAgICAgICAgICAgIDxoMiBjbGFzc05hbWU9e2BtYi0zIHRleHQtMnhsIGZvbnQtc2VtaWJvbGRgfT5cbiAgICAgICAgICAgICAgRXhwbG9yZSB0aGUgUHJvbXB0IFN0dWRpb1xuICAgICAgICAgICAgPC9oMj5cbiAgICAgICAgICAgIDxwIGNsYXNzTmFtZT17YG0tMCBtYXgtdy1bMzBjaF0gdGV4dC1zbSBvcGFjaXR5LTUwYH0+XG4gICAgICAgICAgICAgIEVkaXQgcHJvbXB0cywgYXV0b3NhdmUgdmVyc2lvbnMsIGFuZCBhbmFseXplIGRpZmZzLlxuICAgICAgICAgICAgPC9wPlxuICAgICAgICAgIDwvTGluaz5cbiAgICAgICAgPC9kaXY+XG4gICAgICA8L2Rpdj5cblxuICAgICAgPGRpdiBjbGFzc05hbWU9XCJtYi0zMiBncmlkIHRleHQtY2VudGVyIGxnOm1iLTAgbGc6Z3JpZC1jb2xzLTQgbGc6dGV4dC1sZWZ0XCI+XG4gICAgICAgIDxMaW5rXG4gICAgICAgICAgaHJlZj1cIi90ZW1wbGF0ZXNcIlxuICAgICAgICAgIGNsYXNzTmFtZT1cImdyb3VwIHJvdW5kZWQtbGcgYm9yZGVyIGJvcmRlci10cmFuc3BhcmVudCBweC01IHB5LTQgdHJhbnNpdGlvbi1jb2xvcnMgaG92ZXI6Ym9yZGVyLWdyYXktMzAwIGhvdmVyOmJnLWdyYXktMTAwIGRhcms6aG92ZXI6Ym9yZGVyLW5ldXRyYWwtNzAwIGRhcms6aG92ZXI6YmctbmV1dHJhbC04MDAvMzBcIlxuICAgICAgICA+XG4gICAgICAgICAgPGgyIGNsYXNzTmFtZT17YG1iLTMgdGV4dC0yeGwgZm9udC1zZW1pYm9sZGB9PlxuICAgICAgICAgICAgVGVtcGxhdGVzIDxzcGFuIGNsYXNzTmFtZT1cImlubGluZS1ibG9jayB0cmFuc2l0aW9uLXRyYW5zZm9ybSBncm91cC1ob3Zlcjp0cmFuc2xhdGUteC0xIG1vdGlvbi1yZWR1Y2U6dHJhbnNmb3JtLW5vbmVcIj4tJmd0Ozwvc3Bhbj5cbiAgICAgICAgICA8L2gyPlxuICAgICAgICAgIDxwIGNsYXNzTmFtZT17YG0tMCBtYXgtdy1bMzBjaF0gdGV4dC1zbSBvcGFjaXR5LTUwYH0+XG4gICAgICAgICAgICBMaWJyYXJ5IG9mIHJldXNhYmxlIHByb21wdHMgYW5kIHBhdHRlcm5zLlxuICAgICAgICAgIDwvcD5cbiAgICAgICAgPC9MaW5rPlxuXG4gICAgICAgIDxMaW5rXG4gICAgICAgICAgaHJlZj1cIi9pbnZlbnRvcnlcIlxuICAgICAgICAgIGNsYXNzTmFtZT1cImdyb3VwIHJvdW5kZWQtbGcgYm9yZGVyIGJvcmRlci10cmFuc3BhcmVudCBweC01IHB5LTQgdHJhbnNpdGlvbi1jb2xvcnMgaG92ZXI6Ym9yZGVyLWdyYXktMzAwIGhvdmVyOmJnLWdyYXktMTAwIGRhcms6aG92ZXI6Ym9yZGVyLW5ldXRyYWwtNzAwIGRhcms6aG92ZXI6YmctbmV1dHJhbC04MDAvMzBcIlxuICAgICAgICA+XG4gICAgICAgICAgPGgyIGNsYXNzTmFtZT17YG1iLTMgdGV4dC0yeGwgZm9udC1zZW1pYm9sZGB9PlxuICAgICAgICAgICAgSW52ZW50b3J5IDxzcGFuIGNsYXNzTmFtZT1cImlubGluZS1ibG9jayB0cmFuc2l0aW9uLXRyYW5zZm9ybSBncm91cC1ob3Zlcjp0cmFuc2xhdGUteC0xIG1vdGlvbi1yZWR1Y2U6dHJhbnNmb3JtLW5vbmVcIj4tJmd0Ozwvc3Bhbj5cbiAgICAgICAgICA8L2gyPlxuICAgICAgICAgIDxwIGNsYXNzTmFtZT17YG0tMCBtYXgtdy1bMzBjaF0gdGV4dC1zbSBvcGFjaXR5LTUwYH0+XG4gICAgICAgICAgICBNYW5hZ2UgY29udGV4dCBzb3VyY2VzIHVzZWQgYWNyb3NzIGZsb3dzLlxuICAgICAgICAgIDwvcD5cbiAgICAgICAgPC9MaW5rPlxuXG4gICAgICAgIDxMaW5rXG4gICAgICAgICAgaHJlZj1cIi9wbGF5Z3JvdW5kXCJcbiAgICAgICAgICBkYXRhLXRlc3RpZD1cIm5hdi1wbGF5Z3JvdW5kXCJcbiAgICAgICAgICBjbGFzc05hbWU9XCJncm91cCByb3VuZGVkLWxnIGJvcmRlciBib3JkZXItdHJhbnNwYXJlbnQgcHgtNSBweS00IHRyYW5zaXRpb24tY29sb3JzIGhvdmVyOmJvcmRlci1ncmF5LTMwMCBob3ZlcjpiZy1ncmF5LTEwMCBkYXJrOmhvdmVyOmJvcmRlci1uZXV0cmFsLTcwMCBkYXJrOmhvdmVyOmJnLW5ldXRyYWwtODAwLzMwXCJcbiAgICAgICAgPlxuICAgICAgICAgIDxoMiBjbGFzc05hbWU9e2BtYi0zIHRleHQtMnhsIGZvbnQtc2VtaWJvbGRgfT5cbiAgICAgICAgICAgIFBsYXlncm91bmQgPHNwYW4gY2xhc3NOYW1lPVwiaW5saW5lLWJsb2NrIHRyYW5zaXRpb24tdHJhbnNmb3JtIGdyb3VwLWhvdmVyOnRyYW5zbGF0ZS14LTEgbW90aW9uLXJlZHVjZTp0cmFuc2Zvcm0tbm9uZVwiPi0mZ3Q7PC9zcGFuPlxuICAgICAgICAgIDwvaDI+XG4gICAgICAgICAgPHAgY2xhc3NOYW1lPXtgbS0wIG1heC13LVszMGNoXSB0ZXh0LXNtIG9wYWNpdHktNTBgfT5cbiAgICAgICAgICAgIFJhcGlkbHkgaXRlcmF0ZSBwcm9tcHRzIHdpdGggc2lkZS1ieS1zaWRlIHJlc3VsdHMuXG4gICAgICAgICAgPC9wPlxuICAgICAgICA8L0xpbms+XG5cbiAgICAgICAgPExpbmtcbiAgICAgICAgICBocmVmPVwiL2FwaS9zdGF0dXMvZGJcIlxuICAgICAgICAgIGNsYXNzTmFtZT1cImdyb3VwIHJvdW5kZWQtbGcgYm9yZGVyIGJvcmRlci10cmFuc3BhcmVudCBweC01IHB5LTQgdHJhbnNpdGlvbi1jb2xvcnMgaG92ZXI6Ym9yZGVyLWdyYXktMzAwIGhvdmVyOmJnLWdyYXktMTAwIGRhcms6aG92ZXI6Ym9yZGVyLW5ldXRyYWwtNzAwIGRhcms6aG92ZXI6YmctbmV1dHJhbC04MDAvMzBcIlxuICAgICAgICA+XG4gICAgICAgICAgPGgyIGNsYXNzTmFtZT17YG1iLTMgdGV4dC0yeGwgZm9udC1zZW1pYm9sZGB9PlxuICAgICAgICAgICAgVmlldyByZXBvcnQgPHNwYW4gY2xhc3NOYW1lPVwiaW5saW5lLWJsb2NrIHRyYW5zaXRpb24tdHJhbnNmb3JtIGdyb3VwLWhvdmVyOnRyYW5zbGF0ZS14LTEgbW90aW9uLXJlZHVjZTp0cmFuc2Zvcm0tbm9uZVwiPi0mZ3Q7PC9zcGFuPlxuICAgICAgICAgIDwvaDI+XG4gICAgICAgICAgPHAgY2xhc3NOYW1lPXtgbS0wIG1heC13LVszMGNoXSB0ZXh0LXNtIG9wYWNpdHktNTBgfT5cbiAgICAgICAgICAgIFN5c3RlbSBzdGF0dXMgYW5kIGRpYWdub3N0aWNzLlxuICAgICAgICAgIDwvcD5cbiAgICAgICAgPC9MaW5rPlxuICAgICAgPC9kaXY+XG4gICAgPC9tYWluPlxuICApO1xufSJdLCJuYW1lcyI6WyJMaW5rIiwiSG9tZVBhZ2UiLCJtYWluIiwiY2xhc3NOYW1lIiwiZGl2IiwicCIsImNvZGUiLCJocmVmIiwiaDIiLCJzcGFuIiwiZGF0YS10ZXN0aWQiXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///(ssr)/./src/app/page.tsx\n");</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >/***/ }),</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >/***/ "(rsc)/./src/app/globals.css":</span>
+<span class="cstat-no" title="statement not covered" >/*!*****************************!*\</span>
+<span class="cstat-no" title="statement not covered" >  !*** ./src/app/globals.css ***!</span>
+<span class="cstat-no" title="statement not covered" >  \*****************************/</span>
+<span class="cstat-no" title="statement not covered" >/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >"use strict";</span>
+<span class="cstat-no" title="statement not covered" >eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () =&gt; (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (\"ebdf3d898301\");\nif (false) {}\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiKHJzYykvLi9zcmMvYXBwL2dsb2JhbHMuY3NzIiwibWFwcGluZ3MiOiI7Ozs7QUFBQSxpRUFBZSxjQUFjO0FBQzdCLElBQUksS0FBVSxFQUFFLEVBQXVCIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vcGlnZW9uLy4vc3JjL2FwcC9nbG9iYWxzLmNzcz8wOTdlIl0sInNvdXJjZXNDb250ZW50IjpbImV4cG9ydCBkZWZhdWx0IFwiZWJkZjNkODk4MzAxXCJcbmlmIChtb2R1bGUuaG90KSB7IG1vZHVsZS5ob3QuYWNjZXB0KCkgfVxuIl0sIm5hbWVzIjpbXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///(rsc)/./src/app/globals.css\n");</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >/***/ }),</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >/***/ "(rsc)/./src/app/NavBar.tsx":</span>
+<span class="cstat-no" title="statement not covered" >/*!****************************!*\</span>
+<span class="cstat-no" title="statement not covered" >  !*** ./src/app/NavBar.tsx ***!</span>
+<span class="cstat-no" title="statement not covered" >  \****************************/</span>
+<span class="cstat-no" title="statement not covered" >/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >"use strict";</span>
+<span class="cstat-no" title="statement not covered" >__webpack_require__.r(__webpack_exports__);</span>
+<span class="cstat-no" title="statement not covered" >/* harmony export */ __webpack_require__.d(__webpack_exports__, {</span>
+<span class="cstat-no" title="statement not covered" >/* harmony export */   "default": () =&gt; (__WEBPACK_DEFAULT_EXPORT__)</span>
+<span class="cstat-no" title="statement not covered" >/* harmony export */ });</span>
+<span class="cstat-no" title="statement not covered" >/* harmony import */ var next_dist_build_webpack_loaders_next_flight_loader_module_proxy__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! next/dist/build/webpack/loaders/next-flight-loader/module-proxy */ "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-loader/module-proxy.js");</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,next_dist_build_webpack_loaders_next_flight_loader_module_proxy__WEBPACK_IMPORTED_MODULE_0__.createProxy)(String.raw`C:\pigeon\src\app\NavBar.tsx#default`));</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >/***/ }),</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >/***/ "(rsc)/./src/app/layout.tsx":</span>
+<span class="cstat-no" title="statement not covered" >/*!****************************!*\</span>
+<span class="cstat-no" title="statement not covered" >  !*** ./src/app/layout.tsx ***!</span>
+<span class="cstat-no" title="statement not covered" >  \****************************/</span>
+<span class="cstat-no" title="statement not covered" >/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >"use strict";</span>
+<span class="cstat-no" title="statement not covered" >eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () =&gt; (/* binding */ RootLayout),\n/* harmony export */   metadata: () =&gt; (/* binding */ metadata)\n/* harmony export */ });\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-dev-runtime */ \"(rsc)/./node_modules/next/dist/server/future/route-modules/app-page/vendored/rsc/react-jsx-dev-runtime.js\");\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ \"(rsc)/./node_modules/next/dist/server/future/route-modules/app-page/vendored/rsc/react.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/link */ \"(rsc)/./node_modules/next/dist/api/link.js\");\n/* harmony import */ var _globals_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./globals.css */ \"(rsc)/./src/app/globals.css\");\n/* harmony import */ var _NavBar__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./NavBar */ \"(rsc)/./src/app/NavBar.tsx\");\n\n\n\n\n\nconst metadata = {\n    title: \"Pigeon – Prompt &amp; Context Engineering Workspace\",\n    description: \"A workspace for prompt and context engineering at enterprise scale.\"\n};\nfunction RootLayout({ children }) {\n    return /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"html\", {\n        lang: \"en\",\n        children: /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"body\", {\n            className: \"min-h-screen\",\n            children: [\n                /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"header\", {\n                    className: \"sticky top-0 z-40 bg-white/80 dark:bg-neutral-950/80 backdrop-blur border-b border-neutral-200 dark:border-neutral-800\",\n                    \"data-testid\": \"app-header\",\n                    children: /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"div\", {\n                        className: \"max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-14 flex items-center justify-between\",\n                        children: [\n                            /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(next_link__WEBPACK_IMPORTED_MODULE_2__[\"default\"], {\n                                href: \"/\",\n                                className: \"text-base font-semibold\",\n                                \"data-testid\": \"nav-link-home\",\n                                children: \"Pigeon\"\n                            }, void 0, false, {\n                                fileName: \"C:\\\\pigeon\\\\src\\\\app\\\\layout.tsx\",\n                                lineNumber: 17,\n                                columnNumber: 13\n                            }, this),\n                            /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(_NavBar__WEBPACK_IMPORTED_MODULE_4__[\"default\"], {}, void 0, false, {\n                                fileName: \"C:\\\\pigeon\\\\src\\\\app\\\\layout.tsx\",\n                                lineNumber: 21,\n                                columnNumber: 13\n                            }, this)\n                        ]\n                    }, void 0, true, {\n                        fileName: \"C:\\\\pigeon\\\\src\\\\app\\\\layout.tsx\",\n                        lineNumber: 16,\n                        columnNumber: 11\n                    }, this)\n                }, void 0, false, {\n                    fileName: \"C:\\\\pigeon\\\\src\\\\app\\\\layout.tsx\",\n                    lineNumber: 15,\n                    columnNumber: 9\n                }, this),\n                /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"main\", {\n                    className: \"max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6\",\n                    children: children\n                }, void 0, false, {\n                    fileName: \"C:\\\\pigeon\\\\src\\\\app\\\\layout.tsx\",\n                    lineNumber: 24,\n                    columnNumber: 9\n                }, this)\n            ]\n        }, void 0, true, {\n            fileName: \"C:\\\\pigeon\\\\src\\\\app\\\\layout.tsx\",\n            lineNumber: 14,\n            columnNumber: 7\n        }, this)\n    }, void 0, false, {\n        fileName: \"C:\\\\pigeon\\\\src\\\\app\\\\layout.tsx\",\n        lineNumber: 13,\n        columnNumber: 5\n    }, this);\n}\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiKHJzYykvLi9zcmMvYXBwL2xheW91dC50c3giLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7OztBQUEwQjtBQUNHO0FBQ047QUFDTztBQUV2QixNQUFNRyxXQUFXO0lBQ3RCQyxPQUFPO0lBQ1BDLGFBQWE7QUFDZixFQUFFO0FBRWEsU0FBU0MsV0FBVyxFQUFFQyxRQUFRLEVBQWlDO0lBQzVFLHFCQUNFLDhEQUFDQztRQUFLQyxNQUFLO2tCQUNULDRFQUFDQztZQUFLQyxXQUFVOzs4QkFDZCw4REFBQ0M7b0JBQU9ELFdBQVU7b0JBQXlIRSxlQUFZOzhCQUNySiw0RUFBQ0M7d0JBQUlILFdBQVU7OzBDQUNiLDhEQUFDVixpREFBSUE7Z0NBQUNjLE1BQUs7Z0NBQUlKLFdBQVU7Z0NBQTBCRSxlQUFZOzBDQUFnQjs7Ozs7OzBDQUkvRSw4REFBQ1gsK0NBQU1BOzs7Ozs7Ozs7Ozs7Ozs7OzhCQUdYLDhEQUFDYztvQkFBS0wsV0FBVTs4QkFDYko7Ozs7Ozs7Ozs7Ozs7Ozs7O0FBS1giLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly9waWdlb24vLi9zcmMvYXBwL2xheW91dC50c3g/NTdhOSJdLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgUmVhY3QgZnJvbSAncmVhY3QnO1xyXG5pbXBvcnQgTGluayBmcm9tICduZXh0L2xpbmsnO1xyXG5pbXBvcnQgJy4vZ2xvYmFscy5jc3MnO1xyXG5pbXBvcnQgTmF2QmFyIGZyb20gJy4vTmF2QmFyJztcclxuXHJcbmV4cG9ydCBjb25zdCBtZXRhZGF0YSA9IHtcclxuICB0aXRsZTogJ1BpZ2VvbiDigJMgUHJvbXB0ICYgQ29udGV4dCBFbmdpbmVlcmluZyBXb3Jrc3BhY2UnLFxyXG4gIGRlc2NyaXB0aW9uOiAnQSB3b3Jrc3BhY2UgZm9yIHByb21wdCBhbmQgY29udGV4dCBlbmdpbmVlcmluZyBhdCBlbnRlcnByaXNlIHNjYWxlLicsXHJcbn07XHJcblxyXG5leHBvcnQgZGVmYXVsdCBmdW5jdGlvbiBSb290TGF5b3V0KHsgY2hpbGRyZW4gfTogeyBjaGlsZHJlbjogUmVhY3QuUmVhY3ROb2RlIH0pIHtcclxuICByZXR1cm4gKFxyXG4gICAgPGh0bWwgbGFuZz1cImVuXCI+XHJcbiAgICAgIDxib2R5IGNsYXNzTmFtZT1cIm1pbi1oLXNjcmVlblwiPlxyXG4gICAgICAgIDxoZWFkZXIgY2xhc3NOYW1lPVwic3RpY2t5IHRvcC0wIHotNDAgYmctd2hpdGUvODAgZGFyazpiZy1uZXV0cmFsLTk1MC84MCBiYWNrZHJvcC1ibHVyIGJvcmRlci1iIGJvcmRlci1uZXV0cmFsLTIwMCBkYXJrOmJvcmRlci1uZXV0cmFsLTgwMFwiIGRhdGEtdGVzdGlkPVwiYXBwLWhlYWRlclwiPlxyXG4gICAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJtYXgtdy03eGwgbXgtYXV0byBweC00IHNtOnB4LTYgbGc6cHgtOCBoLTE0IGZsZXggaXRlbXMtY2VudGVyIGp1c3RpZnktYmV0d2VlblwiPlxyXG4gICAgICAgICAgICA8TGluayBocmVmPVwiL1wiIGNsYXNzTmFtZT1cInRleHQtYmFzZSBmb250LXNlbWlib2xkXCIgZGF0YS10ZXN0aWQ9XCJuYXYtbGluay1ob21lXCI+XHJcbiAgICAgICAgICAgICAgUGlnZW9uXHJcbiAgICAgICAgICAgIDwvTGluaz5cclxuICAgICAgICAgICAgey8qIENsaWVudCBuYXZpZ2F0aW9uIHdpdGggYWN0aXZlIGhpZ2hsaWdodGluZyArIG1vYmlsZSB0b2dnbGUgKi99XHJcbiAgICAgICAgICAgIDxOYXZCYXIgLz5cclxuICAgICAgICAgIDwvZGl2PlxyXG4gICAgICAgIDwvaGVhZGVyPlxyXG4gICAgICAgIDxtYWluIGNsYXNzTmFtZT1cIm1heC13LTd4bCBteC1hdXRvIHB4LTQgc206cHgtNiBsZzpweC04IHB5LTZcIj5cclxuICAgICAgICAgIHtjaGlsZHJlbn1cclxuICAgICAgICA8L21haW4+XHJcbiAgICAgIDwvYm9keT5cclxuICAgIDwvaHRtbD5cclxuICApO1xyXG59Il0sIm5hbWVzIjpbIlJlYWN0IiwiTGluayIsIk5hdkJhciIsIm1ldGFkYXRhIiwidGl0bGUiLCJkZXNjcmlwdGlvbiIsIlJvb3RMYXlvdXQiLCJjaGlsZHJlbiIsImh0bWwiLCJsYW5nIiwiYm9keSIsImNsYXNzTmFtZSIsImhlYWRlciIsImRhdGEtdGVzdGlkIiwiZGl2IiwiaHJlZiIsIm1haW4iXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///(rsc)/./src/app/layout.tsx\n");</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >/***/ }),</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >/***/ "(rsc)/./src/app/page.tsx":</span>
+<span class="cstat-no" title="statement not covered" >/*!**************************!*\</span>
+<span class="cstat-no" title="statement not covered" >  !*** ./src/app/page.tsx ***!</span>
+<span class="cstat-no" title="statement not covered" >  \**************************/</span>
+<span class="cstat-no" title="statement not covered" >/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >"use strict";</span>
+<span class="cstat-no" title="statement not covered" >__webpack_require__.r(__webpack_exports__);</span>
+<span class="cstat-no" title="statement not covered" >/* harmony export */ __webpack_require__.d(__webpack_exports__, {</span>
+<span class="cstat-no" title="statement not covered" >/* harmony export */   "default": () =&gt; (__WEBPACK_DEFAULT_EXPORT__)</span>
+<span class="cstat-no" title="statement not covered" >/* harmony export */ });</span>
+<span class="cstat-no" title="statement not covered" >/* harmony import */ var next_dist_build_webpack_loaders_next_flight_loader_module_proxy__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! next/dist/build/webpack/loaders/next-flight-loader/module-proxy */ "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-loader/module-proxy.js");</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,next_dist_build_webpack_loaders_next_flight_loader_module_proxy__WEBPACK_IMPORTED_MODULE_0__.createProxy)(String.raw`C:\pigeon\src\app\page.tsx#default`));</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >/***/ })</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >};</span>
+<span class="cstat-no" title="statement not covered" >;</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >// load runtime</span>
+<span class="cstat-no" title="statement not covered" >var __webpack_require__ = require("../webpack-runtime.js");</span>
+<span class="cstat-no" title="statement not covered" >__webpack_require__.C(exports);</span>
+<span class="cstat-no" title="statement not covered" >var __webpack_exec__ = (moduleId) =&gt; (__webpack_require__(__webpack_require__.s = moduleId))</span>
+<span class="cstat-no" title="statement not covered" >var __webpack_exports__ = __webpack_require__.X(0, ["vendor-chunks/next"], () =&gt; (__webpack_exec__("(rsc)/./node_modules/next/dist/build/webpack/loaders/next-app-loader.js?name=app%2Fpage&amp;page=%2Fpage&amp;appPaths=%2Fpage&amp;pagePath=private-next-app-dir%2Fpage.tsx&amp;appDir=C%3A%5Cpigeon%5Csrc%5Capp&amp;pageExtensions=tsx&amp;pageExtensions=ts&amp;pageExtensions=jsx&amp;pageExtensions=js&amp;rootDir=C%3A%5Cpigeon&amp;isDev=true&amp;tsconfigPath=tsconfig.json&amp;basePath=&amp;assetPrefix=&amp;nextConfigOutput=&amp;preferredRegion=&amp;middlewareConfig=e30%3D!")));</span>
+<span class="cstat-no" title="statement not covered" >module.exports = __webpack_exports__;</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >})();</span></pre></td></tr></table></pre>
+
+                <div class='push'></div><!-- for sticky footer -->
+            </div><!-- /wrapper -->
+            <div class='footer quiet pad2 space-top1 center small'>
+                Code coverage generated by
+                <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
+                at 2025-09-18T22:12:25.779Z
+            </div>
+        <script src="../../../../prettify.js"></script>
+        <script>
+            window.onload = function () {
+                prettyPrint();
+            };
+        </script>
+        <script src="../../../../sorter.js"></script>
+        <script src="../../../../block-navigation.js"></script>
+    </body>
+</html>
+    

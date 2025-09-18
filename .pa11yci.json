@@ -1,0 +1,19 @@
+{
+  "$schema": "https://raw.githubusercontent.com/pa11y/pa11y-ci/master/schema.json",
+  "defaults": {
+    "standard": "WCAG2AA",
+    "includeNotices": false,
+    "includeWarnings": false,
+    "timeout": 30000,
+    "runners": ["axe"],
+    "chromeLaunchConfig": {
+      "args": ["--no-sandbox", "--disable-dev-shm-usage"]
+    }
+  },
+  "urls": [
+    "http://localhost:3100/",
+    "http://localhost:3100/studio/10000000-0000-0000-0000-000000000001",
+    "http://localhost:3100/inventory",
+    "http://localhost:3100/playground"
+  ]
+}

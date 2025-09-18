@@ -1,0 +1,197 @@
+2025-08-24 15:06:51.251 SAST [33960] LOG:  starting PostgreSQL 17.5 on x86_64-windows, compiled by msvc-19.44.35209, 64-bit
+2025-08-24 15:06:51.252 SAST [33960] LOG:  listening on IPv4 address "127.0.0.1", port 5433
+2025-08-24 15:06:51.290 SAST [30768] LOG:  database system was shut down at 2025-08-24 15:06:45 SAST
+2025-08-24 15:06:51.306 SAST [33960] LOG:  database system is ready to accept connections
+2025-08-24 15:11:51.295 SAST [21872] LOG:  checkpoint starting: time
+2025-08-24 15:11:56.280 SAST [21872] LOG:  checkpoint complete: wrote 48 buffers (0.3%); 0 WAL file(s) added, 0 removed, 0 recycled; write=4.907 s, sync=0.048 s, total=4.986 s; sync files=11, longest=0.013 s, average=0.005 s; distance=288 kB, estimate=288 kB; lsn=0/15BA480, redo lsn=0/15BA428
+2025-08-24 15:20:22.460 SAST [12144] FATAL:  password authentication failed for user "postgres"
+2025-08-24 15:20:22.460 SAST [12144] DETAIL:  User "postgres" has no password assigned.
+	Connection matched file "C:/pigeon/.pgdata-pigeon-5433/pg_hba.conf" line 119: "host    all             all             127.0.0.1/32            scram-sha-256"
+2025-08-24 15:26:07.309 SAST [33960] LOG:  received SIGHUP, reloading configuration files
+2025-08-24 15:26:44.014 SAST [33836] FATAL:  database "pigeonprompt" does not exist
+2025-08-24 15:27:49.056 SAST [19892] ERROR:  syntax error at or near "select" at character 113
+2025-08-24 15:27:49.056 SAST [19892] STATEMENT:  create schema if not exists auth;
+	
+	create or replace function auth.uid() returns uuid
+	language sql stable
+	as 
+	  select coalesce(nullif(current_setting('request.jwt.claim.sub', true), '')::uuid, '00000000-0000-0000-0000-000000000001'::uuid);
+	;
+2025-08-24 15:30:16.498 SAST [5124] ERROR:  syntax error at or near "request" at character 156
+2025-08-24 15:30:16.498 SAST [5124] STATEMENT:  create schema if not exists auth;
+	
+	create or replace function auth.uid() returns uuid
+	language sql stable
+	as $$
+	  select coalesce(nullif(current_setting(''request.jwt.claim.sub'', true), '''')::uuid, ''00000000-0000-0000-0000-000000000001''::uuid);
+	$$;
+2025-08-24 15:31:51.326 SAST [21872] LOG:  checkpoint starting: time
+2025-08-24 15:33:39.892 SAST [21872] LOG:  checkpoint complete: wrote 1009 buffers (6.2%); 0 WAL file(s) added, 0 removed, 0 recycled; write=107.448 s, sync=1.091 s, total=108.567 s; sync files=345, longest=0.014 s, average=0.004 s; distance=4920 kB, estimate=4920 kB; lsn=0/1A9ADC0, redo lsn=0/1A88718
+2025-08-24 15:41:46.418 SAST [33960] LOG:  background worker "logical replication launcher" (PID 39828) was terminated by exception 0xC000013A
+2025-08-24 15:41:46.418 SAST [33960] HINT:  See C include file "ntstatus.h" for a description of the hexadecimal value.
+2025-08-24 15:41:46.418 SAST [33960] LOG:  terminating any other active server processes
+2025-08-24 15:41:46.422 SAST [33960] LOG:  received fast shutdown request
+^C2025-08-24 17:53:11.953 SAST [9796] LOG:  starting PostgreSQL 17.5 on x86_64-windows, compiled by msvc-19.44.35209, 64-bit
+2025-08-24 17:53:11.954 SAST [9796] LOG:  listening on IPv4 address "127.0.0.1", port 5433
+2025-08-24 17:53:11.987 SAST [38768] LOG:  database system was interrupted; last known up at 2025-08-24 15:33:39 SAST
+2025-08-24 17:53:18.500 SAST [38768] LOG:  could not open file "./postgresql.log": sharing violation
+2025-08-24 17:53:18.500 SAST [38768] DETAIL:  Continuing to retry for 30 seconds.
+2025-08-24 17:53:18.500 SAST [38768] HINT:  You might have antivirus, backup, or similar software interfering with the database system.
+2025-08-24 17:53:45.768 SAST [38768] LOG:  syncing data directory (fsync), elapsed time: 33.78 s, current path: ./postmaster.opts
+2025-08-24 17:53:45.777 SAST [38768] LOG:  database system was not properly shut down; automatic recovery in progress
+2025-08-24 17:53:45.786 SAST [38768] LOG:  redo starts at 0/1A88718
+2025-08-24 17:53:45.795 SAST [38768] LOG:  invalid record length at 0/1A9AE70: expected at least 24, got 0
+2025-08-24 17:53:45.795 SAST [38768] LOG:  redo done at 0/1A9AE38 system usage: CPU: user: 0.00 s, system: 0.01 s, elapsed: 0.00 s
+2025-08-24 17:53:45.801 SAST [38280] LOG:  checkpoint starting: end-of-recovery immediate wait
+2025-08-24 17:53:45.892 SAST [38280] LOG:  checkpoint complete: wrote 43 buffers (0.3%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.007 s, sync=0.069 s, total=0.095 s; sync files=26, longest=0.003 s, average=0.003 s; distance=73 kB, estimate=73 kB; lsn=0/1A9AE70, redo lsn=0/1A9AE70
+2025-08-24 17:53:45.906 SAST [9796] LOG:  database system is ready to accept connections
+2025-08-24 18:26:44.020 SAST [33380] ERROR:  policy "users_self_select" for table "users" already exists
+2025-08-24 18:26:44.020 SAST [33380] STATEMENT:  create policy "users_self_select" on users
+	for select using (id = auth.uid());
+2025-08-24 18:28:45.924 SAST [38280] LOG:  checkpoint starting: time
+2025-08-24 18:28:49.130 SAST [38280] LOG:  checkpoint complete: wrote 30 buffers (0.2%); 0 WAL file(s) added, 0 removed, 0 recycled; write=3.135 s, sync=0.053 s, total=3.207 s; sync files=20, longest=0.003 s, average=0.003 s; distance=101 kB, estimate=101 kB; lsn=0/1AB4380, redo lsn=0/1AB42F0
+2025-08-24 18:30:59.811 SAST [7588] WARNING:  there is no transaction in progress
+2025-08-24 18:31:13.279 SAST [33648] WARNING:  there is no transaction in progress
+2025-08-24 18:38:45.154 SAST [38280] LOG:  checkpoint starting: time
+2025-08-24 18:38:47.828 SAST [38280] LOG:  checkpoint complete: wrote 25 buffers (0.2%); 0 WAL file(s) added, 0 removed, 0 recycled; write=2.560 s, sync=0.085 s, total=2.675 s; sync files=20, longest=0.008 s, average=0.005 s; distance=5 kB, estimate=91 kB; lsn=0/1AB5A50, redo lsn=0/1AB59F8
+2025-08-24 18:44:43.628 SAST [9796] LOG:  background worker "logical replication launcher" (PID 31412) was terminated by exception 0xC000013A
+2025-08-24 18:44:43.628 SAST [9796] HINT:  See C include file "ntstatus.h" for a description of the hexadecimal value.
+2025-08-24 18:44:43.628 SAST [9796] LOG:  terminating any other active server processes
+2025-08-24 18:44:43.651 SAST [9796] LOG:  all server processes terminated; reinitializing
+2025-08-24 18:59:56.540 SAST [37800] LOG:  starting PostgreSQL 17.5 on x86_64-windows, compiled by msvc-19.44.35209, 64-bit
+2025-08-24 18:59:56.541 SAST [37800] LOG:  listening on IPv4 address "127.0.0.1", port 5433
+2025-08-24 18:59:56.588 SAST [20132] LOG:  database system was interrupted; last known up at 2025-08-24 18:38:47 SAST
+2025-08-24 19:00:03.115 SAST [20132] LOG:  could not open file "./postgresql.log": sharing violation
+2025-08-24 19:00:03.115 SAST [20132] DETAIL:  Continuing to retry for 30 seconds.
+2025-08-24 19:00:03.115 SAST [20132] HINT:  You might have antivirus, backup, or similar software interfering with the database system.
+2025-08-24 19:00:29.484 SAST [20132] LOG:  syncing data directory (fsync), elapsed time: 32.89 s, current path: ./postmaster.opts
+2025-08-24 19:00:29.489 SAST [20132] LOG:  database system was not properly shut down; automatic recovery in progress
+2025-08-24 19:00:29.495 SAST [20132] LOG:  redo starts at 0/1AB59F8
+2025-08-24 19:00:29.495 SAST [20132] LOG:  invalid record length at 0/1AB5B00: expected at least 24, got 0
+2025-08-24 19:00:29.495 SAST [20132] LOG:  redo done at 0/1AB5AC8 system usage: CPU: user: 0.00 s, system: 0.00 s, elapsed: 0.00 s
+2025-08-24 19:00:29.501 SAST [10800] LOG:  checkpoint starting: end-of-recovery immediate wait
+2025-08-24 19:00:29.530 SAST [10800] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.002 s, sync=0.007 s, total=0.033 s; sync files=2, longest=0.004 s, average=0.004 s; distance=0 kB, estimate=0 kB; lsn=0/1AB5B00, redo lsn=0/1AB5B00
+2025-08-24 19:00:29.549 SAST [37800] LOG:  database system is ready to accept connections
+2025-08-24 19:31:01.179 SAST [34840] ERROR:  policy "users_self_select" for table "users" already exists
+2025-08-24 19:31:01.179 SAST [34840] STATEMENT:  create policy "users_self_select" on users
+	for select using (id = auth.uid());
+2025-08-24 19:35:29.588 SAST [10800] LOG:  checkpoint starting: time
+2025-08-24 19:35:32.263 SAST [10800] LOG:  checkpoint complete: wrote 25 buffers (0.2%); 0 WAL file(s) added, 0 removed, 0 recycled; write=2.587 s, sync=0.054 s, total=2.676 s; sync files=19, longest=0.005 s, average=0.003 s; distance=103 kB, estimate=103 kB; lsn=0/1ACF7F0, redo lsn=0/1ACF760
+2025-08-24 19:42:37.940 SAST [41108] WARNING:  there is no transaction in progress
+2025-08-24 19:45:29.272 SAST [10800] LOG:  checkpoint starting: time
+2025-08-24 19:45:31.193 SAST [10800] LOG:  checkpoint complete: wrote 17 buffers (0.1%); 0 WAL file(s) added, 0 removed, 0 recycled; write=1.699 s, sync=0.200 s, total=1.921 s; sync files=15, longest=0.045 s, average=0.014 s; distance=6 kB, estimate=93 kB; lsn=0/1AD1388, redo lsn=0/1AD1330
+2025-08-24 21:45:13.702 SAST [10800] LOG:  checkpoint starting: time
+2025-08-24 21:45:14.946 SAST [10800] LOG:  checkpoint complete: wrote 12 buffers (0.1%); 0 WAL file(s) added, 0 removed, 0 recycled; write=1.196 s, sync=0.026 s, total=1.248 s; sync files=10, longest=0.004 s, average=0.003 s; distance=9 kB, estimate=85 kB; lsn=0/1AD3918, redo lsn=0/1AD38C0
+2025-08-24 22:10:13.985 SAST [10800] LOG:  checkpoint starting: time
+2025-08-24 22:10:15.449 SAST [10800] LOG:  checkpoint complete: wrote 14 buffers (0.1%); 0 WAL file(s) added, 0 removed, 0 recycled; write=1.409 s, sync=0.036 s, total=1.465 s; sync files=12, longest=0.004 s, average=0.003 s; distance=14 kB, estimate=78 kB; lsn=0/1AD7508, redo lsn=0/1AD74B0
+2025-08-24 22:15:13.463 SAST [10800] LOG:  checkpoint starting: time
+2025-08-24 22:15:18.358 SAST [10800] LOG:  checkpoint complete: wrote 45 buffers (0.3%); 0 WAL file(s) added, 0 removed, 0 recycled; write=4.786 s, sync=0.082 s, total=4.896 s; sync files=25, longest=0.013 s, average=0.004 s; distance=275 kB, estimate=275 kB; lsn=0/1B1C4C8, redo lsn=0/1B1C470
+2025-08-24 23:35:13.490 SAST [10800] LOG:  checkpoint starting: time
+2025-08-24 23:35:14.528 SAST [10800] LOG:  checkpoint complete: wrote 10 buffers (0.1%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.975 s, sync=0.036 s, total=1.039 s; sync files=10, longest=0.012 s, average=0.004 s; distance=6 kB, estimate=248 kB; lsn=0/1B1DED0, redo lsn=0/1B1DE78
+2025-08-25 01:30:13.710 SAST [10800] LOG:  checkpoint starting: time
+2025-08-25 01:30:14.708 SAST [10800] LOG:  checkpoint complete: wrote 10 buffers (0.1%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.949 s, sync=0.026 s, total=0.999 s; sync files=10, longest=0.003 s, average=0.003 s; distance=7 kB, estimate=224 kB; lsn=0/1B1FB08, redo lsn=0/1B1FAB0
+2025-08-25 01:50:13.737 SAST [10800] LOG:  checkpoint starting: time
+2025-08-25 01:50:15.095 SAST [10800] LOG:  checkpoint complete: wrote 13 buffers (0.1%); 0 WAL file(s) added, 0 removed, 0 recycled; write=1.284 s, sync=0.049 s, total=1.358 s; sync files=11, longest=0.010 s, average=0.005 s; distance=16 kB, estimate=203 kB; lsn=0/1B23C88, redo lsn=0/1B23C30
+2025-08-25 03:10:13.229 SAST [10800] LOG:  checkpoint starting: time
+2025-08-25 03:10:14.305 SAST [10800] LOG:  checkpoint complete: wrote 10 buffers (0.1%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.957 s, sync=0.055 s, total=1.077 s; sync files=10, longest=0.009 s, average=0.006 s; distance=8 kB, estimate=184 kB; lsn=0/1B25E98, redo lsn=0/1B25E08
+2025-08-25 10:14:24.722 SAST [10800] LOG:  checkpoint starting: time
+2025-08-25 10:14:25.768 SAST [10800] LOG:  checkpoint complete: wrote 10 buffers (0.1%); 0 WAL file(s) added, 0 removed, 0 recycled; write=1.002 s, sync=0.020 s, total=1.046 s; sync files=10, longest=0.003 s, average=0.002 s; distance=9 kB, estimate=166 kB; lsn=0/1B282A8, redo lsn=0/1B28250
+2025-08-25 10:39:24.823 SAST [10800] LOG:  checkpoint starting: time
+2025-08-25 10:39:25.864 SAST [10800] LOG:  checkpoint complete: wrote 10 buffers (0.1%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.993 s, sync=0.028 s, total=1.041 s; sync files=10, longest=0.004 s, average=0.003 s; distance=9 kB, estimate=151 kB; lsn=0/1B2A8A0, redo lsn=0/1B2A848
+2025-08-25 10:59:24.894 SAST [10800] LOG:  checkpoint starting: time
+2025-08-25 10:59:25.947 SAST [10800] LOG:  checkpoint complete: wrote 10 buffers (0.1%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.992 s, sync=0.035 s, total=1.054 s; sync files=10, longest=0.006 s, average=0.004 s; distance=10 kB, estimate=137 kB; lsn=0/1B2D0D0, redo lsn=0/1B2D078
+2025-08-25 12:24:24.055 SAST [10800] LOG:  checkpoint starting: time
+2025-08-25 12:24:25.089 SAST [10800] LOG:  checkpoint complete: wrote 10 buffers (0.1%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.986 s, sync=0.027 s, total=1.034 s; sync files=10, longest=0.005 s, average=0.003 s; distance=10 kB, estimate=124 kB; lsn=0/1B2FB18, redo lsn=0/1B2FAC0
+2025-08-25 12:59:24.139 SAST [10800] LOG:  checkpoint starting: time
+2025-08-25 12:59:25.175 SAST [10800] LOG:  checkpoint complete: wrote 10 buffers (0.1%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.985 s, sync=0.026 s, total=1.036 s; sync files=10, longest=0.004 s, average=0.003 s; distance=11 kB, estimate=113 kB; lsn=0/1B327C8, redo lsn=0/1B32770
+2025-08-25 14:24:24.279 SAST [10800] LOG:  checkpoint starting: time
+2025-08-25 14:24:25.328 SAST [10800] LOG:  checkpoint complete: wrote 10 buffers (0.1%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.995 s, sync=0.029 s, total=1.050 s; sync files=10, longest=0.004 s, average=0.003 s; distance=11 kB, estimate=102 kB; lsn=0/1B35690, redo lsn=0/1B35638
+2025-08-25 16:31:30.185 SAST [37800] LOG:  background worker "logical replication launcher" (PID 35860) was terminated by exception 0xC000013A
+2025-08-25 16:31:30.185 SAST [37800] HINT:  See C include file "ntstatus.h" for a description of the hexadecimal value.
+2025-08-25 16:31:30.186 SAST [37800] LOG:  terminating any other active server processes
+2025-08-25 16:31:30.330 SAST [37800] LOG:  all server processes terminated; reinitializing
+^C2025-08-25 17:18:16.079 SAST [46152] LOG:  starting PostgreSQL 17.5 on x86_64-windows, compiled by msvc-19.44.35209, 64-bit
+2025-08-25 17:18:16.080 SAST [46152] LOG:  listening on IPv4 address "127.0.0.1", port 5433
+2025-08-25 17:18:16.118 SAST [456] LOG:  database system was interrupted; last known up at 2025-08-25 14:24:25 SAST
+2025-08-25 17:18:22.450 SAST [456] LOG:  could not open file "./postgresql.log": sharing violation
+2025-08-25 17:18:22.450 SAST [456] DETAIL:  Continuing to retry for 30 seconds.
+2025-08-25 17:18:22.450 SAST [456] HINT:  You might have antivirus, backup, or similar software interfering with the database system.
+2025-08-25 17:18:49.871 SAST [456] LOG:  syncing data directory (fsync), elapsed time: 33.75 s, current path: ./postmaster.opts
+2025-08-25 17:18:49.880 SAST [456] LOG:  database system was not properly shut down; automatic recovery in progress
+2025-08-25 17:18:49.888 SAST [456] LOG:  redo starts at 0/1B35638
+2025-08-25 17:18:49.888 SAST [456] LOG:  invalid record length at 0/1B35740: expected at least 24, got 0
+2025-08-25 17:18:49.888 SAST [456] LOG:  redo done at 0/1B35708 system usage: CPU: user: 0.00 s, system: 0.00 s, elapsed: 0.00 s
+2025-08-25 17:18:49.897 SAST [36080] LOG:  checkpoint starting: end-of-recovery immediate wait
+2025-08-25 17:18:49.932 SAST [36080] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.004 s, sync=0.008 s, total=0.039 s; sync files=2, longest=0.004 s, average=0.004 s; distance=0 kB, estimate=0 kB; lsn=0/1B35740, redo lsn=0/1B35740
+2025-08-25 17:18:49.949 SAST [46152] LOG:  database system is ready to accept connections
+2025-08-25 17:53:49.974 SAST [36080] LOG:  checkpoint starting: time
+2025-08-25 17:53:54.134 SAST [36080] LOG:  checkpoint complete: wrote 38 buffers (0.2%); 0 WAL file(s) added, 0 removed, 0 recycled; write=4.039 s, sync=0.089 s, total=4.160 s; sync files=29, longest=0.005 s, average=0.004 s; distance=154 kB, estimate=154 kB; lsn=0/1B5C110, redo lsn=0/1B5C0B8
+2025-08-25 21:23:49.432 SAST [36080] LOG:  checkpoint starting: time
+2025-08-25 21:23:51.134 SAST [36080] LOG:  checkpoint complete: wrote 16 buffers (0.1%); 0 WAL file(s) added, 0 removed, 0 recycled; write=1.632 s, sync=0.044 s, total=1.702 s; sync files=14, longest=0.012 s, average=0.004 s; distance=23 kB, estimate=141 kB; lsn=0/1B61F00, redo lsn=0/1B61EA8
+2025-08-25 22:28:49.249 SAST [36080] LOG:  checkpoint starting: time
+2025-08-25 22:28:49.395 SAST [36080] LOG:  checkpoint complete: wrote 2 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.107 s, sync=0.015 s, total=0.146 s; sync files=2, longest=0.009 s, average=0.008 s; distance=2 kB, estimate=127 kB; lsn=0/1B62A58, redo lsn=0/1B62A00
+2025-08-25 22:43:49.422 SAST [36080] LOG:  checkpoint starting: time
+2025-08-25 22:43:49.567 SAST [36080] LOG:  checkpoint complete: wrote 2 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.118 s, sync=0.008 s, total=0.146 s; sync files=2, longest=0.005 s, average=0.004 s; distance=3 kB, estimate=114 kB; lsn=0/1B63698, redo lsn=0/1B63640
+2025-08-25 22:53:49.575 SAST [36080] LOG:  checkpoint starting: time
+2025-08-25 22:53:54.000 SAST [36080] LOG:  checkpoint complete: wrote 40 buffers (0.2%); 0 WAL file(s) added, 0 removed, 0 recycled; write=4.147 s, sync=0.092 s, total=4.426 s; sync files=22, longest=0.009 s, average=0.005 s; distance=205 kB, estimate=205 kB; lsn=0/1B96D78, redo lsn=0/1B96D20
+2025-08-25 23:38:07.311 SAST [36080] LOG:  checkpoint starting: time
+2025-08-25 23:38:08.636 SAST [36080] LOG:  checkpoint complete: wrote 12 buffers (0.1%); 0 WAL file(s) added, 0 removed, 0 recycled; write=1.207 s, sync=0.092 s, total=1.325 s; sync files=10, longest=0.037 s, average=0.010 s; distance=20 kB, estimate=187 kB; lsn=0/1B9BDD0, redo lsn=0/1B9BD40
+2025-08-26 12:14:57.503 SAST [46152] LOG:  could not reserve shared memory region (addr=000002464E370000) for child 00000000000010E4: error code 487
+2025-08-26 15:39:04.415 SAST [36080] LOG:  checkpoint starting: time
+2025-08-26 15:39:05.788 SAST [36080] LOG:  checkpoint complete: wrote 13 buffers (0.1%); 0 WAL file(s) added, 0 removed, 0 recycled; write=1.310 s, sync=0.035 s, total=1.374 s; sync files=10, longest=0.006 s, average=0.004 s; distance=20 kB, estimate=170 kB; lsn=0/1BA1160, redo lsn=0/1BA1108
+2025-08-26 16:19:04.849 SAST [36080] LOG:  checkpoint starting: time
+2025-08-26 16:19:06.580 SAST [36080] LOG:  checkpoint complete: wrote 16 buffers (0.1%); 0 WAL file(s) added, 0 removed, 0 recycled; write=1.642 s, sync=0.064 s, total=1.732 s; sync files=14, longest=0.008 s, average=0.005 s; distance=23 kB, estimate=155 kB; lsn=0/1BA7100, redo lsn=0/1BA70A8
+2025-08-26 16:44:04.623 SAST [36080] LOG:  checkpoint starting: time
+2025-08-26 16:44:06.319 SAST [36080] LOG:  checkpoint complete: wrote 16 buffers (0.1%); 0 WAL file(s) added, 0 removed, 0 recycled; write=1.641 s, sync=0.039 s, total=1.698 s; sync files=14, longest=0.005 s, average=0.003 s; distance=28 kB, estimate=143 kB; lsn=0/1BAE320, redo lsn=0/1BAE2C8
+2025-08-26 17:29:04.408 SAST [36080] LOG:  checkpoint starting: time
+2025-08-26 17:29:05.657 SAST [36080] LOG:  checkpoint complete: wrote 12 buffers (0.1%); 0 WAL file(s) added, 0 removed, 0 recycled; write=1.197 s, sync=0.029 s, total=1.250 s; sync files=10, longest=0.005 s, average=0.003 s; distance=22 kB, estimate=131 kB; lsn=0/1BB3BB8, redo lsn=0/1BB3B28
+2025-08-26 23:59:16.037 SAST [46152] LOG:  could not reserve shared memory region (addr=000002464E370000) for child 0000000000000E60: error code 487
+2025-08-28 16:14:40.156 SAST [46152] LOG:  background worker "logical replication launcher" (PID 50524) was terminated by exception 0xC000013A
+2025-08-28 16:14:40.156 SAST [46152] HINT:  See C include file "ntstatus.h" for a description of the hexadecimal value.
+2025-08-28 16:14:40.157 SAST [46152] LOG:  terminating any other active server processes
+2025-08-28 16:14:40.256 SAST [46152] LOG:  received fast shutdown request
+^C2025-09-07 18:01:00.847 SAST [39088] LOG:  starting PostgreSQL 17.5 on x86_64-windows, compiled by msvc-19.44.35209, 64-bit
+2025-09-07 18:01:00.848 SAST [39088] LOG:  listening on IPv4 address "127.0.0.1", port 5433
+2025-09-07 18:01:00.894 SAST [39980] LOG:  database system was interrupted; last known up at 2025-08-26 17:29:05 SAST
+2025-09-07 18:01:09.278 SAST [39980] LOG:  could not open file "./postgresql.log": sharing violation
+2025-09-07 18:01:09.278 SAST [39980] DETAIL:  Continuing to retry for 30 seconds.
+2025-09-07 18:01:09.278 SAST [39980] HINT:  You might have antivirus, backup, or similar software interfering with the database system.
+2025-09-07 18:01:36.235 SAST [39980] LOG:  syncing data directory (fsync), elapsed time: 35.34 s, current path: ./postmaster.opts
+2025-09-07 18:01:36.242 SAST [39980] LOG:  database system was not properly shut down; automatic recovery in progress
+2025-09-07 18:01:36.251 SAST [39980] LOG:  redo starts at 0/1BB3B28
+2025-09-07 18:01:36.251 SAST [39980] LOG:  invalid record length at 0/1BB3C68: expected at least 24, got 0
+2025-09-07 18:01:36.251 SAST [39980] LOG:  redo done at 0/1BB3C30 system usage: CPU: user: 0.00 s, system: 0.00 s, elapsed: 0.00 s
+2025-09-07 18:01:36.259 SAST [18544] LOG:  checkpoint starting: end-of-recovery immediate wait
+2025-09-07 18:01:36.292 SAST [18544] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.004 s, sync=0.007 s, total=0.037 s; sync files=2, longest=0.004 s, average=0.004 s; distance=0 kB, estimate=0 kB; lsn=0/1BB3C68, redo lsn=0/1BB3C68
+2025-09-07 18:01:36.311 SAST [39088] LOG:  database system is ready to accept connections
+2025-09-07 18:31:36.324 SAST [18544] LOG:  checkpoint starting: time
+2025-09-07 18:31:37.872 SAST [39088] LOG:  received fast shutdown request
+2025-09-07 18:31:37.875 SAST [35360] ERROR:  canceling statement due to user request
+2025-09-07 18:31:37.880 SAST [39088] LOG:  aborting any active transactions
+2025-09-07 18:31:37.881 SAST [39088] LOG:  background worker "logical replication launcher" (PID 35360) exited with exit code 1
+2025-09-07 18:31:38.008 SAST [18544] LOG:  checkpoint complete: wrote 58 buffers (0.4%); 0 WAL file(s) added, 0 removed, 0 recycled; write=1.550 s, sync=0.115 s, total=1.684 s; sync files=45, longest=0.008 s, average=0.003 s; distance=302 kB, estimate=302 kB; lsn=0/1BFF790, redo lsn=0/1BFF738
+2025-09-07 18:31:38.009 SAST [18544] LOG:  shutting down
+2025-09-07 18:31:38.013 SAST [18544] LOG:  checkpoint starting: shutdown immediate
+2025-09-07 18:31:38.029 SAST [18544] LOG:  checkpoint complete: wrote 0 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.020 s; sync files=0, longest=0.000 s, average=0.000 s; distance=0 kB, estimate=272 kB; lsn=0/1BFF808, redo lsn=0/1BFF808
+2025-09-07 18:31:38.036 SAST [39088] LOG:  database system is shut down
+2025-09-07 20:11:46.322 SAST [31796] LOG:  starting PostgreSQL 17.5 on x86_64-windows, compiled by msvc-19.44.35209, 64-bit
+2025-09-07 20:11:46.323 SAST [31796] LOG:  listening on IPv4 address "127.0.0.1", port 5433
+2025-09-07 20:11:46.370 SAST [31144] LOG:  database system was shut down at 2025-09-07 18:31:38 SAST
+2025-09-07 20:11:46.390 SAST [31796] LOG:  database system is ready to accept connections
+2025-09-07 20:16:46.378 SAST [41848] LOG:  checkpoint starting: time
+2025-09-07 20:16:51.794 SAST [41848] LOG:  checkpoint complete: wrote 52 buffers (0.3%); 1 WAL file(s) added, 0 removed, 0 recycled; write=5.267 s, sync=0.084 s, total=5.417 s; sync files=30, longest=0.005 s, average=0.003 s; distance=240 kB, estimate=240 kB; lsn=0/1C3BAD0, redo lsn=0/1C3BA40
+2025-09-07 20:18:59.107 SAST [33780] ERROR:  invalid input syntax for type uuid: "user-1757269137753"
+2025-09-07 20:18:59.107 SAST [33780] CONTEXT:  unnamed portal parameter $4 = '...'
+2025-09-07 20:18:59.107 SAST [33780] STATEMENT:  update templates set description = $1, tags = $2 where id = $3 and user_id = $4 returning id, user_id, name, description, system_prompt, user_prompt_template, variables, tags, created_at, updated_at
+2025-09-07 20:21:46.800 SAST [41848] LOG:  checkpoint starting: time
+2025-09-07 20:21:47.361 SAST [41848] LOG:  checkpoint complete: wrote 6 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.524 s, sync=0.019 s, total=0.562 s; sync files=6, longest=0.004 s, average=0.004 s; distance=2 kB, estimate=216 kB; lsn=0/1C3C5E8, redo lsn=0/1C3C590
+2025-09-08 00:46:46.787 SAST [41848] LOG:  checkpoint starting: time
+2025-09-08 00:46:47.136 SAST [41848] LOG:  checkpoint complete: wrote 4 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.315 s, sync=0.014 s, total=0.350 s; sync files=4, longest=0.006 s, average=0.004 s; distance=1 kB, estimate=195 kB; lsn=0/1C3CB80, redo lsn=0/1C3CB28
+2025-09-08 21:18:50.285 SAST [41848] LOG:  checkpoint starting: time
+2025-09-08 21:18:50.747 SAST [41848] LOG:  checkpoint complete: wrote 4 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.432 s, sync=0.012 s, total=0.463 s; sync files=4, longest=0.004 s, average=0.003 s; distance=3 kB, estimate=176 kB; lsn=0/1C3D7B8, redo lsn=0/1C3D760
+2025-09-09 09:17:51.380 SAST [41848] LOG:  checkpoint starting: time
+2025-09-09 09:17:51.743 SAST [41848] LOG:  checkpoint complete: wrote 4 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.329 s, sync=0.014 s, total=0.363 s; sync files=4, longest=0.006 s, average=0.004 s; distance=1 kB, estimate=158 kB; lsn=0/1C3DDD8, redo lsn=0/1C3DD80
+2025-09-09 10:25:36.002 SAST [31796] LOG:  background worker "logical replication launcher" (PID 43320) was terminated by exception 0xC000013A
+2025-09-09 10:25:36.002 SAST [31796] HINT:  See C include file "ntstatus.h" for a description of the hexadecimal value.
+2025-09-09 10:25:36.002 SAST [31796] LOG:  terminating any other active server processes
+2025-09-09 10:25:36.005 SAST [31796] LOG:  received fast shutdown request

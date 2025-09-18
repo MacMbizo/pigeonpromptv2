@@ -1,0 +1,200 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  lint:
+    if: ${{ hashFiles('package.json') != '' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'pnpm'
+      - name: Install dependencies
+        run: pnpm install --no-frozen-lockfile
+      - name: Lint
+        run: pnpm run lint
+
+  typecheck:
+    if: ${{ hashFiles('package.json') != '' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'pnpm'
+      - name: Install dependencies
+        run: pnpm install --no-frozen-lockfile
+      - name: Typecheck
+        run: pnpm run typecheck
+
+  unit_tests:
+    if: ${{ hashFiles('package.json') != '' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'pnpm'
+      - name: Install dependencies
+        run: pnpm install --no-frozen-lockfile
+      - name: Run unit tests
+        run: pnpm run test -- --ci --reporters=default --reporters=github
+
+  e2e_tests:
+    if: ${{ hashFiles('playwright.config.*') != '' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'pnpm'
+      - name: Install dependencies
+        run: pnpm install --no-frozen-lockfile
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps
+      # Playwright webServer will manage starting Next.js on port 3100 for E2E
+      - name: Run Playwright E2E tests
+        env:
+          APP_URL: http://localhost:3100
+        run: |
+          npx playwright install --with-deps
+          pnpm run test:e2e:ci
+      - name: Upload Playwright report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report
+          path: playwright-report
+
+  e2e_smoke:
+    if: ${{ hashFiles('playwright.config.*') != '' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'pnpm'
+      - name: Install dependencies
+        run: pnpm install --no-frozen-lockfile
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps
+      # Run only the fast smoke spec. Playwright webServer will manage Next.js on port 3100
+      - name: Run Playwright E2E smoke tests
+        env:
+          APP_URL: http://localhost:3100
+        run: |
+          npx playwright install --with-deps
+          pnpm run test:e2e:smoke:ci
+      - name: Upload Playwright smoke report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report-smoke
+          path: playwright-report
+
+  accessibility:
+    if: ${{ hashFiles('.pa11yci*') != '' || hashFiles('axe.config.*') != '' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'pnpm'
+      - name: Install dependencies
+        run: pnpm install --no-frozen-lockfile
+      - name: Start dev server
+        run: npx next dev -p 3100 &
+      - name: Wait for app to be ready
+        run: npx wait-on http://localhost:3100
+      - name: Run Pa11y (if configured)
+        run: |
+          if [ -f .pa11yci.json ] || [ -f .pa11yci ]; then
+            npx pa11y-ci
+          else
+            echo "No pa11y config found; skipping"
+          fi
+      - name: Run axe (if configured)
+        run: |
+          if ls axe.config.* 1> /dev/null 2>&1; then
+            npx @axe-core/cli http://localhost:3100 || true
+          else
+            echo "No axe config found; skipping"
+          fi
+
+  bundle_size:
+    if: ${{ hashFiles('**/next.config.*') != '' || contains(join(steps.pkg.outputs.pkgjson, '\n'), 'next') }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'pnpm'
+      - name: Install dependencies
+        run: pnpm install --no-frozen-lockfile
+      - name: Build app
+        run: pnpm run build
+      - name: Upload build artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: app-build
+          path: .next/**
+
+  security_scans:
+    if: ${{ hashFiles('package.json') != '' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'pnpm'
+      - name: Install dependencies
+        run: pnpm install --no-frozen-lockfile
+      - name: Dependency audit (high+)
+        run: pnpm audit --audit-level=high || true
+      - name: Secret scan (trufflehog)
+        run: |
+          pipx install trufflehog || python -m pip install --user trufflehog
+          trufflehog filesystem --no-update --fail --only-verified --max_depth 5 . || true
