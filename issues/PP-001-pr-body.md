@@ -19,8 +19,8 @@ Option B (explicit plain config):
 - npx playwright test tests/e2e/record-context-preview.spec.ts --config=playwright.plain.config.ts
 
 Evidence
-- Lint: npm run lint → PASS
-- Unit tests: npm run test:unit → PASS (coverage produced; thresholds maintained)
+- Lint: pnpm run lint → PASS
+- Unit tests: pnpm run test:unit → PASS (coverage produced; thresholds maintained)
 - Targeted E2E (recording spec): PASS
   ```
   1 passed (8.5s)
