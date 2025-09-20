@@ -66,3 +66,11 @@ debug/
 .cache/
 .npm/
 .eslintcache
+
+# Next.js build output
+.next/
+
+# Playwright reports
+playwright-report/
+playwright-report-smoke/
+playwright-report-smoke-local/
