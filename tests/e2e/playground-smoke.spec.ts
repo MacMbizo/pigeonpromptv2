@@ -4,7 +4,11 @@ const APP_URL = process.env.APP_URL || 'http://localhost:3100';
 
 // Simple smoke of playground run both and verify outputs render with metrics
 test('playground run both displays results and metrics', async ({ page, browserName }) => {
-  test.skip(browserName === 'webkit', 'Skip webkit intermittently in CI');
+  if (browserName === 'webkit') {
+    if (process.env.CI && process.env.E2E_ENABLE_WEBKIT_CI !== '1') {
+      test.skip(true, 'Skip on WebKit in CI until stabilized. Set E2E_ENABLE_WEBKIT_CI=1 to enable.');
+    }
+  }
 
   await page.goto(`${APP_URL}/playground`);
   await expect(page.getByTestId('playground-page')).toBeVisible();
