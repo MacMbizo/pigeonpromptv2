@@ -21,10 +21,10 @@ See RULES.md for complete standards.
 
 ## Test Plan
 - Commands executed locally:
-  - npm run lint
-  - npm run typecheck (if available)
-  - npm run test:unit
-  - npx playwright install (first time only), then npx playwright test (for UI/flows)
+  - pnpm run lint
+  - pnpm run typecheck (if available)
+  - pnpm run test:unit
+  - npx playwright install (first time only), then pnpm run test:e2e:smoke:ci (for UI/flows)
 - Manual verification notes (browsers, viewport sizes)
 
 ## Risks & Rollout

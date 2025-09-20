@@ -1,0 +1,28 @@
+# Normalize line endings and enforce LF for text files
+* text=auto eol=lf
+
+# Source code
+*.ts text eol=lf
+*.tsx text eol=lf
+*.js text eol=lf
+*.jsx text eol=lf
+*.mjs text eol=lf
+*.cjs text eol=lf
+
+# Config & data
+*.json text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.md text eol=lf
+*.env text eol=lf
+*.env.* text eol=lf
+*.svg text eol=lf
+*.css text eol=lf
+*.scss text eol=lf
+*.html text eol=lf
+*.xml text eol=lf
+
+# Shell and scripts
+*.sh text eol=lf
+*.ps1 text eol=lf
+*.bat text eol=crlf
