@@ -1,4 +1,4 @@
-import { defineConfig } from '@playwright/test';
+import { defineConfig } from '@playwright/test'
 
 // CI/E2E config (starts its own webServer):
 // - Designed for CI and isolated local runs that shouldn't depend on a running dev server.
@@ -7,7 +7,7 @@ import { defineConfig } from '@playwright/test';
 // - To run against a locally started dev server on 3100, use playwright.plain.config.ts instead.
 
 // Ensure tests use the same base URL as the dev server started below
-process.env.APP_URL = process.env.APP_URL || 'http://localhost:4100';
+process.env.APP_URL = process.env.APP_URL || 'http://localhost:4100'
 
 export default defineConfig({
   testDir: './tests/e2e',
@@ -27,7 +27,7 @@ export default defineConfig({
   ],
   webServer: {
     // Use a dedicated port to avoid collisions with a locally running dev instance
-    command: 'npm run dev -- -p 4100',
+    command: 'npx next dev -p 4100',
     url: process.env.APP_URL || 'http://localhost:4100',
     reuseExistingServer: false, // always start fresh to apply test-specific env
     timeout: 120000,
@@ -45,4 +45,4 @@ export default defineConfig({
       DATABASE_URL: '',
     },
   },
-});
+})

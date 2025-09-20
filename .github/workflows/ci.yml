@@ -78,12 +78,11 @@ jobs:
         run: pnpm install --no-frozen-lockfile
       - name: Install Playwright browsers
         run: npx playwright install --with-deps
-      # Playwright webServer will manage starting Next.js on port 3100 for E2E
+      # Playwright webServer will manage starting Next.js on port 4100 for E2E
       - name: Run Playwright E2E tests
         env:
           APP_URL: http://localhost:4100
         run: |
-          npx playwright install --with-deps
           pnpm run test:e2e:ci
       - name: Upload Playwright report
         if: always()
@@ -108,19 +107,19 @@ jobs:
         run: pnpm install --no-frozen-lockfile
       - name: Install Playwright browsers
         run: npx playwright install --with-deps
-      # Run only the fast smoke spec. Playwright webServer will manage Next.js on port 3100
+      # Run only the fast smoke spec. Playwright webServer will manage Next.js on port 4100
       - name: Run Playwright E2E smoke tests
         env:
           APP_URL: http://localhost:4100
+          E2E_ENABLE_WEBKIT_CI: "1"
         run: |
-          npx playwright install --with-deps
           pnpm run test:e2e:smoke:ci
       - name: Upload Playwright smoke report
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: playwright-report-smoke
-          path: playwright-report
+          path: playwright-report-smoke
 
   accessibility:
     if: ${{ hashFiles('.pa11yci*') != '' || hashFiles('axe.config.*') != '' }}

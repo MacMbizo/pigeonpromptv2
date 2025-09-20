@@ -1,7 +1,5 @@
 import { test, expect, Page } from '@playwright/test';
-
-const APP_URL = process.env['APP_URL'] || 'http://localhost:3100';
-const STUDIO_ID = process.env['STUDIO_ID'] || 'dev';
+import { APP_URL, STUDIO_ID } from './helpers'
 
 async function collectConsoleErrors(page: Page) {
   const errors: string[] = [];
@@ -43,13 +41,17 @@ test('Version timeline: selecting a version highlights it and diff panel is pres
   const consoleErrors = await collectConsoleErrors(page);
   await gotoStudio(page);
 
-  // Click v1 and assert it becomes selected (selected style class present)
-  await page.getByTestId('version-item-1').click();
-  await expect(page.getByTestId('version-item-1')).toHaveClass(/bg-blue-100/);
+  // Ensure listbox is present and labeled
+  const listbox = page.getByRole('listbox', { name: 'Versions' });
+  await expect(listbox).toBeVisible();
+
+  // Click v1 and assert it becomes selected using ARIA roles (scoped within listbox)
+  await listbox.getByRole('option', { name: /^v1\b/ }).click();
+  await expect(listbox.getByRole('option', { name: /^v1\b/ })).toHaveAttribute('aria-selected', 'true');
 
   // Click v2 and assert it becomes selected
-  await page.getByTestId('version-item-2').click();
-  await expect(page.getByTestId('version-item-2')).toHaveClass(/bg-blue-100/);
+  await listbox.getByRole('option', { name: /^v2\b/ }).click();
+  await expect(listbox.getByRole('option', { name: /^v2\b/ })).toHaveAttribute('aria-selected', 'true');
 
   // Diff & Changelog panel visible
   await expect(page.getByTestId('diff-panel')).toBeVisible();
@@ -82,3 +84,13 @@ test('Version timeline: selecting a version highlights it and diff panel is pres
 
   expect(consoleErrors).toEqual([]);
 });
+
+test.beforeEach(async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: 'reduce' })
+  page.on('dialog', d => d.dismiss().catch(() => { /* noop */ }))
+  await page.evaluate(() => {
+    document.documentElement.classList.add('disable-transitions')
+    try { localStorage.clear(); } catch { /* noop */ }
+    try { sessionStorage.clear(); } catch { /* noop */ }
+  })
+})

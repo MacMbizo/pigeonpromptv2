@@ -1,11 +1,21 @@
 import { test, expect } from '@playwright/test';
-
-const APP_URL = process.env.APP_URL || 'http://localhost:3100';
-const STUDIO_ID = '10000000-0000-0000-0000-000000000001';
+import { APP_URL, STUDIO_ID } from './helpers';
 
 // This spec validates the Live Preview panel behavior on the Studio page.
 // It relies on the development fallbacks of the API to provide a prompt with variables
 // and versions content like: "Hello {{user_input}}\n\nUse context: {{context}}".
+
+test.beforeEach(async ({ page }) => {
+  // Reduce motion and disable transitions for stability
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  await page.addStyleTag({ content: '* { transition: none !important; animation: none !important; }' });
+  // Auto-dismiss any dialogs that could block the run
+  page.on('dialog', d => d.dismiss().catch(() => {}));
+  // Clear storages for isolation between tests
+  await page.addInitScript(() => {
+    try { localStorage.clear(); sessionStorage.clear(); } catch { /* noop */ }
+  });
+});
 
 test.describe('Studio Live Preview', () => {
   test('updates output as variables change and respects missing policy + reset', async ({ page }) => {
@@ -75,7 +85,7 @@ test.describe('Studio Live Preview', () => {
     await policySelect.selectOption('empty');
     await expect(previewOutput).toContainText('Hello');
     await expect(previewOutput).toContainText('Use context:');
-    // And specifically ensure the placeholder label isn\'t there
+    // And specifically ensure the placeholder label isn't there
     await expect(previewOutput).not.toContainText('{{user_input}}');
     await expect(previewOutput).not.toContainText('{{context}}');
 

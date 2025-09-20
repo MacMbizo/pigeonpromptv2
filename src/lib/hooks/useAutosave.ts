@@ -121,6 +121,16 @@ export function useAutosave({ draft, isDirty, storageKey, delayMs = 800 }: UseAu
       } catch (e) {
         /* no-op */
       }
+      // Cancel any pending debounced write to avoid re-persisting a stale draft after clear()
+      if (writeTimeoutRef.current) {
+        window.clearTimeout(writeTimeoutRef.current);
+        writeTimeoutRef.current = null;
+      }
+      // Also clear any pending status reset timer to avoid unexpected transitions
+      if (clearTimeoutRef.current) {
+        window.clearTimeout(clearTimeoutRef.current);
+        clearTimeoutRef.current = null;
+      }
     }
     setStatus((prev) => {
       if (prev !== 'saved') {

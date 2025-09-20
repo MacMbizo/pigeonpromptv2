@@ -1,9 +1,7 @@
-import { test, expect, Page } from '@playwright/test';
+import { test, expect } from '@playwright/test';
+import { STUDIO_ID, gotoStudio } from './helpers';
 
-const APP_URL = process.env['APP_URL'] || 'http://localhost:3100';
-const STUDIO_ID = process.env['STUDIO_ID'] || 'dev';
-
-async function collectConsoleErrors(page: Page) {
+async function collectConsoleErrors(page: import('@playwright/test').Page) {
   const errors: string[] = [];
   page.on('console', (msg) => {
     if (
@@ -19,15 +17,21 @@ async function collectConsoleErrors(page: Page) {
   return errors;
 }
 
-async function gotoStudio(page: Page) {
-  await page.goto(`${APP_URL}/studio/${STUDIO_ID}`);
-  await expect(page.locator('#modelPresetSelect')).toBeVisible();
-}
+// Stability & isolation guards
+test.beforeEach(async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  await page.addStyleTag({ content: '* { transition: none !important; animation: none !important; }' });
+  page.on('dialog', d => d.dismiss().catch(() => { /* noop */ }));
+  await page.addInitScript(() => {
+    try { localStorage.clear(); sessionStorage.clear(); } catch { /* noop */ }
+  });
+});
 
 // Verifies: preset selection autofills price and (with checkbox enabled) adds a chip to targets
 test('Model preset autofills price and adds to targets when enabled', async ({ page }) => {
   const consoleErrors = await collectConsoleErrors(page);
-  await gotoStudio(page);
+  await gotoStudio(page, STUDIO_ID);
+  await expect(page.locator('#modelPresetSelect')).toBeVisible();
 
   const price = page.locator('#pricePerK');
   const preset = page.locator('#modelPresetSelect');
@@ -54,7 +58,8 @@ test('Model preset autofills price and adds to targets when enabled', async ({ p
 // Verifies: when checkbox is disabled, preset selection still autofills price but does not add chip
 test('Model preset autofills price without adding to targets when disabled', async ({ page }) => {
   const consoleErrors = await collectConsoleErrors(page);
-  await gotoStudio(page);
+  await gotoStudio(page, STUDIO_ID);
+  await expect(page.locator('#modelPresetSelect')).toBeVisible();
 
   const price = page.locator('#pricePerK');
   const preset = page.locator('#modelPresetSelect');

@@ -708,10 +708,10 @@ export default function PromptStudioPage({ params }: { params: { id: string } })
           {/* Version Timeline */}
           <section className="md:col-span-3 rounded-lg border border-neutral-200/30 bg-white p-3 dark:border-neutral-700/40 dark:bg-neutral-900" data-testid="version-timeline">
             <div className="mb-2 flex items-center justify-between">
-              <h2 className="text-sm font-medium opacity-80">Versions</h2>
+              <h2 className="text-sm font-medium opacity-80" id="versions-heading">Versions</h2>
               <span className="text-xs opacity-60">{versions.length}</span>
             </div>
-            <ul className="space-y-1">
+            <ul className="space-y-1" role="listbox" aria-labelledby="versions-heading">
               {versions.map((v) => (
                 <li key={v.id}>
                   <button
@@ -723,6 +723,9 @@ export default function PromptStudioPage({ params }: { params: { id: string } })
                     onClick={() => setSelectedVersion(v.version)}
                     title={v.changelog || undefined}
                     data-testid={`version-item-${v.version}`}
+                    data-selected={selectedVersion === v.version}
+                    role="option"
+                    aria-selected={selectedVersion === v.version}
                   >
                     <div className="flex items-center justify-between">
                       <span className="font-medium">v{v.version}</span>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import type { AutoSaveStatus } from '@/lib/hooks/useAutosave';
 
 export interface AutosaveBadgeProps {
@@ -8,13 +8,31 @@ export interface AutosaveBadgeProps {
 
 /**
  * Presentational autosave status with a screen-reader live region.
- * Renders nothing when status is 'idle'.
+ * Renders nothing when status is 'idle' or when a 'saved' badge has expired.
  */
 export function AutosaveBadge({ status, ts }: AutosaveBadgeProps) {
+  const [savedVisible, setSavedVisible] = useState(false);
+
+  // Manage a local 5s visibility window for the 'Saved' badge, based on timestamp.
+  useEffect(() => {
+    if (status !== 'saved') {
+      setSavedVisible(false);
+      return;
+    }
+    setSavedVisible(true);
+    const now = Date.now();
+    const startTs = typeof ts === 'number' ? ts : now;
+    const remaining = Math.max(0, 5000 - (now - startTs));
+    const timer = window.setTimeout(() => setSavedVisible(false), remaining);
+    return () => window.clearTimeout(timer);
+  }, [status, ts]);
+
   const title = ts ? new Date(ts).toLocaleString() : undefined;
   const srText = status === 'saving' ? 'Autosaving' : status === 'saved' ? (ts ? `Saved at ${new Date(ts).toLocaleString()}` : 'Saved') : '';
 
-  if (status === 'idle') {
+  const showBadge = status === 'saving' || (status === 'saved' && savedVisible);
+
+  if (!showBadge) {
     return (
       <span aria-live="polite" className="sr-only" data-testid="autosave-live-region">{srText}</span>
     );

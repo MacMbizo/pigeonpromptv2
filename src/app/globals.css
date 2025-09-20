@@ -4,3 +4,20 @@
 
 :root { color-scheme: light dark; }
 body { @apply min-h-screen bg-white text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100; }
+
+/* Neutralize animations/transitions for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001s !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001s !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Test-only escape hatch to force-disable transitions/animations */
+/* Apply class="disable-transitions" on <html> or <body> in tests if needed */
+.disable-transitions *, .disable-transitions *::before, .disable-transitions *::after {
+  animation: none !important;
+  transition: none !important;
+}

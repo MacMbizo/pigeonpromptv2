@@ -2,6 +2,7 @@ import type { Page } from '@playwright/test';
 import { expect } from '@playwright/test';
 import type { APIRequestContext } from '@playwright/test'
 
+
 /**
  * Wait for either the Saved badge to appear or a persisted localStorage draft.
  * If expectedContent is provided, asserts that the persisted draft contains it; otherwise asserts non-empty content.
@@ -84,4 +85,18 @@ export async function cleanupUserTemplates(request: APIRequestContext, userId: s
     // eslint-disable-next-line no-console
     console.warn('cleanupUserTemplates warning:', e);
   }
+}
+
+
+export const APP_URL = process.env.APP_URL || 'http://localhost:3100'
+
+// Centralized deterministic Studio ID for all specs unless overridden in a specific test
+export const STUDIO_ID = process.env.E2E_STUDIO_ID || '10000000-0000-0000-0000-000000000001'
+
+// Compute the draft localStorage key consistently
+export const studioDraftKey = (studioId: string = STUDIO_ID) => `pigeon:studio:${studioId}:draft`
+
+// Common navigation helper
+export async function gotoStudio(page: Page, studioId: string = STUDIO_ID) {
+  await page.goto(`${APP_URL}/studio/${studioId}`)
 }
