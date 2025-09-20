@@ -74,3 +74,5 @@ debug/
 playwright-report/
 playwright-report-smoke/
 playwright-report-smoke-local/
+
+.gitignore
