@@ -12,7 +12,7 @@
     "test": "vitest --run",
     "test:unit": "vitest --run",
     "test:e2e:ci": "playwright test --reporter=line,junit",
-    "test:e2e:smoke:ci": "playwright test tests/e2e/smoke.spec.ts tests/e2e/templates.spec.ts tests/e2e/playground-smoke.spec.ts --reporter=line,junit --output=playwright-report-smoke"
+    "test:e2e:smoke:ci": "playwright test tests/e2e/smoke.spec.ts tests/e2e/playground-smoke.spec.ts --reporter=line,junit --output=playwright-report-smoke"
   },
   "dependencies": {
     "next": "14.2.5",
