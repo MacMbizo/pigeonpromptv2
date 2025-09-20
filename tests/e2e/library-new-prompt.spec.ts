@@ -167,8 +167,9 @@ test.describe('Library: New Prompt creation flow', () => {
     await expect(page.getByRole('heading', { name: 'Create New Prompt' })).toBeVisible();
 
     await page.getByLabel('Name').fill('Random Name');
-    await page.getByRole('button', { name: 'Create' }).click();
-
+    // Submit via form.requestSubmit to avoid actionability races when the button becomes disabled on mousedown
+    await page.locator('form').first().evaluate((el: HTMLFormElement) => el.requestSubmit());
+    
     // Generic error should be displayed
     await expect(page.getByText('Failed to create prompt')).toBeVisible();
     

@@ -1,5 +1,8 @@
 import Link from 'next/link';
 import { listSystemTemplates } from '@/lib/templates/system';
+import dynamic from 'next/dynamic';
+
+const UserTemplatesClient = dynamic(() => import('./UserTemplatesClient'), { ssr: false });
 
 export default async function TemplatesPage() {
   const items = listSystemTemplates();
@@ -51,6 +54,10 @@ export default async function TemplatesPage() {
           </div>
         ))}
       </section>
+
+      <hr className="my-8 border-neutral-200/60 dark:border-neutral-700/60" />
+
+      <UserTemplatesClient />
     </main>
   );
 }

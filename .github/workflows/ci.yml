@@ -81,7 +81,7 @@ jobs:
       # Playwright webServer will manage starting Next.js on port 3100 for E2E
       - name: Run Playwright E2E tests
         env:
-          APP_URL: http://localhost:3100
+          APP_URL: http://localhost:4100
         run: |
           npx playwright install --with-deps
           pnpm run test:e2e:ci
@@ -111,7 +111,7 @@ jobs:
       # Run only the fast smoke spec. Playwright webServer will manage Next.js on port 3100
       - name: Run Playwright E2E smoke tests
         env:
-          APP_URL: http://localhost:3100
+          APP_URL: http://localhost:4100
         run: |
           npx playwright install --with-deps
           pnpm run test:e2e:smoke:ci

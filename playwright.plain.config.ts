@@ -1,7 +1,11 @@
 import { defineConfig, devices } from '@playwright/test';
 
-// Plain config: does not start a webServer. Assumes the app is already running.
-// Enables video capture for demos.
+// Local E2E config (no webServer):
+// - Intended for running against an already-started dev server.
+// - Start the app in another terminal: `npm run dev` (defaults to http://localhost:3100)
+// - Then run: `npm run test:e2e:local` (this config)
+// - APP_URL can override the base URL if needed, otherwise defaults to 3100.
+// - Video enabled for easier debugging of local runs.
 
 const APP_URL = process.env.APP_URL || 'http://localhost:3100';
 

@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/29</span>
+                <span class='fraction'>0/34</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/29</span>
+                <span class='fraction'>0/34</span>
             </div>
         
             
@@ -98,7 +98,25 @@
 <a name='L33'></a><a href='#L33'>33</a>
 <a name='L34'></a><a href='#L34'>34</a>
 <a name='L35'></a><a href='#L35'>35</a>
-<a name='L36'></a><a href='#L36'>36</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L36'></a><a href='#L36'>36</a>
+<a name='L37'></a><a href='#L37'>37</a>
+<a name='L38'></a><a href='#L38'>38</a>
+<a name='L39'></a><a href='#L39'>39</a>
+<a name='L40'></a><a href='#L40'>40</a>
+<a name='L41'></a><a href='#L41'>41</a>
+<a name='L42'></a><a href='#L42'>42</a>
+<a name='L43'></a><a href='#L43'>43</a>
+<a name='L44'></a><a href='#L44'>44</a>
+<a name='L45'></a><a href='#L45'>45</a>
+<a name='L46'></a><a href='#L46'>46</a>
+<a name='L47'></a><a href='#L47'>47</a>
+<a name='L48'></a><a href='#L48'>48</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -108,6 +126,12 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -135,6 +159,12 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" >import { defineConfig } from '@playwright/test';<span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ></span></span></span>
 &nbsp;
+// CI/E2E config (starts its own webServer):
+// - Designed for CI and isolated local runs that shouldn't depend on a running dev server.
+// - Starts Next.js on port 4100 and sets APP_URL accordingly.
+// - Use `npx playwright test` or `npm run test:e2e` to run this config.
+// - To run against a locally started dev server on 3100, use playwright.plain.config.ts instead.
+&nbsp;
 // Ensure tests use the same base URL as the dev server started below
 <span class="cstat-no" title="statement not covered" >process.env.APP_URL = process.env.APP_URL || 'http://localhost:4100';</span>
 &nbsp;
@@ -146,8 +176,14 @@
 <span class="cstat-no" title="statement not covered" >    baseURL: process.env.APP_URL || 'http://localhost:4100',</span>
 <span class="cstat-no" title="statement not covered" >    trace: 'on-first-retry',</span>
 <span class="cstat-no" title="statement not covered" >  },</span>
-<span class="cstat-no" title="statement not covered" >  timeout: 30000,</span>
+<span class="cstat-no" title="statement not covered" >  timeout: 60000,</span>
 <span class="cstat-no" title="statement not covered" >  expect: { timeout: 5000 },</span>
+  // Run across all three browsers; individual specs may conditionally skip WebKit when necessary
+<span class="cstat-no" title="statement not covered" >  projects: [</span>
+<span class="cstat-no" title="statement not covered" >    { name: 'Chromium', use: { browserName: 'chromium' } },</span>
+<span class="cstat-no" title="statement not covered" >    { name: 'Firefox', use: { browserName: 'firefox' } },</span>
+<span class="cstat-no" title="statement not covered" >    { name: 'WebKit', use: { browserName: 'webkit' } },</span>
+<span class="cstat-no" title="statement not covered" >  ],</span>
 <span class="cstat-no" title="statement not covered" >  webServer: {</span>
     // Use a dedicated port to avoid collisions with a locally running dev instance
 <span class="cstat-no" title="statement not covered" >    command: 'npm run dev -- -p 4100',</span>
@@ -175,7 +211,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-09-18T22:12:25.779Z
+                at 2025-09-20T00:53:23.901Z
             </div>
         <script src="../prettify.js"></script>
         <script>

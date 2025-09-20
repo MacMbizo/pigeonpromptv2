@@ -37,8 +37,16 @@ export async function PUT(req: NextRequest, { params }: { params: { id: string }
       try {
         // We need to get the current template first to verify the If-Match condition
         const { getUserTemplates } = await import('@/lib/db');
-        const templates = await getUserTemplates(userId);
+        let templates = await getUserTemplates(userId);
         currentTemplate = templates.find((t: any) => t.id === params.id);
+
+        // In development, lib/db may return an empty list when no DB is configured.
+        // Fall back to the dev in-memory store before concluding Not Found.
+        if (!currentTemplate && process.env.NODE_ENV === 'development') {
+          const { devGetTemplates } = await import('@/lib/dev/templates-store');
+          const devTemplates = devGetTemplates(userId);
+          currentTemplate = devTemplates.find((t: any) => t.id === params.id);
+        }
       } catch (dbErr: any) {
         if (process.env.NODE_ENV === 'development') {
           const { devGetTemplates } = await import('@/lib/dev/templates-store');

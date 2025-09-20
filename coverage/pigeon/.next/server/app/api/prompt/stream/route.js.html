@@ -1,0 +1,370 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Code coverage report for pigeon/.next/server/app/api/prompt/stream/route.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../../../../base.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../../../../../../favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+    
+<body>
+<div class='wrapper'>
+    <div class='pad1'>
+        <h1><a href="../../../../../../../index.html">All files</a> / <a href="index.html">pigeon/.next/server/app/api/prompt/stream</a> route.js</h1>
+        <div class='clearfix'>
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">0% </span>
+                <span class="quiet">Statements</span>
+                <span class='fraction'>0/96</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">0% </span>
+                <span class="quiet">Branches</span>
+                <span class='fraction'>0/1</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">0% </span>
+                <span class="quiet">Functions</span>
+                <span class='fraction'>0/1</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">0% </span>
+                <span class="quiet">Lines</span>
+                <span class='fraction'>0/96</span>
+            </div>
+        
+            
+        </div>
+        <p class="quiet">
+            Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
+        </p>
+        <template id="filterTemplate">
+            <div class="quiet">
+                Filter:
+                <input type="search" id="fileSearch">
+            </div>
+        </template>
+    </div>
+    <div class='status-line low'></div>
+    <pre><table class="coverage">
+<tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
+<a name='L2'></a><a href='#L2'>2</a>
+<a name='L3'></a><a href='#L3'>3</a>
+<a name='L4'></a><a href='#L4'>4</a>
+<a name='L5'></a><a href='#L5'>5</a>
+<a name='L6'></a><a href='#L6'>6</a>
+<a name='L7'></a><a href='#L7'>7</a>
+<a name='L8'></a><a href='#L8'>8</a>
+<a name='L9'></a><a href='#L9'>9</a>
+<a name='L10'></a><a href='#L10'>10</a>
+<a name='L11'></a><a href='#L11'>11</a>
+<a name='L12'></a><a href='#L12'>12</a>
+<a name='L13'></a><a href='#L13'>13</a>
+<a name='L14'></a><a href='#L14'>14</a>
+<a name='L15'></a><a href='#L15'>15</a>
+<a name='L16'></a><a href='#L16'>16</a>
+<a name='L17'></a><a href='#L17'>17</a>
+<a name='L18'></a><a href='#L18'>18</a>
+<a name='L19'></a><a href='#L19'>19</a>
+<a name='L20'></a><a href='#L20'>20</a>
+<a name='L21'></a><a href='#L21'>21</a>
+<a name='L22'></a><a href='#L22'>22</a>
+<a name='L23'></a><a href='#L23'>23</a>
+<a name='L24'></a><a href='#L24'>24</a>
+<a name='L25'></a><a href='#L25'>25</a>
+<a name='L26'></a><a href='#L26'>26</a>
+<a name='L27'></a><a href='#L27'>27</a>
+<a name='L28'></a><a href='#L28'>28</a>
+<a name='L29'></a><a href='#L29'>29</a>
+<a name='L30'></a><a href='#L30'>30</a>
+<a name='L31'></a><a href='#L31'>31</a>
+<a name='L32'></a><a href='#L32'>32</a>
+<a name='L33'></a><a href='#L33'>33</a>
+<a name='L34'></a><a href='#L34'>34</a>
+<a name='L35'></a><a href='#L35'>35</a>
+<a name='L36'></a><a href='#L36'>36</a>
+<a name='L37'></a><a href='#L37'>37</a>
+<a name='L38'></a><a href='#L38'>38</a>
+<a name='L39'></a><a href='#L39'>39</a>
+<a name='L40'></a><a href='#L40'>40</a>
+<a name='L41'></a><a href='#L41'>41</a>
+<a name='L42'></a><a href='#L42'>42</a>
+<a name='L43'></a><a href='#L43'>43</a>
+<a name='L44'></a><a href='#L44'>44</a>
+<a name='L45'></a><a href='#L45'>45</a>
+<a name='L46'></a><a href='#L46'>46</a>
+<a name='L47'></a><a href='#L47'>47</a>
+<a name='L48'></a><a href='#L48'>48</a>
+<a name='L49'></a><a href='#L49'>49</a>
+<a name='L50'></a><a href='#L50'>50</a>
+<a name='L51'></a><a href='#L51'>51</a>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a>
+<a name='L54'></a><a href='#L54'>54</a>
+<a name='L55'></a><a href='#L55'>55</a>
+<a name='L56'></a><a href='#L56'>56</a>
+<a name='L57'></a><a href='#L57'>57</a>
+<a name='L58'></a><a href='#L58'>58</a>
+<a name='L59'></a><a href='#L59'>59</a>
+<a name='L60'></a><a href='#L60'>60</a>
+<a name='L61'></a><a href='#L61'>61</a>
+<a name='L62'></a><a href='#L62'>62</a>
+<a name='L63'></a><a href='#L63'>63</a>
+<a name='L64'></a><a href='#L64'>64</a>
+<a name='L65'></a><a href='#L65'>65</a>
+<a name='L66'></a><a href='#L66'>66</a>
+<a name='L67'></a><a href='#L67'>67</a>
+<a name='L68'></a><a href='#L68'>68</a>
+<a name='L69'></a><a href='#L69'>69</a>
+<a name='L70'></a><a href='#L70'>70</a>
+<a name='L71'></a><a href='#L71'>71</a>
+<a name='L72'></a><a href='#L72'>72</a>
+<a name='L73'></a><a href='#L73'>73</a>
+<a name='L74'></a><a href='#L74'>74</a>
+<a name='L75'></a><a href='#L75'>75</a>
+<a name='L76'></a><a href='#L76'>76</a>
+<a name='L77'></a><a href='#L77'>77</a>
+<a name='L78'></a><a href='#L78'>78</a>
+<a name='L79'></a><a href='#L79'>79</a>
+<a name='L80'></a><a href='#L80'>80</a>
+<a name='L81'></a><a href='#L81'>81</a>
+<a name='L82'></a><a href='#L82'>82</a>
+<a name='L83'></a><a href='#L83'>83</a>
+<a name='L84'></a><a href='#L84'>84</a>
+<a name='L85'></a><a href='#L85'>85</a>
+<a name='L86'></a><a href='#L86'>86</a>
+<a name='L87'></a><a href='#L87'>87</a>
+<a name='L88'></a><a href='#L88'>88</a>
+<a name='L89'></a><a href='#L89'>89</a>
+<a name='L90'></a><a href='#L90'>90</a>
+<a name='L91'></a><a href='#L91'>91</a>
+<a name='L92'></a><a href='#L92'>92</a>
+<a name='L93'></a><a href='#L93'>93</a>
+<a name='L94'></a><a href='#L94'>94</a>
+<a name='L95'></a><a href='#L95'>95</a>
+<a name='L96'></a><a href='#L96'>96</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >"use strict";</span></span></span>
+<span class="cstat-no" title="statement not covered" >/*</span>
+<span class="cstat-no" title="statement not covered" > * ATTENTION: An "eval-source-map" devtool has been used.</span>
+<span class="cstat-no" title="statement not covered" > * This devtool is neither made for production nor for readable output files.</span>
+<span class="cstat-no" title="statement not covered" > * It uses "eval()" calls to create a separate source file with attached SourceMaps in the browser devtools.</span>
+<span class="cstat-no" title="statement not covered" > * If you are trying to read the output file, select a different devtool (https://webpack.js.org/configuration/devtool/)</span>
+<span class="cstat-no" title="statement not covered" > * or disable the default devtool with "devtool: false".</span>
+<span class="cstat-no" title="statement not covered" > * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).</span>
+<span class="cstat-no" title="statement not covered" > */</span>
+<span class="cstat-no" title="statement not covered" >(() =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >var exports = {};</span>
+<span class="cstat-no" title="statement not covered" >exports.id = "app/api/prompt/stream/route";</span>
+<span class="cstat-no" title="statement not covered" >exports.ids = ["app/api/prompt/stream/route"];</span>
+<span class="cstat-no" title="statement not covered" >exports.modules = {</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >/***/ "next/dist/compiled/next-server/app-page.runtime.dev.js":</span>
+<span class="cstat-no" title="statement not covered" >/*!*************************************************************************!*\</span>
+<span class="cstat-no" title="statement not covered" >  !*** external "next/dist/compiled/next-server/app-page.runtime.dev.js" ***!</span>
+<span class="cstat-no" title="statement not covered" >  \*************************************************************************/</span>
+<span class="cstat-no" title="statement not covered" >/***/ ((module) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >module.exports = require("next/dist/compiled/next-server/app-page.runtime.dev.js");</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >/***/ }),</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >/***/ "next/dist/compiled/next-server/app-route.runtime.dev.js":</span>
+<span class="cstat-no" title="statement not covered" >/*!**************************************************************************!*\</span>
+<span class="cstat-no" title="statement not covered" >  !*** external "next/dist/compiled/next-server/app-route.runtime.dev.js" ***!</span>
+<span class="cstat-no" title="statement not covered" >  \**************************************************************************/</span>
+<span class="cstat-no" title="statement not covered" >/***/ ((module) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >module.exports = require("next/dist/compiled/next-server/app-route.runtime.dev.js");</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >/***/ }),</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >/***/ "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-app-loader.js?name=app%2Fapi%2Fprompt%2Fstream%2Froute&amp;page=%2Fapi%2Fprompt%2Fstream%2Froute&amp;appPaths=&amp;pagePath=private-next-app-dir%2Fapi%2Fprompt%2Fstream%2Froute.ts&amp;appDir=C%3A%5Cpigeon%5Csrc%5Capp&amp;pageExtensions=tsx&amp;pageExtensions=ts&amp;pageExtensions=jsx&amp;pageExtensions=js&amp;rootDir=C%3A%5Cpigeon&amp;isDev=true&amp;tsconfigPath=tsconfig.json&amp;basePath=&amp;assetPrefix=&amp;nextConfigOutput=&amp;preferredRegion=&amp;middlewareConfig=e30%3D!":</span>
+<span class="cstat-no" title="statement not covered" >/*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\</span>
+<span class="cstat-no" title="statement not covered" >  !*** ./node_modules/next/dist/build/webpack/loaders/next-app-loader.js?name=app%2Fapi%2Fprompt%2Fstream%2Froute&amp;page=%2Fapi%2Fprompt%2Fstream%2Froute&amp;appPaths=&amp;pagePath=private-next-app-dir%2Fapi%2Fprompt%2Fstream%2Froute.ts&amp;appDir=C%3A%5Cpigeon%5Csrc%5Capp&amp;pageExtensions=tsx&amp;pageExtensions=ts&amp;pageExtensions=jsx&amp;pageExtensions=js&amp;rootDir=C%3A%5Cpigeon&amp;isDev=true&amp;tsconfigPath=tsconfig.json&amp;basePath=&amp;assetPrefix=&amp;nextConfigOutput=&amp;preferredRegion=&amp;middlewareConfig=e30%3D! ***!</span>
+<span class="cstat-no" title="statement not covered" >  \*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/</span>
+<span class="cstat-no" title="statement not covered" >/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   originalPathname: () =&gt; (/* binding */ originalPathname),\n/* harmony export */   patchFetch: () =&gt; (/* binding */ patchFetch),\n/* harmony export */   requestAsyncStorage: () =&gt; (/* binding */ requestAsyncStorage),\n/* harmony export */   routeModule: () =&gt; (/* binding */ routeModule),\n/* harmony export */   serverHooks: () =&gt; (/* binding */ serverHooks),\n/* harmony export */   staticGenerationAsyncStorage: () =&gt; (/* binding */ staticGenerationAsyncStorage)\n/* harmony export */ });\n/* harmony import */ var next_dist_server_future_route_modules_app_route_module_compiled__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! next/dist/server/future/route-modules/app-route/module.compiled */ \"(rsc)/./node_modules/next/dist/server/future/route-modules/app-route/module.compiled.js\");\n/* harmony import */ var next_dist_server_future_route_modules_app_route_module_compiled__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(next_dist_server_future_route_modules_app_route_module_compiled__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var next_dist_server_future_route_kind__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/dist/server/future/route-kind */ \"(rsc)/./node_modules/next/dist/server/future/route-kind.js\");\n/* harmony import */ var next_dist_server_lib_patch_fetch__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/dist/server/lib/patch-fetch */ \"(rsc)/./node_modules/next/dist/server/lib/patch-fetch.js\");\n/* harmony import */ var next_dist_server_lib_patch_fetch__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_dist_server_lib_patch_fetch__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var C_pigeon_src_app_api_prompt_stream_route_ts__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./src/app/api/prompt/stream/route.ts */ \"(rsc)/./src/app/api/prompt/stream/route.ts\");\n\n\n\n\n// We inject the nextConfigOutput here so that we can use them in the route\n// module.\nconst nextConfigOutput = \"\"\nconst routeModule = new next_dist_server_future_route_modules_app_route_module_compiled__WEBPACK_IMPORTED_MODULE_0__.AppRouteRouteModule({\n    definition: {\n        kind: next_dist_server_future_route_kind__WEBPACK_IMPORTED_MODULE_1__.RouteKind.APP_ROUTE,\n        page: \"/api/prompt/stream/route\",\n        pathname: \"/api/prompt/stream\",\n        filename: \"route\",\n        bundlePath: \"app/api/prompt/stream/route\"\n    },\n    resolvedPagePath: \"C:\\\\pigeon\\\\src\\\\app\\\\api\\\\prompt\\\\stream\\\\route.ts\",\n    nextConfigOutput,\n    userland: C_pigeon_src_app_api_prompt_stream_route_ts__WEBPACK_IMPORTED_MODULE_3__\n});\n// Pull out the exports that we need to expose from the module. This should\n// be eliminated when we've moved the other routes to the new format. These\n// are used to hook into the route.\nconst { requestAsyncStorage, staticGenerationAsyncStorage, serverHooks } = routeModule;\nconst originalPathname = \"/api/prompt/stream/route\";\nfunction patchFetch() {\n    return (0,next_dist_server_lib_patch_fetch__WEBPACK_IMPORTED_MODULE_2__.patchFetch)({\n        serverHooks,\n        staticGenerationAsyncStorage\n    });\n}\n\n\n//# sourceMappingURL=app-route.js.map//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiKHJzYykvLi9ub2RlX21vZHVsZXMvbmV4dC9kaXN0L2J1aWxkL3dlYnBhY2svbG9hZGVycy9uZXh0LWFwcC1sb2FkZXIuanM/bmFtZT1hcHAlMkZhcGklMkZwcm9tcHQlMkZzdHJlYW0lMkZyb3V0ZSZwYWdlPSUyRmFwaSUyRnByb21wdCUyRnN0cmVhbSUyRnJvdXRlJmFwcFBhdGhzPSZwYWdlUGF0aD1wcml2YXRlLW5leHQtYXBwLWRpciUyRmFwaSUyRnByb21wdCUyRnN0cmVhbSUyRnJvdXRlLnRzJmFwcERpcj1DJTNBJTVDcGlnZW9uJTVDc3JjJTVDYXBwJnBhZ2VFeHRlbnNpb25zPXRzeCZwYWdlRXh0ZW5zaW9ucz10cyZwYWdlRXh0ZW5zaW9ucz1qc3gmcGFnZUV4dGVuc2lvbnM9anMmcm9vdERpcj1DJTNBJTVDcGlnZW9uJmlzRGV2PXRydWUmdHNjb25maWdQYXRoPXRzY29uZmlnLmpzb24mYmFzZVBhdGg9JmFzc2V0UHJlZml4PSZuZXh0Q29uZmlnT3V0cHV0PSZwcmVmZXJyZWRSZWdpb249Jm1pZGRsZXdhcmVDb25maWc9ZTMwJTNEISIsIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7Ozs7Ozs7QUFBc0c7QUFDdkM7QUFDYztBQUNHO0FBQ2hGO0FBQ0E7QUFDQTtBQUNBLHdCQUF3QixnSEFBbUI7QUFDM0M7QUFDQSxjQUFjLHlFQUFTO0FBQ3ZCO0FBQ0E7QUFDQTtBQUNBO0FBQ0EsS0FBSztBQUNMO0FBQ0E7QUFDQSxZQUFZO0FBQ1osQ0FBQztBQUNEO0FBQ0E7QUFDQTtBQUNBLFFBQVEsaUVBQWlFO0FBQ3pFO0FBQ0E7QUFDQSxXQUFXLDRFQUFXO0FBQ3RCO0FBQ0E7QUFDQSxLQUFLO0FBQ0w7QUFDdUg7O0FBRXZIIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vcGlnZW9uLz81MGUxIl0sInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IEFwcFJvdXRlUm91dGVNb2R1bGUgfSBmcm9tIFwibmV4dC9kaXN0L3NlcnZlci9mdXR1cmUvcm91dGUtbW9kdWxlcy9hcHAtcm91dGUvbW9kdWxlLmNvbXBpbGVkXCI7XG5pbXBvcnQgeyBSb3V0ZUtpbmQgfSBmcm9tIFwibmV4dC9kaXN0L3NlcnZlci9mdXR1cmUvcm91dGUta2luZFwiO1xuaW1wb3J0IHsgcGF0Y2hGZXRjaCBhcyBfcGF0Y2hGZXRjaCB9IGZyb20gXCJuZXh0L2Rpc3Qvc2VydmVyL2xpYi9wYXRjaC1mZXRjaFwiO1xuaW1wb3J0ICogYXMgdXNlcmxhbmQgZnJvbSBcIkM6XFxcXHBpZ2VvblxcXFxzcmNcXFxcYXBwXFxcXGFwaVxcXFxwcm9tcHRcXFxcc3RyZWFtXFxcXHJvdXRlLnRzXCI7XG4vLyBXZSBpbmplY3QgdGhlIG5leHRDb25maWdPdXRwdXQgaGVyZSBzbyB0aGF0IHdlIGNhbiB1c2UgdGhlbSBpbiB0aGUgcm91dGVcbi8vIG1vZHVsZS5cbmNvbnN0IG5leHRDb25maWdPdXRwdXQgPSBcIlwiXG5jb25zdCByb3V0ZU1vZHVsZSA9IG5ldyBBcHBSb3V0ZVJvdXRlTW9kdWxlKHtcbiAgICBkZWZpbml0aW9uOiB7XG4gICAgICAgIGtpbmQ6IFJvdXRlS2luZC5BUFBfUk9VVEUsXG4gICAgICAgIHBhZ2U6IFwiL2FwaS9wcm9tcHQvc3RyZWFtL3JvdXRlXCIsXG4gICAgICAgIHBhdGhuYW1lOiBcIi9hcGkvcHJvbXB0L3N0cmVhbVwiLFxuICAgICAgICBmaWxlbmFtZTogXCJyb3V0ZVwiLFxuICAgICAgICBidW5kbGVQYXRoOiBcImFwcC9hcGkvcHJvbXB0L3N0cmVhbS9yb3V0ZVwiXG4gICAgfSxcbiAgICByZXNvbHZlZFBhZ2VQYXRoOiBcIkM6XFxcXHBpZ2VvblxcXFxzcmNcXFxcYXBwXFxcXGFwaVxcXFxwcm9tcHRcXFxcc3RyZWFtXFxcXHJvdXRlLnRzXCIsXG4gICAgbmV4dENvbmZpZ091dHB1dCxcbiAgICB1c2VybGFuZFxufSk7XG4vLyBQdWxsIG91dCB0aGUgZXhwb3J0cyB0aGF0IHdlIG5lZWQgdG8gZXhwb3NlIGZyb20gdGhlIG1vZHVsZS4gVGhpcyBzaG91bGRcbi8vIGJlIGVsaW1pbmF0ZWQgd2hlbiB3ZSd2ZSBtb3ZlZCB0aGUgb3RoZXIgcm91dGVzIHRvIHRoZSBuZXcgZm9ybWF0LiBUaGVzZVxuLy8gYXJlIHVzZWQgdG8gaG9vayBpbnRvIHRoZSByb3V0ZS5cbmNvbnN0IHsgcmVxdWVzdEFzeW5jU3RvcmFnZSwgc3RhdGljR2VuZXJhdGlvbkFzeW5jU3RvcmFnZSwgc2VydmVySG9va3MgfSA9IHJvdXRlTW9kdWxlO1xuY29uc3Qgb3JpZ2luYWxQYXRobmFtZSA9IFwiL2FwaS9wcm9tcHQvc3RyZWFtL3JvdXRlXCI7XG5mdW5jdGlvbiBwYXRjaEZldGNoKCkge1xuICAgIHJldHVybiBfcGF0Y2hGZXRjaCh7XG4gICAgICAgIHNlcnZlckhvb2tzLFxuICAgICAgICBzdGF0aWNHZW5lcmF0aW9uQXN5bmNTdG9yYWdlXG4gICAgfSk7XG59XG5leHBvcnQgeyByb3V0ZU1vZHVsZSwgcmVxdWVzdEFzeW5jU3RvcmFnZSwgc3RhdGljR2VuZXJhdGlvbkFzeW5jU3RvcmFnZSwgc2VydmVySG9va3MsIG9yaWdpbmFsUGF0aG5hbWUsIHBhdGNoRmV0Y2gsICB9O1xuXG4vLyMgc291cmNlTWFwcGluZ1VSTD1hcHAtcm91dGUuanMubWFwIl0sIm5hbWVzIjpbXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///(rsc)/./node_modules/next/dist/build/webpack/loaders/next-app-loader.js?name=app%2Fapi%2Fprompt%2Fstream%2Froute&amp;page=%2Fapi%2Fprompt%2Fstream%2Froute&amp;appPaths=&amp;pagePath=private-next-app-dir%2Fapi%2Fprompt%2Fstream%2Froute.ts&amp;appDir=C%3A%5Cpigeon%5Csrc%5Capp&amp;pageExtensions=tsx&amp;pageExtensions=ts&amp;pageExtensions=jsx&amp;pageExtensions=js&amp;rootDir=C%3A%5Cpigeon&amp;isDev=true&amp;tsconfigPath=tsconfig.json&amp;basePath=&amp;assetPrefix=&amp;nextConfigOutput=&amp;preferredRegion=&amp;middlewareConfig=e30%3D!\n");</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >/***/ }),</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >/***/ "(rsc)/./src/app/api/prompt/stream/route.ts":</span>
+<span class="cstat-no" title="statement not covered" >/*!********************************************!*\</span>
+<span class="cstat-no" title="statement not covered" >  !*** ./src/app/api/prompt/stream/route.ts ***!</span>
+<span class="cstat-no" title="statement not covered" >  \********************************************/</span>
+<span class="cstat-no" title="statement not covered" >/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   GET: () =&gt; (/* binding */ GET)\n/* harmony export */ });\n/* harmony import */ var _lib_llm__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/lib/llm */ \"(rsc)/./src/lib/llm/index.ts\");\n/* harmony import */ var _lib_telemetry__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/lib/telemetry */ \"(rsc)/./src/lib/telemetry.ts\");\n\n\n// SSE stream endpoint\n// GET /api/prompt/stream?model=...&amp;temperature=...&amp;prompt=...&amp;context=...\nasync function GET(req) {\n    const { searchParams } = new URL(req.url);\n    const model = searchParams.get(\"model\") || \"gpt-4o-mini\";\n    const temperature = parseFloat(searchParams.get(\"temperature\") || \"0.7\");\n    const prompt = searchParams.get(\"prompt\") || \"\";\n    const context = searchParams.get(\"context\") || \"\";\n    if (!prompt.trim()) {\n        (0,_lib_telemetry__WEBPACK_IMPORTED_MODULE_1__.logRunTelemetry)({\n            kind: \"stream\",\n            model,\n            ok: false,\n            status: 400,\n            elapsedMs: 0,\n            timestamp: new Date().toISOString(),\n            promptChars: prompt.length,\n            contextChars: context.length\n        });\n        return new Response(\"Prompt is required\", {\n            status: 400\n        });\n    }\n    const sse = new ReadableStream({\n        async start (controller) {\n            const started = Date.now();\n            let tokensIn = undefined;\n            const encoder = new TextEncoder();\n            const enqueue = (obj)=&gt;controller.enqueue(encoder.encode(`data: ${JSON.stringify(obj)}\\n\\n`));\n            try {\n                for await (const chunk of (0,_lib_llm__WEBPACK_IMPORTED_MODULE_0__.stream)({\n                    model,\n                    temperature,\n                    prompt,\n                    context\n                })){\n                    if (!tokensIn &amp;&amp; chunk.type === \"start\" &amp;&amp; typeof chunk.tokensIn === \"number\") {\n                        tokensIn = chunk.tokensIn;\n                    }\n                    enqueue(chunk);\n                }\n                controller.close();\n                const elapsedMs = Date.now() - started;\n                (0,_lib_telemetry__WEBPACK_IMPORTED_MODULE_1__.logRunTelemetry)({\n                    kind: \"stream\",\n                    model,\n                    tokensIn,\n                    ok: true,\n                    status: 200,\n                    elapsedMs,\n                    timestamp: new Date().toISOString(),\n                    promptChars: prompt.length,\n                    contextChars: context.length\n                });\n            } catch (err) {\n                enqueue({\n                    type: \"error\",\n                    message: err?.message || \"stream error\"\n                });\n                try {\n                    controller.close();\n                } catch (e) {\n                    void e;\n                }\n                const elapsedMs = Date.now() - started;\n                (0,_lib_telemetry__WEBPACK_IMPORTED_MODULE_1__.logRunTelemetry)({\n                    kind: \"stream\",\n                    model,\n                    tokensIn,\n                    ok: false,\n                    status: 500,\n                    elapsedMs,\n                    timestamp: new Date().toISOString(),\n                    promptChars: prompt.length,\n                    contextChars: context.length\n                });\n            }\n        }\n    });\n    return new Response(sse, {\n        headers: {\n            \"Content-Type\": \"text/event-stream; charset=utf-8\",\n            \"Cache-Control\": \"no-cache, no-transform\",\n            Connection: \"keep-alive\",\n            \"X-Accel-Buffering\": \"no\"\n        },\n        status: 200\n    });\n}\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiKHJzYykvLi9zcmMvYXBwL2FwaS9wcm9tcHQvc3RyZWFtL3JvdXRlLnRzIiwibWFwcGluZ3MiOiI7Ozs7OztBQUNnRDtBQUNFO0FBRWxELHNCQUFzQjtBQUN0QiwwRUFBMEU7QUFFbkUsZUFBZUcsSUFBSUMsR0FBZ0I7SUFDeEMsTUFBTSxFQUFFQyxZQUFZLEVBQUUsR0FBRyxJQUFJQyxJQUFJRixJQUFJRyxHQUFHO0lBQ3hDLE1BQU1DLFFBQVFILGFBQWFJLEdBQUcsQ0FBQyxZQUFZO0lBQzNDLE1BQU1DLGNBQWNDLFdBQVdOLGFBQWFJLEdBQUcsQ0FBQyxrQkFBa0I7SUFDbEUsTUFBTUcsU0FBU1AsYUFBYUksR0FBRyxDQUFDLGFBQWE7SUFDN0MsTUFBTUksVUFBVVIsYUFBYUksR0FBRyxDQUFDLGNBQWM7SUFFL0MsSUFBSSxDQUFDRyxPQUFPRSxJQUFJLElBQUk7UUFDbEJaLCtEQUFlQSxDQUFDO1lBQUVhLE1BQU07WUFBVVA7WUFBT1EsSUFBSTtZQUFPQyxRQUFRO1lBQUtDLFdBQVc7WUFBR0MsV0FBVyxJQUFJQyxPQUFPQyxXQUFXO1lBQUlDLGFBQWFWLE9BQU9XLE1BQU07WUFBRUMsY0FBY1gsUUFBUVUsTUFBTTtRQUFDO1FBQzdLLE9BQU8sSUFBSUUsU0FBUyxzQkFBc0I7WUFBRVIsUUFBUTtRQUFJO0lBQzFEO0lBRUEsTUFBTVMsTUFBTSxJQUFJQyxlQUFvQjtRQUNsQyxNQUFNQyxPQUFNQyxVQUFVO1lBQ3BCLE1BQU1DLFVBQVVWLEtBQUtXLEdBQUc7WUFDeEIsSUFBSUMsV0FBK0JDO1lBQ25DLE1BQU1DLFVBQVUsSUFBSUM7WUFDcEIsTUFBTUMsVUFBVSxDQUFDQyxNQUFhUixXQUFXTyxPQUFPLENBQUNGLFFBQVFJLE1BQU0sQ0FBQyxDQUFDLE1BQU0sRUFBRUMsS0FBS0MsU0FBUyxDQUFDSCxLQUFLLElBQUksQ0FBQztZQUVsRyxJQUFJO2dCQUNGLFdBQVcsTUFBTUksU0FBU3hDLGdEQUFTQSxDQUFDO29CQUFFTztvQkFBT0U7b0JBQWFFO29CQUFRQztnQkFBUSxHQUFJO29CQUM1RSxJQUFJLENBQUNtQixZQUFZUyxNQUFNQyxJQUFJLEtBQUssV0FBVyxPQUFPRCxNQUFNVCxRQUFRLEtBQUssVUFBVTt3QkFDN0VBLFdBQVdTLE1BQU1ULFFBQVE7b0JBQzNCO29CQUNBSSxRQUFRSztnQkFDVjtnQkFDQVosV0FBV2MsS0FBSztnQkFDaEIsTUFBTXpCLFlBQVlFLEtBQUtXLEdBQUcsS0FBS0Q7Z0JBQy9CNUIsK0RBQWVBLENBQUM7b0JBQUVhLE1BQU07b0JBQVVQO29CQUFPd0I7b0JBQVVoQixJQUFJO29CQUFNQyxRQUFRO29CQUFLQztvQkFBV0MsV0FBVyxJQUFJQyxPQUFPQyxXQUFXO29CQUFJQyxhQUFhVixPQUFPVyxNQUFNO29CQUFFQyxjQUFjWCxRQUFRVSxNQUFNO2dCQUFDO1lBQ3JMLEVBQUUsT0FBT3FCLEtBQVU7Z0JBQ2pCUixRQUFRO29CQUFFTSxNQUFNO29CQUFTRyxTQUFTRCxLQUFLQyxXQUFXO2dCQUFlO2dCQUNqRSxJQUFJO29CQUFFaEIsV0FBV2MsS0FBSztnQkFBSSxFQUFFLE9BQU9HLEdBQUc7b0JBQUUsS0FBS0E7Z0JBQUc7Z0JBQ2hELE1BQU01QixZQUFZRSxLQUFLVyxHQUFHLEtBQUtEO2dCQUMvQjVCLCtEQUFlQSxDQUFDO29CQUFFYSxNQUFNO29CQUFVUDtvQkFBT3dCO29CQUFVaEIsSUFBSTtvQkFBT0MsUUFBUTtvQkFBS0M7b0JBQVdDLFdBQVcsSUFBSUMsT0FBT0MsV0FBVztvQkFBSUMsYUFBYVYsT0FBT1csTUFBTTtvQkFBRUMsY0FBY1gsUUFBUVUsTUFBTTtnQkFBQztZQUN0TDtRQUNGO0lBQ0Y7SUFFQSxPQUFPLElBQUlFLFNBQVNDLEtBQUs7UUFDdkJxQixTQUFTO1lBQ1AsZ0JBQWdCO1lBQ2hCLGlCQUFpQjtZQUNqQkMsWUFBWTtZQUNaLHFCQUFxQjtRQUN2QjtRQUNBL0IsUUFBUTtJQUNWO0FBQ0YiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly9waWdlb24vLi9zcmMvYXBwL2FwaS9wcm9tcHQvc3RyZWFtL3JvdXRlLnRzPzYyZTciXSwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgTmV4dFJlcXVlc3QgfSBmcm9tIFwibmV4dC9zZXJ2ZXJcIjtcbmltcG9ydCB7IHN0cmVhbSBhcyBzdHJlYW1MTE0gfSBmcm9tIFwiQC9saWIvbGxtXCI7XG5pbXBvcnQgeyBsb2dSdW5UZWxlbWV0cnkgfSBmcm9tIFwiQC9saWIvdGVsZW1ldHJ5XCI7XG5cbi8vIFNTRSBzdHJlYW0gZW5kcG9pbnRcbi8vIEdFVCAvYXBpL3Byb21wdC9zdHJlYW0/bW9kZWw9Li4uJnRlbXBlcmF0dXJlPS4uLiZwcm9tcHQ9Li4uJmNvbnRleHQ9Li4uXG5cbmV4cG9ydCBhc3luYyBmdW5jdGlvbiBHRVQocmVxOiBOZXh0UmVxdWVzdCkge1xuICBjb25zdCB7IHNlYXJjaFBhcmFtcyB9ID0gbmV3IFVSTChyZXEudXJsKTtcbiAgY29uc3QgbW9kZWwgPSBzZWFyY2hQYXJhbXMuZ2V0KFwibW9kZWxcIikgfHwgXCJncHQtNG8tbWluaVwiO1xuICBjb25zdCB0ZW1wZXJhdHVyZSA9IHBhcnNlRmxvYXQoc2VhcmNoUGFyYW1zLmdldChcInRlbXBlcmF0dXJlXCIpIHx8IFwiMC43XCIpO1xuICBjb25zdCBwcm9tcHQgPSBzZWFyY2hQYXJhbXMuZ2V0KFwicHJvbXB0XCIpIHx8IFwiXCI7XG4gIGNvbnN0IGNvbnRleHQgPSBzZWFyY2hQYXJhbXMuZ2V0KFwiY29udGV4dFwiKSB8fCBcIlwiO1xuXG4gIGlmICghcHJvbXB0LnRyaW0oKSkge1xuICAgIGxvZ1J1blRlbGVtZXRyeSh7IGtpbmQ6IFwic3RyZWFtXCIsIG1vZGVsLCBvazogZmFsc2UsIHN0YXR1czogNDAwLCBlbGFwc2VkTXM6IDAsIHRpbWVzdGFtcDogbmV3IERhdGUoKS50b0lTT1N0cmluZygpLCBwcm9tcHRDaGFyczogcHJvbXB0Lmxlbmd0aCwgY29udGV4dENoYXJzOiBjb250ZXh0Lmxlbmd0aCB9KTtcbiAgICByZXR1cm4gbmV3IFJlc3BvbnNlKFwiUHJvbXB0IGlzIHJlcXVpcmVkXCIsIHsgc3RhdHVzOiA0MDAgfSk7XG4gIH1cblxuICBjb25zdCBzc2UgPSBuZXcgUmVhZGFibGVTdHJlYW08YW55Pih7XG4gICAgYXN5bmMgc3RhcnQoY29udHJvbGxlcikge1xuICAgICAgY29uc3Qgc3RhcnRlZCA9IERhdGUubm93KCk7XG4gICAgICBsZXQgdG9rZW5zSW46IG51bWJlciB8IHVuZGVmaW5lZCA9IHVuZGVmaW5lZDtcbiAgICAgIGNvbnN0IGVuY29kZXIgPSBuZXcgVGV4dEVuY29kZXIoKTtcbiAgICAgIGNvbnN0IGVucXVldWUgPSAob2JqOiBhbnkpID0+IGNvbnRyb2xsZXIuZW5xdWV1ZShlbmNvZGVyLmVuY29kZShgZGF0YTogJHtKU09OLnN0cmluZ2lmeShvYmopfVxcblxcbmApKTtcblxuICAgICAgdHJ5IHtcbiAgICAgICAgZm9yIGF3YWl0IChjb25zdCBjaHVuayBvZiBzdHJlYW1MTE0oeyBtb2RlbCwgdGVtcGVyYXR1cmUsIHByb21wdCwgY29udGV4dCB9KSkge1xuICAgICAgICAgIGlmICghdG9rZW5zSW4gJiYgY2h1bmsudHlwZSA9PT0gXCJzdGFydFwiICYmIHR5cGVvZiBjaHVuay50b2tlbnNJbiA9PT0gXCJudW1iZXJcIikge1xuICAgICAgICAgICAgdG9rZW5zSW4gPSBjaHVuay50b2tlbnNJbjtcbiAgICAgICAgICB9XG4gICAgICAgICAgZW5xdWV1ZShjaHVuayk7XG4gICAgICAgIH1cbiAgICAgICAgY29udHJvbGxlci5jbG9zZSgpO1xuICAgICAgICBjb25zdCBlbGFwc2VkTXMgPSBEYXRlLm5vdygpIC0gc3RhcnRlZDtcbiAgICAgICAgbG9nUnVuVGVsZW1ldHJ5KHsga2luZDogXCJzdHJlYW1cIiwgbW9kZWwsIHRva2Vuc0luLCBvazogdHJ1ZSwgc3RhdHVzOiAyMDAsIGVsYXBzZWRNcywgdGltZXN0YW1wOiBuZXcgRGF0ZSgpLnRvSVNPU3RyaW5nKCksIHByb21wdENoYXJzOiBwcm9tcHQubGVuZ3RoLCBjb250ZXh0Q2hhcnM6IGNvbnRleHQubGVuZ3RoIH0pO1xuICAgICAgfSBjYXRjaCAoZXJyOiBhbnkpIHtcbiAgICAgICAgZW5xdWV1ZSh7IHR5cGU6IFwiZXJyb3JcIiwgbWVzc2FnZTogZXJyPy5tZXNzYWdlIHx8IFwic3RyZWFtIGVycm9yXCIgfSk7XG4gICAgICAgIHRyeSB7IGNvbnRyb2xsZXIuY2xvc2UoKTsgfSBjYXRjaCAoZSkgeyB2b2lkIGU7IH1cbiAgICAgICAgY29uc3QgZWxhcHNlZE1zID0gRGF0ZS5ub3coKSAtIHN0YXJ0ZWQ7XG4gICAgICAgIGxvZ1J1blRlbGVtZXRyeSh7IGtpbmQ6IFwic3RyZWFtXCIsIG1vZGVsLCB0b2tlbnNJbiwgb2s6IGZhbHNlLCBzdGF0dXM6IDUwMCwgZWxhcHNlZE1zLCB0aW1lc3RhbXA6IG5ldyBEYXRlKCkudG9JU09TdHJpbmcoKSwgcHJvbXB0Q2hhcnM6IHByb21wdC5sZW5ndGgsIGNvbnRleHRDaGFyczogY29udGV4dC5sZW5ndGggfSk7XG4gICAgICB9XG4gICAgfSxcbiAgfSk7XG5cbiAgcmV0dXJuIG5ldyBSZXNwb25zZShzc2UsIHtcbiAgICBoZWFkZXJzOiB7XG4gICAgICBcIkNvbnRlbnQtVHlwZVwiOiBcInRleHQvZXZlbnQtc3RyZWFtOyBjaGFyc2V0PXV0Zi04XCIsXG4gICAgICBcIkNhY2hlLUNvbnRyb2xcIjogXCJuby1jYWNoZSwgbm8tdHJhbnNmb3JtXCIsXG4gICAgICBDb25uZWN0aW9uOiBcImtlZXAtYWxpdmVcIixcbiAgICAgIFwiWC1BY2NlbC1CdWZmZXJpbmdcIjogXCJub1wiLFxuICAgIH0sXG4gICAgc3RhdHVzOiAyMDAsXG4gIH0pO1xufSJdLCJuYW1lcyI6WyJzdHJlYW0iLCJzdHJlYW1MTE0iLCJsb2dSdW5UZWxlbWV0cnkiLCJHRVQiLCJyZXEiLCJzZWFyY2hQYXJhbXMiLCJVUkwiLCJ1cmwiLCJtb2RlbCIsImdldCIsInRlbXBlcmF0dXJlIiwicGFyc2VGbG9hdCIsInByb21wdCIsImNvbnRleHQiLCJ0cmltIiwia2luZCIsIm9rIiwic3RhdHVzIiwiZWxhcHNlZE1zIiwidGltZXN0YW1wIiwiRGF0ZSIsInRvSVNPU3RyaW5nIiwicHJvbXB0Q2hhcnMiLCJsZW5ndGgiLCJjb250ZXh0Q2hhcnMiLCJSZXNwb25zZSIsInNzZSIsIlJlYWRhYmxlU3RyZWFtIiwic3RhcnQiLCJjb250cm9sbGVyIiwic3RhcnRlZCIsIm5vdyIsInRva2Vuc0luIiwidW5kZWZpbmVkIiwiZW5jb2RlciIsIlRleHRFbmNvZGVyIiwiZW5xdWV1ZSIsIm9iaiIsImVuY29kZSIsIkpTT04iLCJzdHJpbmdpZnkiLCJjaHVuayIsInR5cGUiLCJjbG9zZSIsImVyciIsIm1lc3NhZ2UiLCJlIiwiaGVhZGVycyIsIkNvbm5lY3Rpb24iXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///(rsc)/./src/app/api/prompt/stream/route.ts\n");</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >/***/ }),</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >/***/ "(rsc)/./src/lib/llm/index.ts":</span>
+<span class="cstat-no" title="statement not covered" >/*!******************************!*\</span>
+<span class="cstat-no" title="statement not covered" >  !*** ./src/lib/llm/index.ts ***!</span>
+<span class="cstat-no" title="statement not covered" >  \******************************/</span>
+<span class="cstat-no" title="statement not covered" >/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   generate: () =&gt; (/* binding */ generate),\n/* harmony export */   getPricing: () =&gt; (/* binding */ getPricing),\n/* harmony export */   stream: () =&gt; (/* binding */ stream)\n/* harmony export */ });\n/* harmony import */ var _lib_token_estimator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/lib/token-estimator */ \"(rsc)/./src/lib/token-estimator.ts\");\n// Provider-agnostic LLM service scaffold\n// - Defines ModelAdapter interface\n// - Provides DevAdapter (deterministic, offline)\n// - Central generate() and stream() helpers routing by model prefix\n// --- Utilities ---\n\nfunction pickAdapter(model) {\n    // Future: route by provider prefix (openai:, claude:, gemini:, etc.)\n    // Default to dev adapter for now\n    void model;\n    return DevAdapter;\n}\n// Public API\nasync function generate(params) {\n    const adapter = pickAdapter(params.model);\n    // eslint-disable-next-line no-unused-expressions\n    void params;\n    return adapter.generate(params);\n}\nfunction stream(params) {\n    const adapter = pickAdapter(params.model);\n    // eslint-disable-next-line no-unused-expressions\n    void params;\n    return adapter.stream(params);\n}\nfunction getPricing(model) {\n    const adapter = pickAdapter(model);\n    return {\n        pricePerKIn: typeof adapter.pricePerKIn === \"number\" ? adapter.pricePerKIn : null,\n        pricePerKOut: typeof adapter.pricePerKOut === \"number\" ? adapter.pricePerKOut : null\n    };\n}\n// --- Dev Adapter (deterministic, offline) ---\nconst DevAdapter = {\n    pricePerKIn: 0,\n    pricePerKOut: 0,\n    supportsStreaming: true,\n    async generate ({ model, prompt, context = \"\", temperature = 0.7 }) {\n        const combined = prompt + (context ? `\\n\\n[context]\\n${context}` : \"\");\n        const tokensIn = (0,_lib_token_estimator__WEBPACK_IMPORTED_MODULE_0__.estimateTokens)(combined);\n        const prefix = model.includes(\"claude\") ? \"(Claude)\" : model.includes(\"gpt\") ? \"(OpenAI)\" : \"(LLM)\";\n        const hash = (prompt.length + context.length + Math.round((isFinite(temperature) ? temperature : 0.7) * 10)) % 97;\n        const lines = [\n            `- ${prefix} Deterministic response id ${hash}`,\n            `- Prompt chars: ${prompt.length}, Ctx chars: ${context.length}`,\n            `- Temp: ${isFinite(temperature) ? temperature : 0.7}`,\n            `- Tokens in (est): ${tokensIn}`\n        ];\n        const output = lines.join(\"\\n\");\n        const tokensOut = (0,_lib_token_estimator__WEBPACK_IMPORTED_MODULE_0__.estimateTokens)(output);\n        return {\n            model,\n            output,\n            tokensIn,\n            tokensOut\n        };\n    },\n    async *stream ({ model, prompt, context = \"\", temperature = 0.7 }) {\n        const combined = prompt + (context ? `\\n\\n[context]\\n${context}` : \"\");\n        const tokensIn = (0,_lib_token_estimator__WEBPACK_IMPORTED_MODULE_0__.estimateTokens)(combined);\n        const prefix = model.includes(\"claude\") ? \"(Claude)\" : model.includes(\"gpt\") ? \"(OpenAI)\" : \"(LLM)\";\n        const hash = (prompt.length + context.length + Math.round((isFinite(temperature) ? temperature : 0.7) * 10)) % 97;\n        const lines = [\n            `- ${prefix} Streaming response id ${hash}`,\n            `- Prompt chars: ${prompt.length}, Ctx chars: ${context.length}`,\n            `- Temp: ${isFinite(temperature) ? temperature : 0.7}`,\n            `- Tokens in (est): ${tokensIn}`\n        ];\n        yield {\n            type: \"start\",\n            model,\n            tokensIn\n        };\n        for(let i = 0; i &lt; lines.length; i++){\n            yield {\n                type: \"delta\",\n                text: lines[i] + (i &lt; lines.length - 1 ? \"\\n\" : \"\")\n            };\n            // small delay between chunks for realism in dev; consumer may buffer\n            await new Promise((r)=&gt;setTimeout(r, 150));\n        }\n        yield {\n            type: \"done\"\n        };\n    }\n};\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiKHJzYykvLi9zcmMvbGliL2xsbS9pbmRleC50cyIsIm1hcHBpbmdzIjoiOzs7Ozs7O0FBQUEseUNBQXlDO0FBQ3pDLG1DQUFtQztBQUNuQyxpREFBaUQ7QUFDakQsb0VBQW9FO0FBcUNwRSxvQkFBb0I7QUFDbUM7QUFFdkQsU0FBU0MsWUFBWUMsS0FBYTtJQUNoQyxxRUFBcUU7SUFDckUsaUNBQWlDO0lBQ2pDLEtBQUtBO0lBQ0wsT0FBT0M7QUFDVDtBQUVBLGFBQWE7QUFDTixlQUFlQyxTQUFTQyxNQUFzQjtJQUNuRCxNQUFNQyxVQUFVTCxZQUFZSSxPQUFPSCxLQUFLO0lBQ3hDLGlEQUFpRDtJQUNqRCxLQUFLRztJQUNMLE9BQU9DLFFBQVFGLFFBQVEsQ0FBQ0M7QUFDMUI7QUFFTyxTQUFTRSxPQUFPRixNQUFzQjtJQUMzQyxNQUFNQyxVQUFVTCxZQUFZSSxPQUFPSCxLQUFLO0lBQ3hDLGlEQUFpRDtJQUNqRCxLQUFLRztJQUNMLE9BQU9DLFFBQVFDLE1BQU0sQ0FBQ0Y7QUFDeEI7QUFFTyxTQUFTRyxXQUFXTixLQUFhO0lBQ3RDLE1BQU1JLFVBQVVMLFlBQVlDO0lBQzVCLE9BQU87UUFDTE8sYUFBYSxPQUFPSCxRQUFRRyxXQUFXLEtBQUssV0FBV0gsUUFBUUcsV0FBVyxHQUFHO1FBQzdFQyxjQUFjLE9BQU9KLFFBQVFJLFlBQVksS0FBSyxXQUFXSixRQUFRSSxZQUFZLEdBQUc7SUFDbEY7QUFDRjtBQUVBLCtDQUErQztBQUMvQyxNQUFNUCxhQUEyQjtJQUMvQk0sYUFBYTtJQUNiQyxjQUFjO0lBQ2RDLG1CQUFtQjtJQUVuQixNQUFNUCxVQUFTLEVBQUVGLEtBQUssRUFBRVUsTUFBTSxFQUFFQyxVQUFVLEVBQUUsRUFBRUMsY0FBYyxHQUFHLEVBQWtCO1FBQy9FLE1BQU1DLFdBQVdILFNBQVVDLENBQUFBLFVBQVUsQ0FBQyxlQUFlLEVBQUVBLFFBQVEsQ0FBQyxHQUFHLEVBQUM7UUFDcEUsTUFBTUcsV0FBV2hCLG9FQUFjQSxDQUFDZTtRQUNoQyxNQUFNRSxTQUFTZixNQUFNZ0IsUUFBUSxDQUFDLFlBQVksYUFBYWhCLE1BQU1nQixRQUFRLENBQUMsU0FBUyxhQUFhO1FBQzVGLE1BQU1DLE9BQU8sQ0FBQ1AsT0FBT1EsTUFBTSxHQUFHUCxRQUFRTyxNQUFNLEdBQUdDLEtBQUtDLEtBQUssQ0FBQyxDQUFDQyxTQUFTVCxlQUFlQSxjQUFjLEdBQUUsSUFBSyxHQUFFLElBQUs7UUFDL0csTUFBTVUsUUFBUTtZQUNaLENBQUMsRUFBRSxFQUFFUCxPQUFPLDJCQUEyQixFQUFFRSxLQUFLLENBQUM7WUFDL0MsQ0FBQyxnQkFBZ0IsRUFBRVAsT0FBT1EsTUFBTSxDQUFDLGFBQWEsRUFBRVAsUUFBUU8sTUFBTSxDQUFDLENBQUM7WUFDaEUsQ0FBQyxRQUFRLEVBQUVHLFNBQVNULGVBQWVBLGNBQWMsSUFBSSxDQUFDO1lBQ3RELENBQUMsbUJBQW1CLEVBQUVFLFNBQVMsQ0FBQztTQUNqQztRQUNELE1BQU1TLFNBQVNELE1BQU1FLElBQUksQ0FBQztRQUMxQixNQUFNQyxZQUFZM0Isb0VBQWNBLENBQUN5QjtRQUNqQyxPQUFPO1lBQUV2QjtZQUFPdUI7WUFBUVQ7WUFBVVc7UUFBVTtJQUM5QztJQUVBLE9BQU9wQixRQUFPLEVBQUVMLEtBQUssRUFBRVUsTUFBTSxFQUFFQyxVQUFVLEVBQUUsRUFBRUMsY0FBYyxHQUFHLEVBQWtCO1FBQzlFLE1BQU1DLFdBQVdILFNBQVVDLENBQUFBLFVBQVUsQ0FBQyxlQUFlLEVBQUVBLFFBQVEsQ0FBQyxHQUFHLEVBQUM7UUFDcEUsTUFBTUcsV0FBV2hCLG9FQUFjQSxDQUFDZTtRQUNoQyxNQUFNRSxTQUFTZixNQUFNZ0IsUUFBUSxDQUFDLFlBQVksYUFBYWhCLE1BQU1nQixRQUFRLENBQUMsU0FBUyxhQUFhO1FBQzVGLE1BQU1DLE9BQU8sQ0FBQ1AsT0FBT1EsTUFBTSxHQUFHUCxRQUFRTyxNQUFNLEdBQUdDLEtBQUtDLEtBQUssQ0FBQyxDQUFDQyxTQUFTVCxlQUFlQSxjQUFjLEdBQUUsSUFBSyxHQUFFLElBQUs7UUFDL0csTUFBTVUsUUFBUTtZQUNaLENBQUMsRUFBRSxFQUFFUCxPQUFPLHVCQUF1QixFQUFFRSxLQUFLLENBQUM7WUFDM0MsQ0FBQyxnQkFBZ0IsRUFBRVAsT0FBT1EsTUFBTSxDQUFDLGFBQWEsRUFBRVAsUUFBUU8sTUFBTSxDQUFDLENBQUM7WUFDaEUsQ0FBQyxRQUFRLEVBQUVHLFNBQVNULGVBQWVBLGNBQWMsSUFBSSxDQUFDO1lBQ3RELENBQUMsbUJBQW1CLEVBQUVFLFNBQVMsQ0FBQztTQUNqQztRQUNELE1BQU07WUFBRVksTUFBTTtZQUFTMUI7WUFBT2M7UUFBUztRQUN2QyxJQUFLLElBQUlhLElBQUksR0FBR0EsSUFBSUwsTUFBTUosTUFBTSxFQUFFUyxJQUFLO1lBQ3JDLE1BQU07Z0JBQUVELE1BQU07Z0JBQVNFLE1BQU1OLEtBQUssQ0FBQ0ssRUFBRSxHQUFJQSxDQUFBQSxJQUFJTCxNQUFNSixNQUFNLEdBQUcsSUFBSSxPQUFPLEVBQUM7WUFBRztZQUMzRSxxRUFBcUU7WUFDckUsTUFBTSxJQUFJVyxRQUFRLENBQUNDLElBQU1DLFdBQVdELEdBQUc7UUFDekM7UUFDQSxNQUFNO1lBQUVKLE1BQU07UUFBTztJQUN2QjtBQUNGIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vcGlnZW9uLy4vc3JjL2xpYi9sbG0vaW5kZXgudHM/MWU0YyJdLCJzb3VyY2VzQ29udGVudCI6WyIvLyBQcm92aWRlci1hZ25vc3RpYyBMTE0gc2VydmljZSBzY2FmZm9sZFxuLy8gLSBEZWZpbmVzIE1vZGVsQWRhcHRlciBpbnRlcmZhY2Vcbi8vIC0gUHJvdmlkZXMgRGV2QWRhcHRlciAoZGV0ZXJtaW5pc3RpYywgb2ZmbGluZSlcbi8vIC0gQ2VudHJhbCBnZW5lcmF0ZSgpIGFuZCBzdHJlYW0oKSBoZWxwZXJzIHJvdXRpbmcgYnkgbW9kZWwgcHJlZml4XG5cbmV4cG9ydCBpbnRlcmZhY2UgR2VuZXJhdGVQYXJhbXMge1xuICBtb2RlbDogc3RyaW5nO1xuICBwcm9tcHQ6IHN0cmluZztcbiAgY29udGV4dD86IHN0cmluZztcbiAgdGVtcGVyYXR1cmU/OiBudW1iZXI7XG59XG5cbmV4cG9ydCBpbnRlcmZhY2UgR2VuZXJhdGVSZXN1bHQge1xuICBtb2RlbDogc3RyaW5nO1xuICBvdXRwdXQ6IHN0cmluZztcbiAgdG9rZW5zSW46IG51bWJlcjtcbiAgdG9rZW5zT3V0OiBudW1iZXI7XG59XG5cbmV4cG9ydCBpbnRlcmZhY2UgU3RyZWFtQ2h1bmsge1xuICB0eXBlOiBcInN0YXJ0XCIgfCBcImRlbHRhXCIgfCBcImRvbmVcIjtcbiAgdGV4dD86IHN0cmluZztcbiAgbW9kZWw/OiBzdHJpbmc7XG4gIHRva2Vuc0luPzogbnVtYmVyO1xufVxuXG5leHBvcnQgaW50ZXJmYWNlIE1vZGVsQWRhcHRlciB7XG4gIC8vIFNpbmdsZS1zaG90IGdlbmVyYXRpb25cbiAgLy8gZXNsaW50LWRpc2FibGUtbmV4dC1saW5lIG5vLXVudXNlZC12YXJzXG4gIGdlbmVyYXRlKHBhcmFtczogR2VuZXJhdGVQYXJhbXMpOiBQcm9taXNlPEdlbmVyYXRlUmVzdWx0PjtcbiAgLy8gQXN5bmMgaXRlcmF0b3IgZm9yIHN0cmVhbWluZyBkZWx0YXNcbiAgLy8gZXNsaW50LWRpc2FibGUtbmV4dC1saW5lIG5vLXVudXNlZC12YXJzXG4gIHN0cmVhbShwYXJhbXM6IEdlbmVyYXRlUGFyYW1zKTogQXN5bmNJdGVyYWJsZTxTdHJlYW1DaHVuaz47XG4gIC8vIE9wdGlvbmFsIHByaWNpbmcgcGVyIDFLIHRva2Vuc1xuICBwcmljZVBlcktJbj86IG51bWJlcjtcbiAgcHJpY2VQZXJLT3V0PzogbnVtYmVyO1xuICAvLyBDYXBhYmlsaXR5IGZsYWdzXG4gIHN1cHBvcnRzU3RyZWFtaW5nPzogYm9vbGVhbjtcbn1cblxuLy8gLS0tIFV0aWxpdGllcyAtLS1cbmltcG9ydCB7IGVzdGltYXRlVG9rZW5zIH0gZnJvbSBcIkAvbGliL3Rva2VuLWVzdGltYXRvclwiO1xuXG5mdW5jdGlvbiBwaWNrQWRhcHRlcihtb2RlbDogc3RyaW5nKTogTW9kZWxBZGFwdGVyIHtcbiAgLy8gRnV0dXJlOiByb3V0ZSBieSBwcm92aWRlciBwcmVmaXggKG9wZW5haTosIGNsYXVkZTosIGdlbWluaTosIGV0Yy4pXG4gIC8vIERlZmF1bHQgdG8gZGV2IGFkYXB0ZXIgZm9yIG5vd1xuICB2b2lkIG1vZGVsO1xuICByZXR1cm4gRGV2QWRhcHRlcjtcbn1cblxuLy8gUHVibGljIEFQSVxuZXhwb3J0IGFzeW5jIGZ1bmN0aW9uIGdlbmVyYXRlKHBhcmFtczogR2VuZXJhdGVQYXJhbXMpOiBQcm9taXNlPEdlbmVyYXRlUmVzdWx0PiB7XG4gIGNvbnN0IGFkYXB0ZXIgPSBwaWNrQWRhcHRlcihwYXJhbXMubW9kZWwpO1xuICAvLyBlc2xpbnQtZGlzYWJsZS1uZXh0LWxpbmUgbm8tdW51c2VkLWV4cHJlc3Npb25zXG4gIHZvaWQgcGFyYW1zO1xuICByZXR1cm4gYWRhcHRlci5nZW5lcmF0ZShwYXJhbXMpO1xufVxuXG5leHBvcnQgZnVuY3Rpb24gc3RyZWFtKHBhcmFtczogR2VuZXJhdGVQYXJhbXMpOiBBc3luY0l0ZXJhYmxlPFN0cmVhbUNodW5rPiB7XG4gIGNvbnN0IGFkYXB0ZXIgPSBwaWNrQWRhcHRlcihwYXJhbXMubW9kZWwpO1xuICAvLyBlc2xpbnQtZGlzYWJsZS1uZXh0LWxpbmUgbm8tdW51c2VkLWV4cHJlc3Npb25zXG4gIHZvaWQgcGFyYW1zO1xuICByZXR1cm4gYWRhcHRlci5zdHJlYW0ocGFyYW1zKTtcbn1cblxuZXhwb3J0IGZ1bmN0aW9uIGdldFByaWNpbmcobW9kZWw6IHN0cmluZyk6IHsgcHJpY2VQZXJLSW46IG51bWJlciB8IG51bGw7IHByaWNlUGVyS091dDogbnVtYmVyIHwgbnVsbCB9IHtcbiAgY29uc3QgYWRhcHRlciA9IHBpY2tBZGFwdGVyKG1vZGVsKTtcbiAgcmV0dXJuIHtcbiAgICBwcmljZVBlcktJbjogdHlwZW9mIGFkYXB0ZXIucHJpY2VQZXJLSW4gPT09IFwibnVtYmVyXCIgPyBhZGFwdGVyLnByaWNlUGVyS0luIDogbnVsbCxcbiAgICBwcmljZVBlcktPdXQ6IHR5cGVvZiBhZGFwdGVyLnByaWNlUGVyS091dCA9PT0gXCJudW1iZXJcIiA/IGFkYXB0ZXIucHJpY2VQZXJLT3V0IDogbnVsbCxcbiAgfTtcbn1cblxuLy8gLS0tIERldiBBZGFwdGVyIChkZXRlcm1pbmlzdGljLCBvZmZsaW5lKSAtLS1cbmNvbnN0IERldkFkYXB0ZXI6IE1vZGVsQWRhcHRlciA9IHtcbiAgcHJpY2VQZXJLSW46IDAsXG4gIHByaWNlUGVyS091dDogMCxcbiAgc3VwcG9ydHNTdHJlYW1pbmc6IHRydWUsXG5cbiAgYXN5bmMgZ2VuZXJhdGUoeyBtb2RlbCwgcHJvbXB0LCBjb250ZXh0ID0gXCJcIiwgdGVtcGVyYXR1cmUgPSAwLjcgfTogR2VuZXJhdGVQYXJhbXMpOiBQcm9taXNlPEdlbmVyYXRlUmVzdWx0PiB7XG4gICAgY29uc3QgY29tYmluZWQgPSBwcm9tcHQgKyAoY29udGV4dCA/IGBcXG5cXG5bY29udGV4dF1cXG4ke2NvbnRleHR9YCA6IFwiXCIpO1xuICAgIGNvbnN0IHRva2Vuc0luID0gZXN0aW1hdGVUb2tlbnMoY29tYmluZWQpO1xuICAgIGNvbnN0IHByZWZpeCA9IG1vZGVsLmluY2x1ZGVzKFwiY2xhdWRlXCIpID8gXCIoQ2xhdWRlKVwiIDogbW9kZWwuaW5jbHVkZXMoXCJncHRcIikgPyBcIihPcGVuQUkpXCIgOiBcIihMTE0pXCI7XG4gICAgY29uc3QgaGFzaCA9IChwcm9tcHQubGVuZ3RoICsgY29udGV4dC5sZW5ndGggKyBNYXRoLnJvdW5kKChpc0Zpbml0ZSh0ZW1wZXJhdHVyZSkgPyB0ZW1wZXJhdHVyZSA6IDAuNykgKiAxMCkpICUgOTc7XG4gICAgY29uc3QgbGluZXMgPSBbXG4gICAgICBgLSAke3ByZWZpeH0gRGV0ZXJtaW5pc3RpYyByZXNwb25zZSBpZCAke2hhc2h9YCxcbiAgICAgIGAtIFByb21wdCBjaGFyczogJHtwcm9tcHQubGVuZ3RofSwgQ3R4IGNoYXJzOiAke2NvbnRleHQubGVuZ3RofWAsXG4gICAgICBgLSBUZW1wOiAke2lzRmluaXRlKHRlbXBlcmF0dXJlKSA/IHRlbXBlcmF0dXJlIDogMC43fWAsXG4gICAgICBgLSBUb2tlbnMgaW4gKGVzdCk6ICR7dG9rZW5zSW59YCxcbiAgICBdO1xuICAgIGNvbnN0IG91dHB1dCA9IGxpbmVzLmpvaW4oXCJcXG5cIik7XG4gICAgY29uc3QgdG9rZW5zT3V0ID0gZXN0aW1hdGVUb2tlbnMob3V0cHV0KTtcbiAgICByZXR1cm4geyBtb2RlbCwgb3V0cHV0LCB0b2tlbnNJbiwgdG9rZW5zT3V0IH07XG4gIH0sXG5cbiAgYXN5bmMgKnN0cmVhbSh7IG1vZGVsLCBwcm9tcHQsIGNvbnRleHQgPSBcIlwiLCB0ZW1wZXJhdHVyZSA9IDAuNyB9OiBHZW5lcmF0ZVBhcmFtcyk6IEFzeW5jSXRlcmFibGU8U3RyZWFtQ2h1bms+IHtcbiAgICBjb25zdCBjb21iaW5lZCA9IHByb21wdCArIChjb250ZXh0ID8gYFxcblxcbltjb250ZXh0XVxcbiR7Y29udGV4dH1gIDogXCJcIik7XG4gICAgY29uc3QgdG9rZW5zSW4gPSBlc3RpbWF0ZVRva2Vucyhjb21iaW5lZCk7XG4gICAgY29uc3QgcHJlZml4ID0gbW9kZWwuaW5jbHVkZXMoXCJjbGF1ZGVcIikgPyBcIihDbGF1ZGUpXCIgOiBtb2RlbC5pbmNsdWRlcyhcImdwdFwiKSA/IFwiKE9wZW5BSSlcIiA6IFwiKExMTSlcIjtcbiAgICBjb25zdCBoYXNoID0gKHByb21wdC5sZW5ndGggKyBjb250ZXh0Lmxlbmd0aCArIE1hdGgucm91bmQoKGlzRmluaXRlKHRlbXBlcmF0dXJlKSA/IHRlbXBlcmF0dXJlIDogMC43KSAqIDEwKSkgJSA5NztcbiAgICBjb25zdCBsaW5lcyA9IFtcbiAgICAgIGAtICR7cHJlZml4fSBTdHJlYW1pbmcgcmVzcG9uc2UgaWQgJHtoYXNofWAsXG4gICAgICBgLSBQcm9tcHQgY2hhcnM6ICR7cHJvbXB0Lmxlbmd0aH0sIEN0eCBjaGFyczogJHtjb250ZXh0Lmxlbmd0aH1gLFxuICAgICAgYC0gVGVtcDogJHtpc0Zpbml0ZSh0ZW1wZXJhdHVyZSkgPyB0ZW1wZXJhdHVyZSA6IDAuN31gLFxuICAgICAgYC0gVG9rZW5zIGluIChlc3QpOiAke3Rva2Vuc0lufWAsXG4gICAgXTtcbiAgICB5aWVsZCB7IHR5cGU6IFwic3RhcnRcIiwgbW9kZWwsIHRva2Vuc0luIH07XG4gICAgZm9yIChsZXQgaSA9IDA7IGkgPCBsaW5lcy5sZW5ndGg7IGkrKykge1xuICAgICAgeWllbGQgeyB0eXBlOiBcImRlbHRhXCIsIHRleHQ6IGxpbmVzW2ldICsgKGkgPCBsaW5lcy5sZW5ndGggLSAxID8gXCJcXG5cIiA6IFwiXCIpIH07XG4gICAgICAvLyBzbWFsbCBkZWxheSBiZXR3ZWVuIGNodW5rcyBmb3IgcmVhbGlzbSBpbiBkZXY7IGNvbnN1bWVyIG1heSBidWZmZXJcbiAgICAgIGF3YWl0IG5ldyBQcm9taXNlKChyKSA9PiBzZXRUaW1lb3V0KHIsIDE1MCkpO1xuICAgIH1cbiAgICB5aWVsZCB7IHR5cGU6IFwiZG9uZVwiIH07XG4gIH0sXG59OyJdLCJuYW1lcyI6WyJlc3RpbWF0ZVRva2VucyIsInBpY2tBZGFwdGVyIiwibW9kZWwiLCJEZXZBZGFwdGVyIiwiZ2VuZXJhdGUiLCJwYXJhbXMiLCJhZGFwdGVyIiwic3RyZWFtIiwiZ2V0UHJpY2luZyIsInByaWNlUGVyS0luIiwicHJpY2VQZXJLT3V0Iiwic3VwcG9ydHNTdHJlYW1pbmciLCJwcm9tcHQiLCJjb250ZXh0IiwidGVtcGVyYXR1cmUiLCJjb21iaW5lZCIsInRva2Vuc0luIiwicHJlZml4IiwiaW5jbHVkZXMiLCJoYXNoIiwibGVuZ3RoIiwiTWF0aCIsInJvdW5kIiwiaXNGaW5pdGUiLCJsaW5lcyIsIm91dHB1dCIsImpvaW4iLCJ0b2tlbnNPdXQiLCJ0eXBlIiwiaSIsInRleHQiLCJQcm9taXNlIiwiciIsInNldFRpbWVvdXQiXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///(rsc)/./src/lib/llm/index.ts\n");</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >/***/ }),</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >/***/ "(rsc)/./src/lib/telemetry.ts":</span>
+<span class="cstat-no" title="statement not covered" >/*!******************************!*\</span>
+<span class="cstat-no" title="statement not covered" >  !*** ./src/lib/telemetry.ts ***!</span>
+<span class="cstat-no" title="statement not covered" >  \******************************/</span>
+<span class="cstat-no" title="statement not covered" >/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   getTelemetryBuffer: () =&gt; (/* binding */ getTelemetryBuffer),\n/* harmony export */   logRunTelemetry: () =&gt; (/* binding */ logRunTelemetry)\n/* harmony export */ });\n// Lightweight telemetry helper with dev-safe no-op fallback\n// Captures prompt run metrics (no prompt/context contents)\nconst MAX_BUFFER = 500;\nfunction getBuffer() {\n    const g = globalThis;\n    if (!g.__pigeonTelemetryBuffer) {\n        g.__pigeonTelemetryBuffer = [];\n    }\n    return g.__pigeonTelemetryBuffer;\n}\nfunction pushToBuffer(ev) {\n    try {\n        const buf = getBuffer();\n        buf.push(ev);\n        if (buf.length &gt; MAX_BUFFER) buf.splice(0, buf.length - MAX_BUFFER);\n    } catch (e) {\n        void e;\n    }\n}\nconst TELEMETRY_DISABLED = process.env.PIGEON_TELEMETRY_DISABLED === \"1\" || \"development\" === \"production\";\nconst CONSOLE_ENABLED = (process.env.TELEMETRY_CONSOLE === \"1\" || \"development\" !== \"production\") &amp;&amp; !TELEMETRY_DISABLED;\nfunction logRunTelemetry(event) {\n    try {\n        if (TELEMETRY_DISABLED) return;\n        pushToBuffer(event);\n        if (CONSOLE_ENABLED) {\n            // Intentionally avoid logging prompt/context contents; only metadata\n            // Use a recognizable tag for easy grepping in dev logs\n            // eslint-disable-next-line no-console\n            console.info(\"[telemetry]\", JSON.stringify(event));\n        }\n    } catch (e) {\n        void e;\n    }\n}\nfunction getTelemetryBuffer() {\n    return [\n        ...getBuffer()\n    ];\n}\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiKHJzYykvLi9zcmMvbGliL3RlbGVtZXRyeS50cyIsIm1hcHBpbmdzIjoiOzs7OztBQUFBLDREQUE0RDtBQUM1RCwyREFBMkQ7QUFpQjNELE1BQU1BLGFBQWE7QUFFbkIsU0FBU0M7SUFDUCxNQUFNQyxJQUFJQztJQUNWLElBQUksQ0FBQ0QsRUFBRUUsdUJBQXVCLEVBQUU7UUFDOUJGLEVBQUVFLHVCQUF1QixHQUFHLEVBQUU7SUFDaEM7SUFDQSxPQUFPRixFQUFFRSx1QkFBdUI7QUFDbEM7QUFFQSxTQUFTQyxhQUFhQyxFQUFxQjtJQUN6QyxJQUFJO1FBQ0YsTUFBTUMsTUFBTU47UUFDWk0sSUFBSUMsSUFBSSxDQUFDRjtRQUNULElBQUlDLElBQUlFLE1BQU0sR0FBR1QsWUFBWU8sSUFBSUcsTUFBTSxDQUFDLEdBQUdILElBQUlFLE1BQU0sR0FBR1Q7SUFDMUQsRUFBRSxPQUFPVyxHQUFHO1FBQUUsS0FBS0E7SUFBRztBQUN4QjtBQUVBLE1BQU1DLHFCQUFxQkMsUUFBUUMsR0FBRyxDQUFDQyx5QkFBeUIsS0FBSyxPQUFPRixrQkFBeUI7QUFDckcsTUFBTUcsa0JBQWtCLENBQUNILFFBQVFDLEdBQUcsQ0FBQ0csaUJBQWlCLEtBQUssT0FBT0osa0JBQXlCLFlBQVcsS0FBTSxDQUFDRDtBQUV0RyxTQUFTTSxnQkFBZ0JDLEtBQXdCO0lBQ3RELElBQUk7UUFDRixJQUFJUCxvQkFBb0I7UUFDeEJQLGFBQWFjO1FBQ2IsSUFBSUgsaUJBQWlCO1lBQ25CLHFFQUFxRTtZQUNyRSx1REFBdUQ7WUFDdkQsc0NBQXNDO1lBQ3RDSSxRQUFRQyxJQUFJLENBQUMsZUFBZUMsS0FBS0MsU0FBUyxDQUFDSjtRQUM3QztJQUNGLEVBQUUsT0FBT1IsR0FBRztRQUFFLEtBQUtBO0lBQUc7QUFDeEI7QUFFTyxTQUFTYTtJQUNkLE9BQU87V0FBSXZCO0tBQVk7QUFDekIiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly9waWdlb24vLi9zcmMvbGliL3RlbGVtZXRyeS50cz81NzM4Il0sInNvdXJjZXNDb250ZW50IjpbIi8vIExpZ2h0d2VpZ2h0IHRlbGVtZXRyeSBoZWxwZXIgd2l0aCBkZXYtc2FmZSBuby1vcCBmYWxsYmFja1xuLy8gQ2FwdHVyZXMgcHJvbXB0IHJ1biBtZXRyaWNzIChubyBwcm9tcHQvY29udGV4dCBjb250ZW50cylcblxuZXhwb3J0IHR5cGUgUnVuVGVsZW1ldHJ5RXZlbnQgPSB7XG4gIGtpbmQ6IFwicnVuXCIgfCBcInN0cmVhbVwiO1xuICBtb2RlbDogc3RyaW5nO1xuICB0b2tlbnNJbj86IG51bWJlcjtcbiAgdG9rZW5zT3V0PzogbnVtYmVyO1xuICBjb3N0PzogbnVtYmVyIHwgbnVsbDtcbiAgZWxhcHNlZE1zPzogbnVtYmVyO1xuICBwcm9tcHRDaGFycz86IG51bWJlcjtcbiAgY29udGV4dENoYXJzPzogbnVtYmVyO1xuICBvazogYm9vbGVhbjtcbiAgc3RhdHVzPzogbnVtYmVyO1xuICAvLyBJU08gdGltZXN0YW1wXG4gIHRpbWVzdGFtcDogc3RyaW5nO1xufTtcblxuY29uc3QgTUFYX0JVRkZFUiA9IDUwMDtcblxuZnVuY3Rpb24gZ2V0QnVmZmVyKCk6IFJ1blRlbGVtZXRyeUV2ZW50W10ge1xuICBjb25zdCBnID0gZ2xvYmFsVGhpcyBhcyBhbnk7XG4gIGlmICghZy5fX3BpZ2VvblRlbGVtZXRyeUJ1ZmZlcikge1xuICAgIGcuX19waWdlb25UZWxlbWV0cnlCdWZmZXIgPSBbXSBhcyBSdW5UZWxlbWV0cnlFdmVudFtdO1xuICB9XG4gIHJldHVybiBnLl9fcGlnZW9uVGVsZW1ldHJ5QnVmZmVyIGFzIFJ1blRlbGVtZXRyeUV2ZW50W107XG59XG5cbmZ1bmN0aW9uIHB1c2hUb0J1ZmZlcihldjogUnVuVGVsZW1ldHJ5RXZlbnQpIHtcbiAgdHJ5IHtcbiAgICBjb25zdCBidWYgPSBnZXRCdWZmZXIoKTtcbiAgICBidWYucHVzaChldik7XG4gICAgaWYgKGJ1Zi5sZW5ndGggPiBNQVhfQlVGRkVSKSBidWYuc3BsaWNlKDAsIGJ1Zi5sZW5ndGggLSBNQVhfQlVGRkVSKTtcbiAgfSBjYXRjaCAoZSkgeyB2b2lkIGU7IH1cbn1cblxuY29uc3QgVEVMRU1FVFJZX0RJU0FCTEVEID0gcHJvY2Vzcy5lbnYuUElHRU9OX1RFTEVNRVRSWV9ESVNBQkxFRCA9PT0gXCIxXCIgfHwgcHJvY2Vzcy5lbnYuTk9ERV9FTlYgPT09IFwicHJvZHVjdGlvblwiO1xuY29uc3QgQ09OU09MRV9FTkFCTEVEID0gKHByb2Nlc3MuZW52LlRFTEVNRVRSWV9DT05TT0xFID09PSBcIjFcIiB8fCBwcm9jZXNzLmVudi5OT0RFX0VOViAhPT0gXCJwcm9kdWN0aW9uXCIpICYmICFURUxFTUVUUllfRElTQUJMRUQ7XG5cbmV4cG9ydCBmdW5jdGlvbiBsb2dSdW5UZWxlbWV0cnkoZXZlbnQ6IFJ1blRlbGVtZXRyeUV2ZW50KTogdm9pZCB7XG4gIHRyeSB7XG4gICAgaWYgKFRFTEVNRVRSWV9ESVNBQkxFRCkgcmV0dXJuO1xuICAgIHB1c2hUb0J1ZmZlcihldmVudCk7XG4gICAgaWYgKENPTlNPTEVfRU5BQkxFRCkge1xuICAgICAgLy8gSW50ZW50aW9uYWxseSBhdm9pZCBsb2dnaW5nIHByb21wdC9jb250ZXh0IGNvbnRlbnRzOyBvbmx5IG1ldGFkYXRhXG4gICAgICAvLyBVc2UgYSByZWNvZ25pemFibGUgdGFnIGZvciBlYXN5IGdyZXBwaW5nIGluIGRldiBsb2dzXG4gICAgICAvLyBlc2xpbnQtZGlzYWJsZS1uZXh0LWxpbmUgbm8tY29uc29sZVxuICAgICAgY29uc29sZS5pbmZvKFwiW3RlbGVtZXRyeV1cIiwgSlNPTi5zdHJpbmdpZnkoZXZlbnQpKTtcbiAgICB9XG4gIH0gY2F0Y2ggKGUpIHsgdm9pZCBlOyB9XG59XG5cbmV4cG9ydCBmdW5jdGlvbiBnZXRUZWxlbWV0cnlCdWZmZXIoKTogUnVuVGVsZW1ldHJ5RXZlbnRbXSB7XG4gIHJldHVybiBbLi4uZ2V0QnVmZmVyKCldO1xufSJdLCJuYW1lcyI6WyJNQVhfQlVGRkVSIiwiZ2V0QnVmZmVyIiwiZyIsImdsb2JhbFRoaXMiLCJfX3BpZ2VvblRlbGVtZXRyeUJ1ZmZlciIsInB1c2hUb0J1ZmZlciIsImV2IiwiYnVmIiwicHVzaCIsImxlbmd0aCIsInNwbGljZSIsImUiLCJURUxFTUVUUllfRElTQUJMRUQiLCJwcm9jZXNzIiwiZW52IiwiUElHRU9OX1RFTEVNRVRSWV9ESVNBQkxFRCIsIkNPTlNPTEVfRU5BQkxFRCIsIlRFTEVNRVRSWV9DT05TT0xFIiwibG9nUnVuVGVsZW1ldHJ5IiwiZXZlbnQiLCJjb25zb2xlIiwiaW5mbyIsIkpTT04iLCJzdHJpbmdpZnkiLCJnZXRUZWxlbWV0cnlCdWZmZXIiXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///(rsc)/./src/lib/telemetry.ts\n");</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >/***/ }),</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >/***/ "(rsc)/./src/lib/token-estimator.ts":</span>
+<span class="cstat-no" title="statement not covered" >/*!************************************!*\</span>
+<span class="cstat-no" title="statement not covered" >  !*** ./src/lib/token-estimator.ts ***!</span>
+<span class="cstat-no" title="statement not covered" >  \************************************/</span>
+<span class="cstat-no" title="statement not covered" >/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   estimateCost: () =&gt; (/* binding */ estimateCost),\n/* harmony export */   estimateTokens: () =&gt; (/* binding */ estimateTokens)\n/* harmony export */ });\n// Token estimation and cost utilities\n// Note: heuristic approximation (~4 chars per token)\nfunction estimateTokens(text) {\n    if (!text) return 0;\n    const len = text.length;\n    // Ensure non-negative; round up to account for partial token\n    return Math.max(0, Math.ceil(len / 4));\n}\nfunction estimateCost(tokens, pricePerK) {\n    if (!isFinite(pricePerK) || pricePerK &lt;= 0) return null;\n    if (!isFinite(tokens) || tokens &lt;= 0) return 0;\n    return tokens / 1000 * pricePerK;\n}\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiKHJzYykvLi9zcmMvbGliL3Rva2VuLWVzdGltYXRvci50cyIsIm1hcHBpbmdzIjoiOzs7OztBQUFBLHNDQUFzQztBQUN0QyxxREFBcUQ7QUFFOUMsU0FBU0EsZUFBZUMsSUFBK0I7SUFDNUQsSUFBSSxDQUFDQSxNQUFNLE9BQU87SUFDbEIsTUFBTUMsTUFBTUQsS0FBS0UsTUFBTTtJQUN2Qiw2REFBNkQ7SUFDN0QsT0FBT0MsS0FBS0MsR0FBRyxDQUFDLEdBQUdELEtBQUtFLElBQUksQ0FBQ0osTUFBTTtBQUNyQztBQUVPLFNBQVNLLGFBQWFDLE1BQWMsRUFBRUMsU0FBaUI7SUFDNUQsSUFBSSxDQUFDQyxTQUFTRCxjQUFjQSxhQUFhLEdBQUcsT0FBTztJQUNuRCxJQUFJLENBQUNDLFNBQVNGLFdBQVdBLFVBQVUsR0FBRyxPQUFPO0lBQzdDLE9BQU8sU0FBVSxPQUFRQztBQUMzQiIsInNvdXJjZXMiOlsid2VicGFjazovL3BpZ2Vvbi8uL3NyYy9saWIvdG9rZW4tZXN0aW1hdG9yLnRzPzY2YWQiXSwic291cmNlc0NvbnRlbnQiOlsiLy8gVG9rZW4gZXN0aW1hdGlvbiBhbmQgY29zdCB1dGlsaXRpZXNcbi8vIE5vdGU6IGhldXJpc3RpYyBhcHByb3hpbWF0aW9uICh+NCBjaGFycyBwZXIgdG9rZW4pXG5cbmV4cG9ydCBmdW5jdGlvbiBlc3RpbWF0ZVRva2Vucyh0ZXh0OiBzdHJpbmcgfCBudWxsIHwgdW5kZWZpbmVkKTogbnVtYmVyIHtcbiAgaWYgKCF0ZXh0KSByZXR1cm4gMDtcbiAgY29uc3QgbGVuID0gdGV4dC5sZW5ndGg7XG4gIC8vIEVuc3VyZSBub24tbmVnYXRpdmU7IHJvdW5kIHVwIHRvIGFjY291bnQgZm9yIHBhcnRpYWwgdG9rZW5cbiAgcmV0dXJuIE1hdGgubWF4KDAsIE1hdGguY2VpbChsZW4gLyA0KSk7XG59XG5cbmV4cG9ydCBmdW5jdGlvbiBlc3RpbWF0ZUNvc3QodG9rZW5zOiBudW1iZXIsIHByaWNlUGVySzogbnVtYmVyKTogbnVtYmVyIHwgbnVsbCB7XG4gIGlmICghaXNGaW5pdGUocHJpY2VQZXJLKSB8fCBwcmljZVBlcksgPD0gMCkgcmV0dXJuIG51bGw7XG4gIGlmICghaXNGaW5pdGUodG9rZW5zKSB8fCB0b2tlbnMgPD0gMCkgcmV0dXJuIDA7XG4gIHJldHVybiAodG9rZW5zIC8gMTAwMCkgKiBwcmljZVBlcks7XG59Il0sIm5hbWVzIjpbImVzdGltYXRlVG9rZW5zIiwidGV4dCIsImxlbiIsImxlbmd0aCIsIk1hdGgiLCJtYXgiLCJjZWlsIiwiZXN0aW1hdGVDb3N0IiwidG9rZW5zIiwicHJpY2VQZXJLIiwiaXNGaW5pdGUiXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///(rsc)/./src/lib/token-estimator.ts\n");</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >/***/ })</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >};</span>
+<span class="cstat-no" title="statement not covered" >;</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >// load runtime</span>
+<span class="cstat-no" title="statement not covered" >var __webpack_require__ = require("../../../../webpack-runtime.js");</span>
+<span class="cstat-no" title="statement not covered" >__webpack_require__.C(exports);</span>
+<span class="cstat-no" title="statement not covered" >var __webpack_exec__ = (moduleId) =&gt; (__webpack_require__(__webpack_require__.s = moduleId))</span>
+<span class="cstat-no" title="statement not covered" >var __webpack_exports__ = __webpack_require__.X(0, ["vendor-chunks/next"], () =&gt; (__webpack_exec__("(rsc)/./node_modules/next/dist/build/webpack/loaders/next-app-loader.js?name=app%2Fapi%2Fprompt%2Fstream%2Froute&amp;page=%2Fapi%2Fprompt%2Fstream%2Froute&amp;appPaths=&amp;pagePath=private-next-app-dir%2Fapi%2Fprompt%2Fstream%2Froute.ts&amp;appDir=C%3A%5Cpigeon%5Csrc%5Capp&amp;pageExtensions=tsx&amp;pageExtensions=ts&amp;pageExtensions=jsx&amp;pageExtensions=js&amp;rootDir=C%3A%5Cpigeon&amp;isDev=true&amp;tsconfigPath=tsconfig.json&amp;basePath=&amp;assetPrefix=&amp;nextConfigOutput=&amp;preferredRegion=&amp;middlewareConfig=e30%3D!")));</span>
+<span class="cstat-no" title="statement not covered" >module.exports = __webpack_exports__;</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >})();</span></pre></td></tr></table></pre>
+
+                <div class='push'></div><!-- for sticky footer -->
+            </div><!-- /wrapper -->
+            <div class='footer quiet pad2 space-top1 center small'>
+                Code coverage generated by
+                <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
+                at 2025-09-20T00:53:23.901Z
+            </div>
+        <script src="../../../../../../../prettify.js"></script>
+        <script>
+            window.onload = function () {
+                prettyPrint();
+            };
+        </script>
+        <script src="../../../../../../../sorter.js"></script>
+        <script src="../../../../../../../block-navigation.js"></script>
+    </body>
+</html>
+    

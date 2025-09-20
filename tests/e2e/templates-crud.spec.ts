@@ -17,8 +17,38 @@ async function createUserTemplate(api: APIRequestContext, userId: string, name: 
   expect(res.status(), 'create template status').toBe(201);
   const body = await res.json();
   expect(body?.id).toBeTruthy();
-  return body;
+  return body as { id: string; updated_at: string };
 }
+
+async function getUserTemplates(api: APIRequestContext, userId: string) {
+  const res = await api.get(`${APP_URL}/api/templates/user`, { headers: { 'X-User-Id': userId } });
+  expect(res.status()).toBe(200);
+  const body = await res.json();
+  const items = Array.isArray(body) ? body : body.items;
+  return items as Array<{ id: string; updated_at: string; name: string; tags?: string[]; description?: string }>; 
+}
+
+async function updateUserTemplate(api: APIRequestContext, userId: string, id: string, patch: any, ifMatchUpdatedAt?: string) {
+  const res = await api.put(`${APP_URL}/api/templates/user/${id}`, {
+    data: patch,
+    headers: {
+      'X-User-Id': userId,
+      ...(ifMatchUpdatedAt ? { 'If-Match': `"${ifMatchUpdatedAt}"` } : {}),
+    },
+  });
+  return res;
+}
+
+async function deleteUserTemplate(api: APIRequestContext, userId: string, id: string, ifMatchUpdatedAt?: string) {
+  const res = await api.delete(`${APP_URL}/api/templates/user/${id}`, {
+    headers: {
+      'X-User-Id': userId,
+      ...(ifMatchUpdatedAt ? { 'If-Match': `"${ifMatchUpdatedAt}"` } : {}),
+    },
+  });
+  return res;
+}
+
 
 test.describe('User Templates CRUD', () => {
   test('create -> list -> update -> delete', async ({ request }) => {
@@ -28,32 +58,22 @@ test.describe('User Templates CRUD', () => {
     const created = await createUserTemplate(request, userId, `tmpl-${Date.now()}`);
 
     // list
-    const listRes = await request.get(`${APP_URL}/api/templates/user`, { headers: { 'X-User-Id': userId } });
-    expect(listRes.status()).toBe(200);
-    const listBody = await listRes.json();
-    expect(Array.isArray(listBody.items)).toBe(true);
-    expect(listBody.items.find((t: any) => t.id === created.id)).toBeTruthy();
+    const items = await getUserTemplates(request, userId);
+    expect(items.find((t) => t.id === created.id)).toBeTruthy();
 
-    // update
-    const putRes = await request.put(`${APP_URL}/api/templates/user/${created.id}`, {
-      data: { description: 'updated desc', tags: ['e2e', 'updated'] },
-      headers: { 'X-User-Id': userId },
-    });
+    // update with If-Match
+    const putRes = await updateUserTemplate(request, userId, created.id, { description: 'updated desc', tags: ['e2e', 'updated'] }, created.updated_at);
     expect(putRes.status()).toBe(200);
     const updated = await putRes.json();
     expect(updated.description).toBe('updated desc');
     expect(updated.tags).toContain('updated');
 
-    // delete
-    const delRes = await request.delete(`${APP_URL}/api/templates/user/${created.id}`, {
-      headers: { 'X-User-Id': userId },
-    });
+    // delete with If-Match (prefer optimistic concurrency)
+    const delRes = await deleteUserTemplate(request, userId, created.id, updated.updated_at || created.updated_at);
     expect([200, 404]).toContain(delRes.status());
 
     // list again -> not found
-    const listRes2 = await request.get(`${APP_URL}/api/templates/user`, { headers: { 'X-User-Id': userId } });
-    expect(listRes2.status()).toBe(200);
-    const listBody2 = await listRes2.json();
-    expect(listBody2.items.find((t: any) => t.id === created.id)).toBeFalsy();
+    const items2 = await getUserTemplates(request, userId);
+    expect(items2.find((t) => t.id === created.id)).toBeFalsy();
   });
 });

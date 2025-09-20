@@ -48,7 +48,9 @@ test.describe('ETag caching', () => {
   });
 
   test('catalog: 200 -> 304, then invalidated after new public prompt', async ({ request }) => {
-    const url = `${APP_URL}/api/catalog/prompts?page=1&size=5&sort=created_desc`;
+    // Use a unique query filter to isolate from concurrent tests mutating the public catalog
+    const prefix = `e2e-etag-catalog-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
+    const url = `${APP_URL}/api/catalog/prompts?page=1&size=5&sort=created_desc&q=${encodeURIComponent(prefix)}`;
 
     const list1 = await request.get(url);
     expect(list1.status()).toBe(200);
@@ -59,8 +61,8 @@ test.describe('ETag caching', () => {
     const list304 = await request.get(url, { headers: { 'If-None-Match': catEtag1! } });
     expect(list304.status()).toBe(304);
 
-    // Create a new public prompt to change total/maxUpdatedAt
-    await createPublicPrompt(request, `e2e-etag-catalog-${Date.now()}`);
+    // Create a new public prompt with the same prefix so it impacts this filtered catalog
+    await createPublicPrompt(request, `${prefix} ${Date.now()}`);
 
     // Now conditional should be 200 and ETag should change
     const list2 = await request.get(url, { headers: { 'If-None-Match': catEtag1! } });

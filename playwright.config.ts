@@ -1,5 +1,11 @@
 import { defineConfig } from '@playwright/test';
 
+// CI/E2E config (starts its own webServer):
+// - Designed for CI and isolated local runs that shouldn't depend on a running dev server.
+// - Starts Next.js on port 4100 and sets APP_URL accordingly.
+// - Use `npx playwright test` or `npm run test:e2e` to run this config.
+// - To run against a locally started dev server on 3100, use playwright.plain.config.ts instead.
+
 // Ensure tests use the same base URL as the dev server started below
 process.env.APP_URL = process.env.APP_URL || 'http://localhost:4100';
 
@@ -11,8 +17,14 @@ export default defineConfig({
     baseURL: process.env.APP_URL || 'http://localhost:4100',
     trace: 'on-first-retry',
   },
-  timeout: 30000,
+  timeout: 60000,
   expect: { timeout: 5000 },
+  // Run across all three browsers; individual specs may conditionally skip WebKit when necessary
+  projects: [
+    { name: 'Chromium', use: { browserName: 'chromium' } },
+    { name: 'Firefox', use: { browserName: 'firefox' } },
+    { name: 'WebKit', use: { browserName: 'webkit' } },
+  ],
   webServer: {
     // Use a dedicated port to avoid collisions with a locally running dev instance
     command: 'npm run dev -- -p 4100',

@@ -1,0 +1,20 @@
+{
+  "meta": {
+    "name": "Imported One"
+  },
+  "data": {
+    "items": [
+      {
+        "id": "",
+        "t": "note",
+        "name": "Note",
+        "content": "zzzzzzzz",
+        "included": true,
+        "tokens": 0
+      }
+    ],
+    "budget": 5,
+    "fmt": "xml",
+    "pricePerK": "1.5"
+  }
+}

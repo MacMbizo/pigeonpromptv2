@@ -19,6 +19,7 @@
     "test:e2e": "playwright test",
     "test:e2e:headed": "playwright test --headed",
     "test:e2e:debug": "playwright test --debug",
+    "test:e2e:local": "playwright test -c playwright.plain.config.ts",
     "test:e2e:smoke": "playwright test tests/e2e/smoke.spec.ts",
     "test:e2e:smoke:ci": "playwright test tests/e2e/smoke.spec.ts --reporter=line,junit --output=playwright-report-smoke",
     "test:e2e:ci": "playwright test --reporter=line,junit --output=playwright-report",

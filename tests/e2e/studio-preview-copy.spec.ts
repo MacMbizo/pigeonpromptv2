@@ -31,7 +31,7 @@ const STUDIO_ID = '10000000-0000-0000-0000-000000000001';
 // This spec mocks API routes for deterministic content.
 
 test.describe('Studio Live Preview - Copy', () => {
-  test('copies rendered preview text to the clipboard', async ({ page, context }) => {
+  test('copies rendered preview text to the clipboard', async ({ page /*, context */ }) => {
     const promptId = STUDIO_ID;
 
     // Mock Studio data fetches
@@ -76,9 +76,7 @@ test.describe('Studio Live Preview - Copy', () => {
       });
     });
 
-    // Grant clipboard permissions for this origin
-    await context.grantPermissions(['clipboard-read', 'clipboard-write'], { origin: APP_URL });
-
+    // Navigate to Studio
     await page.goto(`${APP_URL}/studio/${STUDIO_ID}`);
 
     // Ensure preview panel is visible
@@ -93,21 +91,32 @@ test.describe('Studio Live Preview - Copy', () => {
     await expect(previewOutput).toContainText('Hello Alice');
     await expect(previewOutput).toContainText('Use context: Docs');
 
+    // In browsers like Firefox, requesting clipboard permissions or using navigator.clipboard.readText
+    // is restricted. Instead, intercept writeText to capture what would be copied.
+    await page.evaluate(() => {
+      (window as any).__copiedText = '';
+      const nav: any = navigator as any;
+      const stub = async (t: string) => { (window as any).__copiedText = t; };
+      if (!nav.clipboard) {
+        nav.clipboard = { writeText: stub };
+      } else if (typeof nav.clipboard.writeText === 'function') {
+        nav.clipboard.writeText = stub;
+      } else {
+        nav.clipboard.writeText = stub;
+      }
+    });
+
     // Click Copy output button
     await expect(page.getByTestId('preview-copy')).toBeVisible();
     await page.getByTestId('preview-copy').click();
 
-    // Read clipboard contents
-    const copied = await page.evaluate(async () => {
-      return await navigator.clipboard.readText();
-    });
+    // Assert the intercepted copied text
+    const copied = await page.evaluate(() => (window as any).__copiedText as string);
 
     expect(copied).toContain('Hello Alice');
     expect(copied).toContain('Use context: Docs');
-    // Inside the test, after await page.goto(`${APP_URL}/studio/${STUDIO_ID}`);
-    const consoleErrors = await collectConsoleErrors(page);
 
-    // At the end of the test, before });
+    const consoleErrors = await collectConsoleErrors(page);
     expect(consoleErrors, `Console errors encountered:\n${consoleErrors.join('\n')}`).toHaveLength(0);
   });
 });

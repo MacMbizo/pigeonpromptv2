@@ -98,10 +98,14 @@ test.describe('Studio page smoke', () => {
   });
 
   test('diff controls toggle and Insert copies into draft', async ({ page, browserName }) => {
-    test.skip(browserName === 'webkit', 'Skip on webkit until browsers are stable in CI');
+    // WebKit enabled for this test after hardening; keep others skipped for now
     const consoleErrors = await collectConsoleErrors(page);
 
     await page.goto(`${APP_URL}/studio/${STUDIO_ID}`, { waitUntil: 'domcontentloaded' });
+
+    // Neutralize animations/transitions for cross-browser stability
+    await page.emulateMedia({ reducedMotion: 'reduce' });
+    await page.addStyleTag({ content: '*, *::before, *::after { animation: none !important; transition: none !important; }' });
 
     const editor = page.getByTestId('editor-input');
     await expect(editor).toBeVisible();
